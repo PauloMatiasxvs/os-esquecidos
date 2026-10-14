@@ -8,7 +8,7 @@ Tudo no jogo é gerado por código: modelos, animação, shaders, texturas, mús
 
 ## Jogar
 
-Gere o executável (veja abaixo) e abra `dist/OsEsquecidos/Os Esquecidos.exe`.
+Baixe o zip para Windows na página de [Releases](https://github.com/PauloMatiasxvs/os-esquecidos/releases/latest), extraia e abra `Os Esquecidos.exe`. Para jogar a partir do código, gere o executável (veja abaixo) e abra `dist/OsEsquecidos/Os Esquecidos.exe`.
 
 | Comando | Ação |
 |---|---|
@@ -29,7 +29,7 @@ Controle de videogame também funciona. O jogo salva sozinho ao voltar para o P�
 | Parte | O que é |
 |---|---|
 | `Assets/Scripts/Esquecidos.Nucleo` | Regras do jogo em C# puro, sem Unity: simulação a 60 Hz, IA, combate, poderes, loot, inventário, missões, roteiros, gerador de labirinto, Pátio, ciclo dia/noite, salvamento |
-| `Assets/Resources/Dados`, `Roteiros` | Conteúdo em texto: 3 classes, 24 poderes de classe, ~90 itens, 30 afixos, 25 inimigos e chefes, 8 NPCs, 13 missões, 6 setores, 18 registros, história com 2 finais |
+| `Assets/Resources/Dados`, `Roteiros` | Conteúdo em texto: 3 classes, 24 poderes de classe, 97 itens, 28 afixos, 23 inimigos (6 chefes), 8 NPCs, 13 missões, 6 setores, 18 registros, história com 2 finais |
 | `Assets/Scripts/Motor` | Construtor de malhas, texturas de ruído, materiais, entrada, síntese de som e música generativa |
 | `Assets/Scripts/Esquecidos.Jogo` | Cena 3D, personagens e bichos animados, câmera, controle, efeitos, áudio e interface |
 | `Assets/Resources/Shaders` | Toon com contorno, muro triplanar com hera e ferrugem, chão, grama com vento, céu e partículas (URP) |
