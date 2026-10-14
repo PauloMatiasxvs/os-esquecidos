@@ -1,0 +1,404 @@
+# Gente do Pátio. Cada [dialogo] é um assunto: aparece quando as condições
+# batem e roda um roteiro (a fala mora nos roteiros, como no Pal3).
+# automatico=1: o assunto começa sozinho quando você fala com a pessoa.
+# requer_missao=id:etapa | id:ativa | id:concluida | id:nova
+
+[npc]
+id=iara
+nome=Iara
+titulo=Líder do Pátio
+aparencia=pele:#8d5a3b;cabelo:#1c1410;penteado:tranca;roupa:#5e6b46;calca:#3b3a32;botas:#2a2018;altura:1.02;porte:0.95
+
+[npc]
+id=teo
+nome=Teo
+titulo=Chefe dos Corredores
+aparencia=pele:#c99470;cabelo:#3a2414;penteado:raspado;roupa:#3e5a44;calca:#2e3430;botas:#30261c;acessorio:mochila;altura:1.06;porte:1.0
+
+[npc]
+id=duda
+nome=Duda
+titulo=Remendeira
+aparencia=pele:#e0b090;cabelo:#8a3a20;penteado:coque;roupa:#d8d0c0;calca:#4a4a50;botas:#3a3028;acessorio:avental;altura:0.96;porte:0.92
+loja=enfermaria
+estacao=enfermaria
+
+[npc]
+id=marreta
+nome=Marreta
+titulo=Mestre da Oficina
+aparencia=pele:#6a4430;cabelo:#100c0a;penteado:careca;roupa:#7a5a3a;calca:#3a3028;botas:#2a2018;acessorio:avental_couro;altura:1.08;porte:1.3
+loja=oficina
+estacao=oficina
+
+[npc]
+id=caio
+nome=Caio
+titulo=Cartógrafo
+aparencia=pele:#d8b8a0;cabelo:#d8c890;penteado:baguncado;roupa:#6a6a80;calca:#3a3a40;botas:#2a2a30;acessorio:oculos;altura:0.98;porte:0.85
+loja=mapas
+
+[npc]
+id=nico
+nome=Nico
+titulo=O mais novo
+aparencia=pele:#a8704a;cabelo:#2a1a10;penteado:cacheado;roupa:#c05030;calca:#4a5060;botas:#e0e0d8;altura:0.78;porte:0.85
+ocio=anda
+
+[npc]
+id=bia
+nome=Bia
+titulo=Cozinheira
+aparencia=pele:#f0c8a8;cabelo:#e0c050;penteado:rabo;roupa:#e8e0d0;calca:#5a4a40;botas:#3a3028;acessorio:avental;altura:0.98;porte:1.05
+loja=cozinha
+
+[npc]
+id=zeca
+nome=Zeca
+titulo=Vigia do Portão Norte
+aparencia=pele:#b07850;cabelo:#5a5048;penteado:curto;roupa:#5a5a48;calca:#3a3a30;botas:#2a2418;acessorio:lanca;altura:1.04;porte:1.1
+
+# ---------------------------------------------------------------------------
+# Iara
+# ---------------------------------------------------------------------------
+
+[dialogo]
+npc=iara
+topico=Primeiro dia
+roteiro=iara_m01
+automatico=1
+prioridade=100
+requer_missao=m01_primeiro_dia:0
+
+[dialogo]
+npc=iara
+topico=Sobre a gravação
+roteiro=iara_gravador
+automatico=1
+prioridade=90
+requer_missao=m04_gravador:1
+
+[dialogo]
+npc=iara
+topico=O que fazer agora?
+roteiro=iara_conselho
+prioridade=10
+requer_status=falou_iara
+
+[dialogo]
+npc=iara
+topico=Sobre o Pátio
+roteiro=iara_patio
+prioridade=5
+requer_status=falou_iara
+
+[dialogo]
+npc=iara
+topico=Sobre você
+roteiro=iara_sobre
+prioridade=4
+requer_status=falou_iara
+
+[dialogo]
+npc=iara
+topico=Os registros
+roteiro=iara_registros_fim
+automatico=1
+prioridade=80
+requer_missao=s08_registros:1
+
+[dialogo]
+npc=iara
+topico=A verdade nos terminais
+roteiro=iara_registros
+prioridade=20
+requer_missao=s08_registros:nova
+requer_status=recebeu_gravador
+
+# ---------------------------------------------------------------------------
+# Teo
+# ---------------------------------------------------------------------------
+
+[dialogo]
+npc=teo
+topico=Treino
+roteiro=teo_treino
+automatico=1
+prioridade=100
+requer_missao=m01_primeiro_dia:3
+
+[dialogo]
+npc=teo
+topico=Pronto
+roteiro=teo_pronto
+automatico=1
+prioridade=100
+requer_missao=m01_primeiro_dia:4
+
+[dialogo]
+npc=teo
+topico=Ainda não
+roteiro=teo_cedo
+automatico=1
+prioridade=100
+requer_missao=m01_primeiro_dia:ativa
+requer_nao_status=falou_marreta
+
+[dialogo]
+npc=teo
+topico=Vem comigo
+roteiro=teo_companheiro
+prioridade=30
+requer_missao=m02_hera:concluida
+
+[dialogo]
+npc=teo
+topico=Dicas de Corredor
+roteiro=teo_dicas
+prioridade=8
+requer_status=falou_teo
+
+[dialogo]
+npc=teo
+topico=Sobre os Tecelões
+roteiro=teo_teceloes
+prioridade=6
+requer_status=falou_teo
+
+[dialogo]
+npc=teo
+topico=Uma noite lá fora
+roteiro=teo_noite_fim
+automatico=1
+prioridade=80
+requer_missao=s02_noite:1
+
+# ---------------------------------------------------------------------------
+# Duda
+# ---------------------------------------------------------------------------
+
+[dialogo]
+npc=duda
+topico=Primeira consulta
+roteiro=duda_m01
+automatico=1
+prioridade=100
+requer_missao=m01_primeiro_dia:1
+
+[dialogo]
+npc=duda
+topico=Negociar
+roteiro=duda_loja
+prioridade=50
+requer_status=falou_duda
+
+[dialogo]
+npc=duda
+topico=Me remenda?
+roteiro=duda_cura
+prioridade=40
+requer_status=falou_duda
+
+[dialogo]
+npc=duda
+topico=Remédio de verdade
+roteiro=duda_s05
+prioridade=30
+requer_status=entregou_nucleo
+requer_missao=s05_remedio:nova
+
+[dialogo]
+npc=duda
+topico=Os ingredientes
+roteiro=duda_s05_entrega
+automatico=1
+prioridade=85
+requer_missao=s05_remedio:2
+
+[dialogo]
+npc=duda
+topico=Sobre a enfermaria
+roteiro=duda_conversa
+prioridade=5
+requer_status=falou_duda
+
+# ---------------------------------------------------------------------------
+# Marreta
+# ---------------------------------------------------------------------------
+
+[dialogo]
+npc=marreta
+topico=Algo para se defender
+roteiro=marreta_m01
+automatico=1
+prioridade=100
+requer_missao=m01_primeiro_dia:2
+
+[dialogo]
+npc=marreta
+topico=Negociar
+roteiro=marreta_loja
+prioridade=50
+requer_status=falou_marreta
+
+[dialogo]
+npc=marreta
+topico=Sucata boa
+roteiro=marreta_s04
+prioridade=30
+requer_status=entregou_nucleo
+requer_missao=s04_sucata:nova
+
+[dialogo]
+npc=marreta
+topico=Trouxe a sucata
+roteiro=marreta_s04_entrega
+automatico=1
+prioridade=85
+requer_missao=s04_sucata:2
+
+[dialogo]
+npc=marreta
+topico=Sobre a oficina
+roteiro=marreta_conversa
+prioridade=5
+requer_status=falou_marreta
+
+# ---------------------------------------------------------------------------
+# Caio
+# ---------------------------------------------------------------------------
+
+[dialogo]
+npc=caio
+topico=O núcleo do Alfa
+roteiro=caio_m02
+automatico=1
+prioridade=100
+requer_missao=m02_hera:3
+
+[dialogo]
+npc=caio
+topico=Os fragmentos
+roteiro=caio_m03
+automatico=1
+prioridade=90
+requer_missao=m03_padrao:4
+
+[dialogo]
+npc=caio
+topico=Negociar
+roteiro=caio_loja
+prioridade=50
+requer_status=falou_iara
+
+[dialogo]
+npc=caio
+topico=Mapas para o Caio
+roteiro=caio_s03
+prioridade=30
+requer_missao=m02_hera:ativa
+requer_missao=s03_cartografo:nova
+
+[dialogo]
+npc=caio
+topico=Mapas para o Caio
+roteiro=caio_s03
+prioridade=30
+requer_missao=m02_hera:concluida
+requer_missao=s03_cartografo:nova
+
+[dialogo]
+npc=caio
+topico=O padrão
+roteiro=caio_padrao
+prioridade=20
+requer_missao=m03_padrao:ativa
+
+[dialogo]
+npc=caio
+topico=Sobre os mapas
+roteiro=caio_conversa
+prioridade=5
+requer_status=falou_iara
+
+# ---------------------------------------------------------------------------
+# Nico
+# ---------------------------------------------------------------------------
+
+[dialogo]
+npc=nico
+topico=A bússola
+roteiro=nico_s01
+prioridade=30
+requer_status=falou_teo
+requer_missao=s01_bussola:nova
+
+[dialogo]
+npc=nico
+topico=Achei!
+roteiro=nico_s01_entrega
+automatico=1
+prioridade=85
+requer_missao=s01_bussola:1
+
+[dialogo]
+npc=nico
+topico=Conversar
+roteiro=nico_conversa
+prioridade=5
+
+# ---------------------------------------------------------------------------
+# Bia
+# ---------------------------------------------------------------------------
+
+[dialogo]
+npc=bia
+topico=Negociar
+roteiro=bia_loja
+prioridade=50
+
+[dialogo]
+npc=bia
+topico=A faca da cozinha
+roteiro=bia_s06
+prioridade=30
+requer_missao=s06_faca:nova
+
+[dialogo]
+npc=bia
+topico=Devolver a faca
+roteiro=bia_s06_entrega
+prioridade=60
+requer_missao=s06_faca:0
+
+[dialogo]
+npc=bia
+topico=Conversar
+roteiro=bia_conversa
+prioridade=5
+
+# ---------------------------------------------------------------------------
+# Zeca
+# ---------------------------------------------------------------------------
+
+[dialogo]
+npc=zeca
+topico=O que ronda à noite
+roteiro=zeca_s07
+prioridade=30
+requer_status=entregou_nucleo
+requer_missao=s07_noturnos:nova
+
+[dialogo]
+npc=zeca
+topico=Feito
+roteiro=zeca_s07_fim
+automatico=1
+prioridade=85
+requer_missao=s07_noturnos:1
+
+[dialogo]
+npc=zeca
+topico=Conversar
+roteiro=zeca_conversa
+prioridade=5

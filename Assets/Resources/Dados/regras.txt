@@ -1,0 +1,128 @@
+# Regras do personagem, no espirito do engine/stats.txt do Flare:
+# valor base, ganho por nivel e ganho por ponto de atributo, cada um numa linha.
+#   estat=<estatistica>,<valor>
+#   estat_por_nivel=<estatistica>,<valor>
+#   estat_por_atributo=<atributo>,<estatistica>,<valor>
+
+[regras]
+pontos_atributo_por_nivel=3
+pontos_poder_por_nivel=1
+nivel_maximo=20
+atributo_maximo=40
+xp_base=100
+xp_expoente=1.7
+acerto_minimo=8
+acerto_maximo=97
+absorcao_maxima_pct=70
+resistencia_maxima=75
+multiplicador_critico=1.6
+perda_sucata_ao_morrer=0.15
+
+estat=vida,60
+estat_por_nivel=vida,9
+estat_por_atributo=fisico,vida,6
+estat_por_atributo=defesa,vida,2
+
+estat=regen_vida,0.5
+estat_por_atributo=fisico,regen_vida,0.12
+
+estat=energia,30
+estat_por_nivel=energia,3
+estat_por_atributo=mente,energia,5
+
+estat=regen_energia,3
+estat_por_nivel=regen_energia,0.08
+estat_por_atributo=mente,regen_energia,0.45
+
+estat=precisao,84
+estat_por_nivel=precisao,1.5
+estat_por_atributo=ofensiva,precisao,2
+
+estat=esquiva,3
+estat_por_nivel=esquiva,0.4
+estat_por_atributo=defesa,esquiva,1.4
+estat_por_atributo=ofensiva,esquiva,0.4
+
+estat=critico,4
+estat_por_atributo=ofensiva,critico,0.7
+
+estat=dano_corpo_min,1
+estat=dano_corpo_max,3
+estat_por_nivel=dano_corpo_min,0.4
+estat_por_nivel=dano_corpo_max,0.6
+estat_por_atributo=fisico,dano_corpo_min,1
+estat_por_atributo=fisico,dano_corpo_max,1.2
+
+estat=dano_dist_min,1
+estat=dano_dist_max,2
+estat_por_nivel=dano_dist_min,0.4
+estat_por_nivel=dano_dist_max,0.6
+estat_por_atributo=ofensiva,dano_dist_min,0.8
+estat_por_atributo=ofensiva,dano_dist_max,1.2
+
+estat=dano_tec_min,2
+estat=dano_tec_max,4
+estat_por_nivel=dano_tec_min,0.5
+estat_por_nivel=dano_tec_max,0.8
+estat_por_atributo=mente,dano_tec_min,1.2
+estat_por_atributo=mente,dano_tec_max,1.8
+
+estat_por_atributo=defesa,absorcao_min,0.3
+estat_por_atributo=defesa,absorcao_max,0.6
+
+estat=tenacidade,10
+estat_por_atributo=defesa,tenacidade,1
+
+# ---------------------------------------------------------------------------
+# Classes. Como no Flare, a classe so decide o comeco: atributos, poder
+# inicial e equipamento. Qualquer um pode aprender qualquer arvore depois.
+# barra = clique esquerdo, clique direito, teclas 1 a 6.
+# ---------------------------------------------------------------------------
+
+[classe]
+id=corredor
+nome=Corredor
+papel=Rápido, crítico, faz sangrar
+descricao=Corredores mapeiam o labirinto de dia e voltam antes dos portões fecharem. Vivem de velocidade: acertam primeiro, abrem feridas e somem antes do revide.
+atributo=fisico,3
+atributo=mente,1
+atributo=ofensiva,4
+atributo=defesa,2
+poderes=rolamento,corte_duplo
+equipamento=faca_cozinha,camisa_rasgada,tenis_gasto
+mochila=bandagem,4
+mochila=cantil,1
+barra=ataque,corte_duplo,-,-,-,-,bandagem,cantil
+cor_roupa=#4f6b4e
+
+[classe]
+id=guardiao
+nome=Guardião
+papel=Resistente, golpes pesados, controle
+descricao=Guardiões seguram a porta enquanto os outros correm. Carregam o que for pesado o bastante para amassar um Tecelão e aguentam o que vier de volta.
+atributo=fisico,4
+atributo=mente,1
+atributo=ofensiva,2
+atributo=defesa,3
+poderes=rolamento,golpe_pesado
+equipamento=cano_ferro,camisa_rasgada,tenis_gasto
+mochila=bandagem,4
+mochila=cantil,1
+barra=ataque,golpe_pesado,-,-,-,-,bandagem,cantil
+cor_roupa=#6e5038
+
+[classe]
+id=remendeiro
+nome=Remendeiro
+papel=À distância, engenhocas, cura
+descricao=Remendeiros fazem de tudo com sucata: curativo, bomba, armadilha, até um drone que atira. Brigam de longe, com a cabeça.
+atributo=fisico,2
+atributo=mente,4
+atributo=ofensiva,2
+atributo=defesa,2
+poderes=rolamento,frasco_acido
+equipamento=estilingue,camisa_rasgada,tenis_gasto
+mochila=bandagem,4
+mochila=cantil,2
+barra=ataque,frasco_acido,-,-,-,-,bandagem,cantil
+cor_roupa=#525a78

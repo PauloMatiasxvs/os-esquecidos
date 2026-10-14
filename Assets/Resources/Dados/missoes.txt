@@ -1,0 +1,149 @@
+# Missões. Cada etapa espera um fato e anda sozinha quando ele acontece:
+#   etapa=status:<nome>|texto          (um roteiro ligou o status)
+#   etapa=matar:<inimigo>:<qtd>|texto  ("*" vale qualquer inimigo)
+#   etapa=item:<item>[:<qtd>]|texto    (ter na mochila)
+#   etapa=mapa:<mapa>|texto            (entrar no mapa)
+#   etapa=nivel:<n>|texto
+
+# ---------------------------------------------------------------------------
+# História
+# ---------------------------------------------------------------------------
+
+[missao]
+id=m01_primeiro_dia
+nome=Primeiro Dia
+tipo=principal
+descricao=Você acordou dentro de uma jaula de metal subindo no escuro. Lá em cima, um jardim cercado por muros enormes e gente que também não lembra de nada.
+etapa=status:falou_iara|Fale com a Iara, debaixo da árvore velha.
+etapa=status:falou_duda|Deixe a Duda dar uma olhada em você na enfermaria, a noroeste.
+etapa=status:falou_marreta|Arranje algo para se defender com o Marreta, na oficina a nordeste.
+etapa=matar:boneco:3|Derrube três bonecos de treino ao lado da oficina.
+etapa=status:falou_teo|Fale com o Teo, perto do portão leste.
+recompensa_xp=100
+status_ao_concluir=portao_leste
+roteiro_ao_concluir=m01_fim
+
+[missao]
+id=m02_hera
+nome=Corredores de Hera
+tipo=principal
+descricao=O Caio quer estudar um núcleo de Tecelão. Não um qualquer: o do Ferrão, o maior do setor leste.
+etapa=mapa:setor1|Atravesse o portão leste até o Setor 1.
+etapa=matar:tecelao_jovem:5|Abata cinco Tecelões Jovens.
+etapa=status:chefe_setor1|Ache a arena no fundo do setor, abra a grade e derrube Ferrão, o Alfa.
+etapa=status:entregou_nucleo|Leve o núcleo do Alfa ao Caio, na Sala dos Mapas (sudeste do Pátio).
+recompensa_xp=300
+recompensa_sucata=60
+status_ao_concluir=portao_sul
+roteiro_ao_concluir=m02_fim
+
+[missao]
+id=m03_padrao
+nome=O Padrão
+tipo=principal
+descricao=Cada setor tem um marco de concreto, e cada marco guarda uma placa com um símbolo. O Caio acha que os quatro símbolos juntos são uma chave.
+etapa=item:fragmento_hera|Pegue o fragmento no marco do Setor 1.
+etapa=item:fragmento_ferrugem|Portão sul: derrube a Tecelã-Mãe no Setor 2 e pegue o fragmento do marco.
+etapa=item:fragmento_fosso|Portão oeste: derrube o Olho-de-Vidro no Setor 3 e pegue o fragmento.
+etapa=item:fragmento_engrenagens|Portão norte: derrube o Ceifador no Setor 4 e pegue o fragmento.
+etapa=status:padrao_decifrado|Leve os quatro fragmentos ao Caio.
+recompensa_xp=800
+roteiro_ao_concluir=m03_fim
+
+[missao]
+id=m04_gravador
+nome=A Voz na Caixa
+tipo=principal
+descricao=O Monta-Cargas subiu fora de época, sem ninguém dentro. Só um gravador velho com o seu nome na etiqueta.
+etapa=status:ouviu_gravador|Ouça o gravador. (Use o Monta-Cargas, no centro do Pátio.)
+etapa=status:decidiu_contar|Fale com a Iara.
+recompensa_xp=200
+
+[missao]
+id=m05_saida
+nome=A Saída
+tipo=principal
+descricao=Os quatro símbolos formam a chave do Núcleo, embaixo do setor das engrenagens. Do outro lado, a ARCA.
+etapa=mapa:setor5|Atravesse a passagem norte do Setor 4 e desça ao Núcleo.
+etapa=status:chefe_setor5|Derrube o Tecelão Primordial.
+etapa=mapa:laboratorio|Siga pela passagem norte do Núcleo até o laboratório da ARCA.
+etapa=status:chefe_laboratorio|Detenha o Executor ÉDEN.
+etapa=status:final_escolhido|Decida o destino do Pátio.
+
+# ---------------------------------------------------------------------------
+# Secundárias
+# ---------------------------------------------------------------------------
+
+[missao]
+id=s01_bussola
+nome=A Bússola do Nico
+descricao=O Nico jura que a bússola dele aponta para casa. Ele a perdeu quando seguiu escondido os Corredores até o setor leste.
+etapa=item:bussola_do_nico|Ache a bússola do Nico em algum beco do Setor 1.
+etapa=status:devolveu_bussola|Devolva a bússola ao Nico.
+recompensa_xp=150
+recompensa_item=estilingue_do_nico
+
+[missao]
+id=s02_noite
+nome=Uma Noite Lá Fora
+descricao=Ninguém que ficou no labirinto depois da sirene voltou para contar. O Teo acha que alguém precisa ser o primeiro.
+etapa=status:sobreviveu_uma_noite|Sobreviva a uma noite inteira dentro do labirinto, do anoitecer até o amanhecer.
+etapa=status:contou_noite|Conte ao Teo.
+recompensa_xp=250
+recompensa_item=faca_do_primeiro
+
+[missao]
+id=s03_cartografo
+nome=Mapas para o Caio
+descricao=Os muros mudam toda noite, mas o Caio insiste: se juntar mapas suficientes, o padrão aparece.
+etapa=status:mapeou_40|Entregue 40 trechos de mapa na Mesa dos Mapas.
+etapa=status:mapeou_120|Entregue 120 trechos de mapa.
+recompensa_xp=400
+recompensa_item=relogio_parado,mapa_rascunhado
+
+[missao]
+id=s04_sucata
+nome=Sucata Boa
+descricao=O Marreta quer construir alguma coisa grande e não conta o quê.
+etapa=item:fio_de_tecelao:12|Junte 12 fios de Tecelão.
+etapa=item:mola:4|Junte 4 molas (as Sentinelas carregam algumas).
+etapa=status:entregou_sucata|Leve tudo ao Marreta.
+recompensa_xp=250
+recompensa_item=marreta_do_marreta
+status_ao_concluir=receitas_marreta
+
+[missao]
+id=s05_remedio
+nome=Remédio de Verdade
+descricao=A Duda acha que dá para fazer um antídoto decente com o próprio veneno dos Tecelões.
+etapa=item:fluido_acido:5|Junte 5 frascos de fluido ácido (os Cuspidores carregam).
+etapa=item:nucleo_de_tecelao:3|Junte 3 núcleos de Tecelão.
+etapa=status:entregou_remedio|Leve tudo à Duda.
+recompensa_xp=200
+recompensa_item=soro
+status_ao_concluir=receitas_duda
+
+[missao]
+id=s06_faca
+nome=A Faca da Cozinha
+descricao=Alguém pegou a melhor faca da Bia. Ela tem um palpite de quem foi.
+etapa=status:devolveu_faca|Devolva uma faca de cozinha à Bia.
+recompensa_xp=50
+
+[missao]
+id=s07_noturnos
+nome=O Que Ronda à Noite
+descricao=O Zeca passa as noites ouvindo os Tecelões arranharem o portão norte. Ele quer saber se eles sangram.
+etapa=matar:tecelao_noturno:6|Abata 6 Tecelões Noturnos (só saem depois que os portões fecham).
+etapa=status:contou_zeca|Conte ao Zeca.
+recompensa_xp=350
+recompensa_item=casca_de_tecelao,tonico_de_fuga
+
+[missao]
+id=s08_registros
+nome=A Verdade nos Terminais
+descricao=Os terminais da ARCA espalhados pelo labirinto guardam registros. A Iara quer saber o que eles dizem.
+etapa=status:leu_seis_registros|Leia seis registros nos terminais do labirinto.
+etapa=status:contou_registros|Conte à Iara o que leu.
+recompensa_xp=400
+recompensa_item=cracha_da_arca

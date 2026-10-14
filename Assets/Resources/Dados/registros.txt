@@ -1,0 +1,110 @@
+# Registros da ARCA: o que se lê nos terminais e papéis do labirinto.
+# \n vira quebra de linha.
+
+[registro]
+id=reg_s1_corredor
+titulo=Riscado no concreto
+autor=Desconhecido
+texto=Dia 41. O muro que estava aqui ontem agora está duas celas para o leste.\nEu vi um deles tecendo. Não constrói: costura. Fio cinza saindo da barriga, endurecendo em concreto.\nSe alguém achar isso, o portão fecha às sete e meia. Não confie no relógio do sol. Confie na sirene.\n— D.
+
+[registro]
+id=reg_s1_obra
+titulo=Ordem de serviço 0017
+autor=ARCA — Engenharia
+texto=PROJETO ÉDEN · SETOR 1\nConfiguração inicial: 81 células, hera ornamental, densidade de ameaça BAIXA.\nObjetivo: aclimatação. Sujeitos devem sentir que o setor 1 é vencível.\nObs. do Arquiteto: "Eles precisam de esperança para que o medo tenha onde se apoiar."
+
+[registro]
+id=reg_s2_ninho
+titulo=Manual de manutenção — Unidade Matriz
+autor=ARCA — Biotecnologia
+texto=A Unidade Matriz (apelido interno: "Mãe") produz em média 3 Tecelões por ciclo.\nTecelões são tecido de hospedeiro cinzento estabilizado sobre esqueleto de liga.\nNão estão vivos. Também não estão mortos. Recomendamos não discutir isso com a equipe nova.
+
+[registro]
+id=reg_s2_relatorio
+titulo=Relatório de comportamento, grupo B
+autor=Dra. H. Vasco
+texto=Os sujeitos formaram hierarquia em 9 dias. Elegeram uma líder (sujeito B-07, "Iara").\nCriaram regras, um cemitério e um muro com nomes.\nNinguém programou isso. É exatamente o que estamos medindo: o que sobra de humano quando se apaga a memória.
+
+[registro]
+id=reg_s2_crianca
+titulo=Bilhete dobrado
+autor=Desconhecido
+texto=Se a caixa trouxer alguém chamado Nico, fala pra ele que a mãe dele tentou.\nFala que ela pediu pra ir junto e não deixaram.\nFala que a bússola aponta pra onde ela está.
+
+[registro]
+id=reg_s3_sentinelas
+titulo=Especificação — Sentinela S-4
+autor=ARCA — Vigilância
+texto=Drone autônomo de observação. Cada Sentinela transmite 220 horas de vídeo por mês para o laboratório.\nPrioridade de gravação: situações de risco, conflito e decisão moral.\nA unidade Olho-de-Vidro coordena as Sentinelas do Setor 3 e não deve ser exposta aos sujeitos.
+
+[registro]
+id=reg_s3_cinza
+titulo=O que é a Cinza
+autor=ARCA — Saúde Pública (arquivo)
+texto=Síndrome de Desagregação Neural, chamada popularmente de "a Cinza".\nA pele acinzenta primeiro. Depois a memória. Depois o nome. O corpo continua andando.\nTaxa de contaminação global estimada: 94%.\nImunes conhecidos: 312. Todos com menos de 19 anos.
+
+[registro]
+id=reg_s3_arquiteto
+titulo=Mensagem interna
+autor=Arquiteto-chefe "Dédalo"
+texto=Helena, eu desenhei os muros e eu desenhei os Tecelões. Não vou desenhar a próxima fase.\nVocê quer que eles tenham medo o bastante para o cérebro deles mostrar o caminho da cura.\nEu quero saber o que acontece com eles quando a gente tiver o que quer.
+
+[registro]
+id=reg_s4_ceifador
+titulo=Unidade de demolição C-1
+autor=ARCA — Engenharia
+texto=O Ceifador remove muros antigos antes da reconfiguração noturna.\nSensores de presença desativados por decisão da diretoria em 3 de março.\n(Anotação à mão: "eles mandaram desligar os sensores. Quem estiver no caminho, fica no caminho.")
+
+[registro]
+id=reg_s4_ciclo
+titulo=Cronograma de reconfiguração
+autor=ARCA — Operações
+texto=20:00 — fechamento dos portões do Pátio.\n21:00 a 05:00 — movimentação de muros a cada hora. Tecelões noturnos liberados.\n06:00 — abertura. A planta do dia é gerada a partir da semente do ciclo.\nNinguém deve ver a mesma planta duas vezes. Isso é importante.
+
+[registro]
+id=reg_s4_voluntario
+titulo=Termo de entrada
+autor=ARCA — Recursos Humanos
+texto=Eu, abaixo assinado, Arquiteto-chefe do Projeto ÉDEN, solicito minha inclusão como sujeito no Pátio, com aplicação completa do Protocolo Lete.\nDeixo um gravador para ser entregue no momento oportuno.\nAssinatura: [rasurada]\nDeferido: Dra. H. Vasco. "Que seja. Talvez ele ache a saída que ele mesmo escondeu."
+
+[registro]
+id=reg_s5_primordial
+titulo=Unidade Primordial
+autor=ARCA — Biotecnologia
+texto=O primeiro Tecelão foi construído sobre o corpo do paciente zero da Cinza.\nEle não obedece a comandos. Ele obedece ao Núcleo.\nO Núcleo é o servidor que guarda os mapas neurais de todos os sujeitos, desde o primeiro dia.
+
+[registro]
+id=reg_s5_cinzentos
+titulo=Contenção, ala leste
+autor=ARCA — Segurança
+texto=Três hospedeiros cinzentos escaparam da ala de cultura de tecido.\nNão tentem conversar. Eles às vezes repetem palavras. Não significa que entendem.\nUm deles repetia um nome. Davi.
+
+[registro]
+id=reg_s5_vasco
+titulo=Diário da diretora
+autor=Dra. H. Vasco
+texto=Mais cem dias. Os mapas neurais do grupo B estão quase completos.\nSe a cura funcionar, ninguém vai perguntar como a gente chegou nela.\nSe não funcionar, ninguém vai sobrar para perguntar.
+
+[registro]
+id=reg_lab_eden
+titulo=Projeto ÉDEN — resumo
+autor=ARCA — Diretoria
+texto=Hipótese: o padrão de atividade cerebral dos imunes sob estresse extremo contém a chave da resistência à Cinza.\nMétodo: ambiente hostil controlado (o Labirinto), apagamento de memória (Protocolo Lete), observação contínua.\nO Pátio é o grupo de controle. O Labirinto é o experimento.
+
+[registro]
+id=reg_lab_arquiteto
+titulo=Ficha de funcionário
+autor=ARCA — Recursos Humanos
+texto=Arquiteto-chefe. Codinome: Dédalo.\nResponsável pelo desenho do Labirinto, dos Tecelões e da porta do Núcleo.\nObservação: incluiu sem autorização uma "chave de saída" baseada nos quatro marcos de setor. Diretoria decidiu manter. "Esperança é parte do teste."
+
+[registro]
+id=reg_lab_mundo
+titulo=Janela da sala de controle
+autor=Anotação na moldura
+texto=Do outro lado do vidro, o mundo de verdade: cidade apagada, estradas vazias, cinza até o horizonte.\nO Labirinto é o lugar mais seguro que sobrou.\nTalvez por isso a gente nunca tenha conseguido sair.
+
+[registro]
+id=reg_lab_ultimo
+titulo=Protocolo Executor
+autor=Dra. H. Vasco
+texto=Se um sujeito alcançar a sala de controle sem autorização, ativar o Executor.\nO experimento não pode ser contaminado pelo conhecimento de si mesmo.\nSe eu estiver errada, que pelo menos tenha sido por uma boa razão.

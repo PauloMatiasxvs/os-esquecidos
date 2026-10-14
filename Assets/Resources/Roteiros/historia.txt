@@ -1,0 +1,223 @@
+# Roteiros da história principal e do Pátio.
+# "@nome" abre um roteiro. Cada linha é um comando; texto com espaço vai entre aspas.
+# Fluxo: rotulo, vai, se [nao] <condição> -> rotulo, escolha "a" -> x "b" -> y, chama, fim.
+
+@abertura
+escurece 0
+musica silencio
+som monta_cargas
+narra "Escuro. Um rangido de metal subindo, subindo. Cheiro de ferrugem e de terra molhada."
+narra "Você não lembra de onde veio. Não lembra de rosto nenhum. Só de uma coisa: o seu próprio nome."
+tremor 0.5
+som monta_cargas_para
+narra "A subida para de uma vez. Do lado de fora, mãos forçam as grades."
+ator_poe iara 55 48.6 -90
+ator_poe jogador 55 44.5 90
+clareia 2.5
+musica patio
+fala iara "Calma. Calma, novato. Ninguém aqui vai te machucar."
+fala iara "Eu sou a Iara. Isso aqui é o Pátio. Todo mundo chegou do mesmo jeito que você: nessa caixa, sem lembrar de nada."
+escolha "Onde eu estou?" -> onde "Por que eu não lembro de nada?" -> memoria
+rotulo onde
+fala iara "Dentro de um muro. E do outro lado do muro, um labirinto que ninguém nunca atravessou."
+vai segue
+rotulo memoria
+fala iara "Ninguém aqui lembra. A gente acha que tiraram de propósito. Quem? Também não sabemos."
+rotulo segue
+fala iara "Respira. Depois você pergunta o resto. Vem comigo até a árvore velha."
+legenda "O Pátio" 3
+ator_anda iara 40.5 56
+missao_inicia m01_primeiro_dia
+dica "Clique no chão ou use W A S D para andar. Clique numa pessoa para conversar (ou chegue perto e aperte F). Q e E giram a câmera, a roda do mouse aproxima."
+
+@iara_m01
+fala iara "Melhor. Já tem cor no rosto."
+fala iara "As regras do Pátio são poucas. Todo mundo trabalha. Ninguém machuca ninguém. E ninguém passa pelos portões sem ser Corredor."
+escolha "O que tem lá fora?" -> fora "Quem colocou a gente aqui?" -> quem "Certo. O que eu faço?" -> segue
+rotulo fora
+fala iara "O labirinto. Muros de concreto do tamanho de prédio. De dia os portões abrem. De noite fecham, os muros andam e os Tecelões saem."
+fala iara "Os Corredores do Teo mapeiam tudo de dia procurando a saída. Faz dois anos que procuram."
+vai segue
+rotulo quem
+fala iara "Tem placas velhas espalhadas pelo labirinto com quatro letras: ARCA. Nunca vimos ninguém da ARCA. Só as coisas que eles mandam."
+rotulo segue
+fala iara "Primeiro, a Duda. Ela cuida de todo mundo que chega. A enfermaria é a cabana a noroeste, depois da plantação."
+afinidade iara 1
+status falou_iara
+
+@iara_conselho
+se missao m01_primeiro_dia ativa -> m01
+se missao m02_hera ativa -> m02
+se missao m04_gravador ativa -> m04
+se missao m03_padrao ativa -> m03
+se missao m05_saida ativa -> m05
+fala iara "Descansa um pouco. O labirinto não vai a lugar nenhum. Infelizmente."
+fim
+rotulo m01
+fala iara "Duda, depois Marreta, depois o Teo. Nessa ordem. A pressa mata mais que os Tecelões."
+fim
+rotulo m02
+fala iara "O Ferrão vive no fundo do setor leste, numa arena com grade. Alguma alavanca abre a grade. Volte antes da sirene."
+fim
+rotulo m03
+fala iara "Os marcos. O Caio está convencido de que os quatro símbolos são uma chave. Eu quero acreditar nele."
+fim
+rotulo m04
+fala iara "O que tinha naquele gravador? Você está com uma cara de quem ouviu um fantasma."
+fim
+rotulo m05
+fala iara "A saída. Depois de dois anos. Vai. Se alguém pode, é você."
+
+@iara_patio
+fala iara "Somos trinta e oito agora. Trinta e nove com você."
+fala iara "A Bia cozinha, a Duda remenda, o Marreta conserta, o Caio desenha mapas. O Zeca vigia o portão norte, que é por onde eles mais tentam entrar."
+fala iara "A cada trinta dias a caixa sobe com comida, ferramentas e uma pessoa nova. Sempre uma só. Sempre sem memória."
+
+@iara_sobre
+fala iara "Eu fui a quarta a chegar. As três primeiras... estão no cemitério, perto do matagal."
+fala iara "Ninguém me escolheu líder. Eu só fui a única que não chorava na primeira noite."
+se afinidade iara 3 -> confia
+fim
+rotulo confia
+fala iara "Às vezes eu sonho com uma janela grande. Gente de branco do outro lado do vidro, anotando. Nunca contei isso para ninguém."
+
+@iara_gravador
+fala iara "Você ouviu o gravador. Eu vi da árvore. O que ele disse?"
+escolha "A verdade: eu trabalhava para a ARCA. Eu ajudei a construir isso." -> verdade "Nada que faça sentido. Chiado, umas palavras soltas." -> mentira
+rotulo verdade
+fala iara "..."
+fala iara "Você desenhou os muros. Os Tecelões. O Davi morreu para uma coisa que você fez."
+fala iara "E mesmo assim você contou. Podia ter mentido e eu nunca ia saber."
+fala iara "Então quem você era não importa. Importa quem você é aqui. Encontra a saída que você mesmo escondeu."
+status contou_verdade
+afinidade iara 3
+vai fim_gravador
+rotulo mentira
+fala iara "Hm. Se você diz."
+fala iara "Só lembra de uma coisa: no Pátio a gente não guarda segredo um do outro. É a única coisa que a gente tem."
+status escondeu_verdade
+afinidade iara -1
+rotulo fim_gravador
+status decidiu_contar
+
+@iara_registros
+fala iara "Você anda lendo aqueles terminais da ARCA no labirinto, não anda? O Caio me contou."
+fala iara "Lê todos que achar. Eu quero saber o que eles pensam que estão fazendo com a gente."
+missao_inicia s08_registros
+
+@iara_registros_fim
+fala iara "E então?"
+fala jogador "A Cinza. Uma doença lá fora que apaga as pessoas. A gente é imune. O labirinto é um teste para achar uma cura."
+fala iara "Então tudo isso... os muros, os Tecelões, as mortes... é um laboratório. E nós somos os ratos."
+fala iara "Obrigada por me contar. Fica com isso. Achei perto do portão norte, semana passada."
+afinidade iara 2
+status contou_registros
+
+@m01_fim
+fala teo "Escuta. O Caio quer um núcleo de Tecelão. Não um qualquer: o do Ferrão, o maior do setor leste."
+fala teo "Eu vou com você dessa vez. Portão leste. A gente volta antes da sirene, entendeu? Antes da sirene."
+companheiro teo
+missao_inicia m02_hera
+dica "Espaço rola: no meio do rolamento nada te acerta. Clique direito e as teclas 1 a 6 usam os poderes e itens da barra. I abre a mochila, C o personagem, K os poderes, J o diário, M o mapa."
+
+@m02_fim
+fala iara "O Teo me contou. Você voltou do setor leste com o núcleo do Ferrão nas mãos."
+fala iara "A partir de hoje você é Corredor. E o portão sul também é seu."
+fala teo "Quando quiser companhia lá fora, é só me chamar. E vê se não morre antes de mim."
+companheiro nenhum
+missao_inicia m03_padrao
+missao_inicia s02_noite
+dica "Você subiu de nível? C abre o personagem para gastar pontos de atributo; K abre a árvore de poderes."
+
+@m03_fim
+fala caio "Os quatro. Juntos. Olha só como encaixam."
+fala caio "Não é desenho. É um mapa. Os quatro setores, de cima, girados até as linhas baterem. E no meio, onde elas se cruzam..."
+fala caio "...embaixo do setor das engrenagens. Tem uma porta lá embaixo. Tem que ter."
+da_item chave_do_nucleo
+fala caio "Encaixei as quatro placas nisso aqui. Se a porta lê o padrão, ela lê isso. A passagem norte do Setor 4."
+missao_inicia m05_saida
+
+@chegada_do_gravador
+som sirene_monta_cargas
+legenda "O Monta-Cargas está subindo." 4
+tremor 0.3
+fala zeca "A caixa! A caixa tá subindo! Fora de época! Faltam vinte dias pro próximo!"
+fala iara "Todo mundo pra trás. Ninguém encosta."
+espera 1.5
+som monta_cargas_para
+fala iara "Vazia. Nenhum novato. Só... isso."
+fala iara "Ei. Vem cá. Tem o seu nome na etiqueta. Com a sua letra."
+da_item gravador
+status recebeu_gravador
+missao_inicia m04_gravador
+
+@monta_cargas
+se item gravador -> ouvir
+narra "A jaula de metal por onde todo mundo chegou. O poço embaixo desce até onde a luz não alcança."
+fim
+rotulo ouvir
+se status ouviu_gravador -> de_novo
+musica silencio
+narra "Você aperta o botão. Chiado. E depois, a sua voz."
+fala "Sua voz" "Se você está ouvindo isso, deu certo. Você esqueceu. Eu esqueci."
+fala "Sua voz" "Eu trabalhava para a ARCA. Eu desenhei os muros. Eu desenhei os Tecelões. Eles me chamavam de Arquiteto."
+fala "Sua voz" "O labirinto não é uma prisão. É um teste. Cada muro que se move mede o que vocês sentem."
+fala "Sua voz" "Existe uma saída. Embaixo do setor das engrenagens, no Núcleo. A porta lê um padrão: os quatro símbolos dos marcos."
+fala "Sua voz" "Eu pedi para entrar aqui. Para consertar o que eu fiz. Não confie em ninguém que use crachá."
+narra "O chiado volta. A fita acabou."
+musica patio
+status ouviu_gravador
+fim
+rotulo de_novo
+narra "Você ouve a fita mais uma vez. A sua voz dizendo coisas que você não lembra de ter dito."
+
+@entrar_patio
+se status recebeu_gravador -> fim_entrada
+se nao status pegou_fragmento_ferrugem -> fim_entrada
+chama chegada_do_gravador
+rotulo fim_entrada
+
+@rede
+se noite -> dormir
+escolha "Descansar até amanhã cedo (salva o jogo)" -> dormir "Agora não" -> nao
+rotulo dormir
+escurece 1.2
+descansa
+salva
+clareia 1.2
+fim
+rotulo nao
+
+@acordou_na_enfermaria
+fala duda "Ei. Ei! Abre o olho. Isso. Te acharam caído perto do portão."
+se contador mortes 2 -> repetido
+fala duda "Perdeu um pouco da sucata pelo caminho. Mas está vivo. Aqui isso já é muito."
+fim
+rotulo repetido
+fala duda "De novo? Você está tentando bater algum recorde? Fica parado que eu vou costurar."
+
+@muro_dos_nomes
+narra "Nomes riscados no concreto, um embaixo do outro. Alguns têm um traço por cima."
+narra "Davi. Lúcia. Bento. Rafa. Jonas. Mais de quarenta. Os riscados são dos que não voltaram."
+se status nome_no_muro -> ja
+escolha "Riscar o seu nome no muro" -> riscar "Deixar para depois" -> nada
+rotulo riscar
+narra "Você pega uma pedra e risca o seu nome, devagar, embaixo dos outros."
+status nome_no_muro
+da_xp 20
+fim
+rotulo ja
+narra "O seu nome está lá, embaixo dos outros. Ainda sem traço por cima."
+rotulo nada
+
+@trancado_portao_leste
+fala zeca "O portão só abre para Corredor. Fala com a Iara primeiro, novato."
+
+@trancado_portao_sul
+fala zeca "O sul? Só depois que você trouxer o núcleo do Ferrão. Ordem da Iara."
+
+@trancado_portao_oeste
+fala zeca "Oeste dá no Fosso. Ninguém vai lá sem antes acabar com o ninho do sul."
+
+@trancado_portao_norte
+fala zeca "O norte é o pior de todos. Primeiro o Fosso, depois a gente conversa."

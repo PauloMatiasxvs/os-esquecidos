@@ -1,0 +1,219 @@
+# Roteiros do labirinto: chegada em cada setor, marcos, chefes e o final.
+
+# ---------------------------------------------------------------------------
+# Setor 1 — Corredores de Hera
+# ---------------------------------------------------------------------------
+
+@entrar_setor1
+se missao s01_bussola 0 -> bussola
+vai chegada
+rotulo bussola
+esconde_item bussola_do_nico
+rotulo chegada
+se status visitou_setor1 -> fim_s1
+status visitou_setor1
+se nao companheiro teo -> fim_s1
+fala teo "Regra número um: nunca pare de andar. Regra número dois: anota tudo que você vir."
+fala teo "A arena do Ferrão fica no fundo, encostada no muro norte. Tem uma grade. Alguma alavanca por aí abre ela."
+dica "M abre o mapa do setor. Becos sem saída escondem alavancas, caixas de suprimento e terminais."
+rotulo fim_s1
+
+@marco_setor1
+se nao chefe setor1 -> dormindo
+se status pegou_fragmento_hera -> vazio
+narra "No topo do marco, uma placa de concreto solta. Gravado nela, um círculo cortado por três linhas."
+da_item fragmento_hera
+status pegou_fragmento_hera
+fim
+rotulo dormindo
+narra "Um obelisco de concreto mais alto que você. Tem uma placa encaixada no topo, mas algo enorme circula a base."
+fim
+rotulo vazio
+narra "O encaixe no topo do marco está vazio. A placa já está com você, ou com o Caio."
+
+@chefe_tecelao_alfa
+narra "O Ferrão se debate uma última vez e para. As patas encolhem devagar, como um guarda-chuva fechando."
+narra "Você enfia a mão na carapaça rachada e arranca o núcleo. Pulsa, quente como um coração."
+da_item nucleo_do_alfa
+se nao companheiro teo -> fim_alfa
+fala teo "Ele caiu. O Ferrão caiu! Dois anos, e você chega e..."
+fala teo "Pega a placa do marco. O Caio vai querer. E depois a gente volta, que eu quero ver a cara da Iara."
+rotulo fim_alfa
+
+# ---------------------------------------------------------------------------
+# Setor 2 — Ninho de Ferrugem
+# ---------------------------------------------------------------------------
+
+@entrar_setor2
+se status visitou_setor2 -> fim_s2
+status visitou_setor2
+legenda "Cheiro doce. Ninho." 3
+se companheiro teo -> teo_s2
+narra "Placas de metal soltas batem com o vento. Debaixo do barulho, outro barulho: um zumbido baixo, como uma colmeia."
+fim
+rotulo teo_s2
+fala teo "Sente esse cheiro? É o ninho. Ela tá aqui em algum lugar. A Mãe."
+rotulo fim_s2
+
+@marco_setor2
+se nao chefe setor2 -> dormindo
+se status pegou_fragmento_ferrugem -> vazio
+narra "A placa deste marco tem um quadrado com um ponto no centro, rodeado de ferrugem."
+da_item fragmento_ferrugem
+status pegou_fragmento_ferrugem
+status portao_oeste
+fala zeca "(pelo rádio do Pátio) Ei! O portão oeste destravou sozinho! Alguém mexeu em alguma coisa aí fora?"
+fim
+rotulo dormindo
+narra "O marco está coberto de casulos. Algo grande se mexe entre eles."
+fim
+rotulo vazio
+narra "O encaixe do marco está vazio."
+
+@chefe_tecela_mae
+narra "A Tecelã-Mãe desaba sobre o próprio ninho. Os casulos em volta param de pulsar, um por um."
+se companheiro teo -> teo_mae
+fim
+rotulo teo_mae
+fala teo "Acabou o ninho. Quantos menos agora? Cem? Mil?"
+
+# ---------------------------------------------------------------------------
+# Setor 3 — O Fosso
+# ---------------------------------------------------------------------------
+
+@entrar_setor3
+se status visitou_setor3 -> fim_s3
+status visitou_setor3
+narra "O chão some em buracos redondos que ninguém sabe a profundidade. Do fundo vem um ar quente e um barulho de unhas no concreto."
+rotulo fim_s3
+
+@marco_setor3
+se nao chefe setor3 -> vigiado
+se status pegou_fragmento_fosso -> vazio
+narra "A placa do Fosso mostra um triângulo invertido com uma linha no meio, como um olho fechado."
+da_item fragmento_fosso
+status pegou_fragmento_fosso
+status portao_norte
+fim
+rotulo vigiado
+narra "Uma luz vermelha passa pelo marco e para em você. Lá no alto, algo te observa."
+fim
+rotulo vazio
+narra "O encaixe do marco está vazio."
+
+@chefe_olho_de_vidro
+narra "O Olho-de-Vidro cai girando e se espatifa no chão do Fosso. Em todo o setor, as luzes vermelhas das Sentinelas apagam ao mesmo tempo."
+narra "Por um instante, ninguém está te olhando."
+
+# ---------------------------------------------------------------------------
+# Setor 4 — As Engrenagens
+# ---------------------------------------------------------------------------
+
+@entrar_setor4
+se status visitou_setor4 -> fim_s4
+status visitou_setor4
+narra "Os muros aqui não são concreto. São máquinas: pistões, correntes, engrenagens do tamanho de casas. O labirinto inteiro trabalha."
+rotulo fim_s4
+
+@marco_setor4
+se nao chefe setor4 -> guardado
+se status pegou_fragmento_engrenagens -> vazio
+narra "A última placa: uma espiral que termina numa linha reta. Uma saída."
+da_item fragmento_engrenagens
+status pegou_fragmento_engrenagens
+fim
+rotulo guardado
+narra "Lâminas enormes giram em volta do marco. Ainda não."
+fim
+rotulo vazio
+narra "O encaixe do marco está vazio."
+
+@chefe_ceifador
+narra "O Ceifador trava no meio de um giro. As lâminas param e o motor tosse fumaça preta."
+narra "Atrás dele, a passagem norte se abre num rangido longo. Uma escada desce para o escuro."
+se nao status padrao_decifrado -> sem_chave
+fim
+rotulo sem_chave
+narra "No fim da escada, uma porta redonda com quatro encaixes vazios. Leve os quatro fragmentos ao Caio."
+
+# ---------------------------------------------------------------------------
+# O Núcleo e o Laboratório
+# ---------------------------------------------------------------------------
+
+@entrar_setor5
+se status visitou_setor5 -> fim_s5
+status visitou_setor5
+musica nucleo
+narra "A porta lê a chave do Caio, gira e abre. Embaixo do labirinto, cabos grossos como troncos correm pelo chão até um zumbido no centro."
+narra "Os cristais nas paredes pulsam no mesmo ritmo do núcleo que você tirou do Ferrão."
+se status contou_verdade -> lembranca
+fim
+rotulo lembranca
+narra "Você reconhece este lugar. Não lembra, reconhece. Os seus pés sabem para onde virar."
+rotulo fim_s5
+
+@marco_setor5
+narra "No centro do Núcleo, um servidor do tamanho de um muro. Na tela, uma lista de nomes. Iara. Teo. Duda. Nico. O seu, no topo."
+narra "Ao lado de cada nome, um gráfico que sobe e desce. Medo, medido todo dia, há dois anos."
+
+@chefe_guardiao_do_nucleo
+narra "O Tecelão Primordial se desenrola do servidor e cai. O zumbido para. Pela primeira vez, silêncio."
+narra "Uma porta branca se abre no fundo do Núcleo. Luz fria do outro lado."
+
+@entrar_laboratorio
+se status visitou_laboratorio -> fim_lab
+status visitou_laboratorio
+musica laboratorio
+narra "Paredes brancas. Luz fria. Janelas enormes que dão para o labirinto, lá embaixo, inteiro, como uma maquete."
+fala "Voz no alto-falante" "Sujeito A-01 na ala de controle. Protocolo Executor em espera. Guardas para o corredor dois."
+se nao status contou_verdade -> sozinho
+se nao afinidade iara 3 -> sozinho
+companheiro iara
+fala iara "Você achou que eu ia te deixar vir sozinho até aqui? Eu segui o seu rastro desde o Núcleo."
+fala iara "Você me contou a verdade quando podia ter mentido. Agora eu vou junto até o fim."
+vai fim_lab
+rotulo sozinho
+narra "Você está sozinho. Atrás de você, a porta do Núcleo se fecha."
+rotulo fim_lab
+
+@marco_laboratorio
+narra "O console central. Um botão com a palavra ABRIR coberto por uma tampa de acrílico."
+se nao chefe laboratorio -> protegido
+narra "O console espera a sua decisão."
+fim
+rotulo protegido
+narra "Uma voz sai do console: 'Acesso negado. Protocolo Executor ativo.'"
+
+@chefe_executor
+escurece 1.5
+musica silencio
+narra "O Executor desaba. As luzes vermelhas do laboratório piscam e apagam, uma por uma."
+clareia 1.5
+fala "Dra. Vasco" "Impressionante. Você sempre foi o melhor de nós. Foi por isso que eu deixei você entrar."
+fala "Dra. Vasco" "Daquele console você abre todos os muros. Os Esquecidos saem, e o mundo lá fora come todos em uma semana. A Cinza ainda está lá."
+fala "Dra. Vasco" "Ou você fecha o console, pega o meu crachá e assume o projeto. Mais cem dias de teste e talvez exista uma cura. Para todo mundo."
+se companheiro iara -> com_iara
+vai decisao
+rotulo com_iara
+fala iara "Ela vai dizer o que for preciso. Decide você. Mas decide sabendo quem está lá embaixo."
+rotulo decisao
+escolha "Abrir os muros. Ninguém mais fica preso." -> abrir "Assumir o Projeto ÉDEN." -> assumir
+rotulo abrir
+status final_libertacao
+status final_escolhido
+escurece 2
+narra "Você levanta a tampa de acrílico e aperta o botão."
+narra "Lá embaixo, pela janela, os muros do labirinto começam a descer. Todos. De uma vez. O barulho chega até o vidro."
+narra "No Pátio, trinta e oito pessoas olham para cima e veem o horizonte pela primeira vez."
+narra "O mundo lá fora é cinza e está vazio. Mas é grande. E agora é deles."
+creditos libertacao
+fim
+rotulo assumir
+status final_arquiteto
+status final_escolhido
+da_item cracha_de_vasco
+escurece 2
+narra "Você fecha a tampa. Pega o crachá. Senta na cadeira dela."
+narra "Pela janela, lá embaixo, os muros continuam no lugar. À noite eles vão se mover de novo."
+narra "Amanhã a caixa sobe com alguém novo. Sem memória. Você já sabe o que vai escrever na etiqueta."
+creditos arquiteto

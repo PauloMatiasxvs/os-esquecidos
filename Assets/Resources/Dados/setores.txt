@@ -1,0 +1,156 @@
+# Setores do labirinto. O gerador monta a planta com a semente do dia: o mesmo
+# setor no mesmo dia é sempre igual, no dia seguinte é outro.
+# inimigos=id:peso,...   grupos=quantos bandos de dia   *_noturnos=depois da sirene
+# alavancas: quantas abrem a grade da arena   muros_moveis: quantos andam de madrugada
+# volta: para onde a saída sul leva (padrão: o portão do Pátio)
+
+[setor]
+id=setor1
+nome=Setor 1 — Corredores de Hera
+descricao=O setor mais perto do Pátio. Hera nos muros, Tecelões jovens em bando.
+tema=hera
+celulas=9,9
+tamanho_celula=7
+nivel=2
+portao=leste
+inimigos=tecelao_jovem:7,tecelao:4,tecelao_cuspidor:2
+grupos=9
+inimigos_noturnos=tecelao_noturno:4,tecelao:3
+grupos_noturnos=5
+chefe=tecelao_alfa
+status_do_chefe=chefe_setor1
+baus=3
+terminais=1
+alavancas=1
+muros_moveis=8
+salas=2
+musica=labirinto_hera
+terminal=reg_s1_corredor
+terminal=reg_s1_obra
+
+[setor]
+id=setor2
+nome=Setor 2 — Ninho de Ferrugem
+descricao=Placas de metal soltas, canos rompidos e o cheiro doce do ninho.
+tema=ferrugem
+celulas=10,10
+tamanho_celula=7
+nivel=5
+portao=sul
+inimigos=tecelao:5,tecelao_blindado:3,tecelao_jovem:4,tecelao_cuspidor:3,sentinela:2
+grupos=11
+inimigos_noturnos=tecelao_noturno:5,tecelao_blindado:2
+grupos_noturnos=6
+chefe=tecela_mae
+status_do_chefe=chefe_setor2
+baus=4
+terminais=2
+alavancas=2
+muros_moveis=10
+salas=3
+musica=labirinto_ferrugem
+terminal=reg_s2_ninho
+terminal=reg_s2_relatorio
+terminal=reg_s2_crianca
+
+[setor]
+id=setor3
+nome=Setor 3 — O Fosso
+descricao=O chão aqui some em buracos que ninguém viu o fundo. Os Rastejadores sobem por eles.
+tema=fosso
+celulas=11,11
+tamanho_celula=7
+nivel=8
+portao=oeste
+inimigos=rastejador:6,sentinela:4,tecelao_blindado:2,tecelao_cuspidor:2
+grupos=12
+inimigos_noturnos=tecelao_noturno:4,rastejador:4
+grupos_noturnos=6
+chefe=olho_de_vidro
+status_do_chefe=chefe_setor3
+baus=4
+terminais=2
+alavancas=2
+muros_moveis=12
+salas=3
+musica=labirinto_fosso
+terminal=reg_s3_sentinelas
+terminal=reg_s3_cinza
+terminal=reg_s3_arquiteto
+
+[setor]
+id=setor4
+nome=Setor 4 — As Engrenagens
+descricao=Os muros aqui são máquinas. Dá para ouvir o labirinto inteiro trabalhando.
+tema=engrenagens
+celulas=11,11
+tamanho_celula=7
+nivel=11
+portao=norte
+proximo=setor5
+inimigos=engrenado:5,vigia_mecanico:3,sentinela:3,tecelao_blindado:2
+grupos=12
+inimigos_noturnos=tecelao_noturno:4,engrenado:3
+grupos_noturnos=6
+chefe=ceifador
+status_do_chefe=chefe_setor4
+baus=4
+terminais=2
+alavancas=3
+muros_moveis=12
+salas=3
+musica=labirinto_engrenagens
+terminal=reg_s4_ceifador
+terminal=reg_s4_ciclo
+terminal=reg_s4_voluntario
+
+[setor]
+id=setor5
+nome=O Núcleo
+descricao=Embaixo das engrenagens, o lugar de onde todos os Tecelões saem. Cabos, cristais, e um zumbido que não para.
+tema=nucleo
+celulas=11,11
+tamanho_celula=7
+nivel=14
+volta=setor4:norte
+requer_status=padrao_decifrado
+proximo=laboratorio
+inimigos=cinzento:5,rastejador:3,tecelao_blindado:2,sentinela:2,cinzento_bruto:1
+grupos=12
+grupos_noturnos=0
+chefe=guardiao_do_nucleo
+status_do_chefe=chefe_setor5
+baus=4
+terminais=2
+alavancas=2
+muros_moveis=6
+salas=3
+musica=nucleo
+terminal=reg_s5_primordial
+terminal=reg_s5_cinzentos
+terminal=reg_s5_vasco
+
+[setor]
+id=laboratorio
+nome=Laboratório ÉDEN
+descricao=Paredes brancas, luz fria e janelas que dão para o labirinto inteiro. Sempre estiveram olhando.
+tema=laboratorio
+celulas=10,10
+tamanho_celula=6
+nivel=16
+volta=setor5:norte
+inimigos=guarda_arca:5,atirador_arca:3,cinzento:3,cinzento_bruto:1
+grupos=12
+grupos_noturnos=0
+chefe=executor
+status_do_chefe=chefe_laboratorio
+baus=4
+terminais=3
+alavancas=3
+muros_moveis=0
+salas=4
+musica=laboratorio
+terminal=reg_lab_eden
+terminal=reg_lab_arquiteto
+terminal=reg_lab_mundo
+terminal=reg_lab_ultimo

@@ -1,0 +1,1273 @@
+# Itens base. O gerador de loot soma raridade e afixos por cima destes.
+# dano=min,max (arma)   armadura=min,max (absorcao)   bonus=estat,valor
+# requer=atributo,valor   uso=efeito,valor[,duracao] (consumivel)
+# genero=f para o adjetivo concordar: "Faca Afiada", "Cano Afiado".
+
+# ---------------------------------------------------------------------------
+# Armas leves — rápidas, críticas
+# ---------------------------------------------------------------------------
+
+[item]
+id=faca_cozinha
+nome=Faca de Cozinha
+genero=f
+tipo=arma
+arma=leve
+nivel=1
+dano=3,6
+velocidade=1.25
+alcance=1.6
+preco=8
+modelo=faca
+cor=#b8bcc0
+descricao=Saiu da cozinha da Bia. Ela ainda quer de volta.
+
+[item]
+id=machete
+nome=Machete
+tipo=arma
+arma=leve
+nivel=4
+dano=6,11
+velocidade=1.2
+alcance=1.8
+requer=ofensiva,5
+preco=30
+modelo=machete
+cor=#9ca2a6
+
+[item]
+id=faca_de_osso
+nome=Faca de Osso
+genero=f
+tipo=arma
+arma=leve
+nivel=7
+dano=9,15
+velocidade=1.3
+alcance=1.6
+requer=ofensiva,8
+bonus=critico,2
+preco=70
+modelo=faca_osso
+cor=#e8dcc0
+
+[item]
+id=lamina_de_tecelao
+nome=Lâmina de Tecelão
+genero=f
+tipo=arma
+arma=leve
+nivel=10
+dano=13,21
+velocidade=1.25
+alcance=1.9
+requer=ofensiva,11
+preco=130
+modelo=lamina_tecelao
+cor=#6a7a70
+descricao=Arrancada da pata de um Tecelão. Ainda está quente.
+
+[item]
+id=facao_da_arca
+nome=Facão da ARCA
+tipo=arma
+arma=leve
+nivel=14
+dano=18,28
+velocidade=1.25
+alcance=1.9
+requer=ofensiva,15
+preco=240
+modelo=machete
+cor=#d0d8e0
+
+[item]
+id=garra_de_ceramica
+nome=Garra de Cerâmica
+genero=f
+tipo=arma
+arma=leve
+nivel=17
+dano=23,35
+velocidade=1.35
+alcance=1.7
+requer=ofensiva,18
+bonus=critico,3
+preco=380
+modelo=faca
+cor=#f0f0f0
+
+# ---------------------------------------------------------------------------
+# Armas pesadas — duas mãos, lentas, empurram
+# ---------------------------------------------------------------------------
+
+[item]
+id=cano_ferro
+nome=Cano de Ferro
+tipo=arma
+arma=pesada
+nivel=1
+dano=6,11
+velocidade=0.85
+alcance=2.0
+duas_maos=1
+preco=10
+modelo=cano
+cor=#7a7064
+descricao=Pesado, enferrujado, honesto.
+
+[item]
+id=taco_com_pregos
+nome=Taco com Pregos
+tipo=arma
+arma=pesada
+nivel=3
+dano=8,15
+velocidade=0.9
+alcance=2.0
+duas_maos=1
+requer=fisico,4
+preco=24
+modelo=taco
+cor=#8a6a48
+
+[item]
+id=marreta
+nome=Marreta
+genero=f
+tipo=arma
+arma=pesada
+nivel=6
+dano=13,23
+velocidade=0.8
+alcance=2.1
+duas_maos=1
+requer=fisico,7
+preco=60
+modelo=marreta
+cor=#707478
+
+[item]
+id=viga_dentada
+nome=Viga Dentada
+genero=f
+tipo=arma
+arma=pesada
+nivel=9
+dano=18,31
+velocidade=0.78
+alcance=2.3
+duas_maos=1
+requer=fisico,10
+preco=115
+modelo=viga
+cor=#8a5a40
+
+[item]
+id=martelo_hidraulico
+nome=Martelo Hidráulico
+tipo=arma
+arma=pesada
+nivel=13
+dano=25,42
+velocidade=0.8
+alcance=2.2
+duas_maos=1
+requer=fisico,14
+preco=220
+modelo=martelo
+cor=#c0a040
+
+[item]
+id=punho_de_concreto
+nome=Punho de Concreto
+tipo=arma
+arma=pesada
+nivel=17
+dano=32,54
+velocidade=0.75
+alcance=2.2
+duas_maos=1
+requer=fisico,18
+bonus=tenacidade,10
+preco=360
+modelo=marreta
+cor=#a8a49c
+
+# ---------------------------------------------------------------------------
+# Hastes — alcance
+# ---------------------------------------------------------------------------
+
+[item]
+id=lanca_de_bambu
+nome=Lança de Bambu
+genero=f
+tipo=arma
+arma=haste
+nivel=2
+dano=5,10
+velocidade=1.0
+alcance=2.9
+duas_maos=1
+preco=16
+modelo=lanca
+cor=#c8b070
+
+[item]
+id=lanca_de_vergalhao
+nome=Lança de Vergalhão
+genero=f
+tipo=arma
+arma=haste
+nivel=5
+dano=9,16
+velocidade=1.0
+alcance=3.0
+duas_maos=1
+requer=fisico,4
+requer=ofensiva,4
+preco=45
+modelo=lanca
+cor=#8a7060
+
+[item]
+id=forcado
+nome=Forcado
+tipo=arma
+arma=haste
+nivel=8
+dano=13,22
+velocidade=1.0
+alcance=3.0
+duas_maos=1
+requer=fisico,6
+requer=ofensiva,6
+preco=90
+modelo=forcado
+cor=#9a9a90
+
+[item]
+id=arpao_de_tecelao
+nome=Arpão de Tecelão
+tipo=arma
+arma=haste
+nivel=12
+dano=19,31
+velocidade=1.0
+alcance=3.2
+duas_maos=1
+requer=fisico,9
+requer=ofensiva,9
+preco=190
+modelo=arpao
+cor=#6a7a70
+
+# ---------------------------------------------------------------------------
+# Arremesso — estilingue, besta
+# ---------------------------------------------------------------------------
+
+[item]
+id=estilingue
+nome=Estilingue
+tipo=arma
+arma=distancia
+nivel=1
+dano=3,7
+velocidade=1.0
+alcance=12
+preco=8
+modelo=estilingue
+cor=#8a6a48
+descricao=Forquilha, câmara de pneu e muita paciência.
+
+[item]
+id=estilingue_reforcado
+nome=Estilingue Reforçado
+tipo=arma
+arma=distancia
+nivel=4
+dano=6,11
+velocidade=1.0
+alcance=12
+requer=ofensiva,4
+preco=30
+modelo=estilingue
+cor=#6a5a50
+
+[item]
+id=besta_improvisada
+nome=Besta Improvisada
+genero=f
+tipo=arma
+arma=distancia
+nivel=7
+dano=11,18
+velocidade=0.8
+alcance=14
+duas_maos=1
+requer=ofensiva,7
+preco=75
+modelo=besta
+cor=#7a6050
+
+[item]
+id=lanca_dardos
+nome=Lança-Dardos
+tipo=arma
+arma=distancia
+nivel=11
+dano=14,23
+velocidade=1.05
+alcance=13
+requer=ofensiva,11
+preco=160
+modelo=lanca_dardos
+cor=#606870
+
+[item]
+id=besta_de_repeticao
+nome=Besta de Repetição
+genero=f
+tipo=arma
+arma=distancia
+nivel=15
+dano=19,30
+velocidade=1.2
+alcance=14
+duas_maos=1
+requer=ofensiva,15
+preco=300
+modelo=besta
+cor=#c0c8d0
+
+# ---------------------------------------------------------------------------
+# Choque — tecnologia da ARCA
+# ---------------------------------------------------------------------------
+
+[item]
+id=bastao_de_choque
+nome=Bastão de Choque
+tipo=arma
+arma=choque
+nivel=8
+dano=10,17
+velocidade=1.1
+alcance=1.9
+requer=mente,8
+preco=110
+modelo=bastao
+cor=#3a4048
+descricao=A ponta estala quando você aperta o botão.
+
+[item]
+id=cassetete_da_arca
+nome=Cassetete da ARCA
+tipo=arma
+arma=choque
+nivel=13
+dano=16,26
+velocidade=1.1
+alcance=1.9
+requer=mente,13
+preco=230
+modelo=bastao
+cor=#d8dde0
+
+# ---------------------------------------------------------------------------
+# Mão secundária
+# ---------------------------------------------------------------------------
+
+[item]
+id=tampa_de_lixeira
+nome=Tampa de Lixeira
+genero=f
+tipo=secundaria
+nivel=1
+armadura=1,2
+bonus=bloqueio,10
+preco=8
+modelo=tampa
+cor=#8a9090
+
+[item]
+id=escudo_de_porta
+nome=Escudo de Porta
+tipo=secundaria
+nivel=5
+armadura=2,4
+bonus=bloqueio,15
+requer=defesa,5
+preco=40
+modelo=escudo_porta
+cor=#8a6a48
+
+[item]
+id=escudo_de_placas
+nome=Escudo de Placas
+tipo=secundaria
+nivel=10
+armadura=3,6
+bonus=bloqueio,20
+requer=defesa,9
+preco=120
+modelo=escudo_placas
+cor=#7a7a74
+
+[item]
+id=escudo_antimotim
+nome=Escudo Antimotim
+tipo=secundaria
+nivel=15
+armadura=5,8
+bonus=bloqueio,25
+requer=defesa,14
+preco=260
+modelo=escudo_antimotim
+cor=#c8d0d8
+
+[item]
+id=aljava_de_couro
+nome=Aljava de Couro
+genero=f
+tipo=secundaria
+nivel=3
+bonus=dano_dist_max,2
+bonus=precisao,4
+preco=22
+modelo=aljava
+cor=#7a5a38
+
+[item]
+id=aljava_reforcada
+nome=Aljava Reforçada
+genero=f
+tipo=secundaria
+nivel=9
+bonus=dano_dist_max,5
+bonus=precisao,8
+preco=100
+modelo=aljava
+cor=#5a4a38
+
+# ---------------------------------------------------------------------------
+# Cabeça
+# ---------------------------------------------------------------------------
+
+[item]
+id=bandana
+nome=Bandana
+genero=f
+tipo=cabeca
+nivel=1
+armadura=0,1
+bonus=esquiva,1
+preco=5
+modelo=bandana
+cor=#a03028
+
+[item]
+id=capuz_de_lona
+nome=Capuz de Lona
+tipo=cabeca
+nivel=3
+armadura=0.5,1.5
+bonus=res_veneno,5
+preco=16
+modelo=capuz
+cor=#6a6448
+
+[item]
+id=capacete_de_obra
+nome=Capacete de Obra
+tipo=cabeca
+nivel=5
+armadura=1,3
+preco=30
+modelo=capacete_obra
+cor=#d8b030
+
+[item]
+id=mascara_de_gas
+nome=Máscara de Gás
+genero=f
+tipo=cabeca
+nivel=8
+armadura=1,2
+bonus=res_veneno,25
+preco=70
+modelo=mascara
+cor=#404840
+
+[item]
+id=capacete_de_sucata
+nome=Capacete de Sucata
+tipo=cabeca
+nivel=11
+armadura=2,4.5
+requer=defesa,8
+preco=130
+modelo=capacete_sucata
+cor=#7a6a58
+
+[item]
+id=capacete_da_arca
+nome=Capacete da ARCA
+tipo=cabeca
+nivel=15
+armadura=3,6
+bonus=res_choque,15
+requer=defesa,12
+preco=250
+modelo=capacete_arca
+cor=#e0e4e8
+
+# ---------------------------------------------------------------------------
+# Corpo
+# ---------------------------------------------------------------------------
+
+[item]
+id=camisa_rasgada
+nome=Camisa Rasgada
+genero=f
+tipo=corpo
+nivel=1
+armadura=0,1
+preco=4
+modelo=camisa
+cor=#8a8070
+
+[item]
+id=jaqueta_de_couro
+nome=Jaqueta de Couro
+genero=f
+tipo=corpo
+nivel=3
+armadura=1,2.5
+preco=20
+modelo=jaqueta
+cor=#5a3a28
+
+[item]
+id=colete_remendado
+nome=Colete Remendado
+tipo=corpo
+nivel=5
+armadura=1.5,3.5
+bonus=vida,10
+preco=36
+modelo=colete
+cor=#6a6a50
+
+[item]
+id=peitoral_de_sucata
+nome=Peitoral de Sucata
+tipo=corpo
+nivel=8
+armadura=2.5,5.5
+bonus=velocidade,-4
+requer=fisico,7
+preco=80
+modelo=peitoral
+cor=#7a7064
+
+[item]
+id=colete_de_tecelao
+nome=Colete de Tecelão
+tipo=corpo
+nivel=11
+armadura=3,6
+bonus=res_veneno,15
+requer=defesa,8
+preco=150
+modelo=colete
+cor=#4a5a4c
+
+[item]
+id=armadura_da_arca
+nome=Armadura da ARCA
+genero=f
+tipo=corpo
+nivel=15
+armadura=4.5,8.5
+requer=defesa,12
+preco=280
+modelo=peitoral
+cor=#d8dde0
+
+# ---------------------------------------------------------------------------
+# Mãos e pés
+# ---------------------------------------------------------------------------
+
+[item]
+id=luvas_de_pano
+nome=Luvas de Pano
+genero=f
+tipo=maos
+nivel=1
+armadura=0,0.5
+preco=4
+modelo=luvas
+cor=#9a9080
+
+[item]
+id=luvas_de_couro
+nome=Luvas de Couro
+genero=f
+tipo=maos
+nivel=4
+armadura=0.5,1.5
+bonus=precisao,3
+preco=22
+modelo=luvas
+cor=#6a4a30
+
+[item]
+id=manoplas
+nome=Manoplas
+genero=f
+tipo=maos
+nivel=9
+armadura=1.5,3
+bonus=dano_corpo_max,2
+preco=90
+modelo=manoplas
+cor=#7a7a7a
+
+[item]
+id=luvas_da_arca
+nome=Luvas da ARCA
+genero=f
+tipo=maos
+nivel=14
+armadura=2,3.5
+bonus=velocidade_ataque,5
+preco=200
+modelo=luvas
+cor=#d0d4d8
+
+[item]
+id=tenis_gasto
+nome=Tênis Gasto
+tipo=pes
+nivel=1
+armadura=0,0.5
+preco=4
+modelo=tenis
+cor=#c8c0b0
+
+[item]
+id=botas_de_trabalho
+nome=Botas de Trabalho
+genero=f
+tipo=pes
+nivel=4
+armadura=0.5,1.5
+preco=22
+modelo=botas
+cor=#5a4030
+
+[item]
+id=botas_de_corredor
+nome=Botas de Corredor
+genero=f
+tipo=pes
+nivel=8
+armadura=0.5,1.5
+bonus=velocidade,8
+preco=95
+modelo=botas
+cor=#3a4a3c
+
+[item]
+id=botas_da_arca
+nome=Botas da ARCA
+genero=f
+tipo=pes
+nivel=14
+armadura=2,3.5
+bonus=velocidade,6
+preco=210
+modelo=botas
+cor=#d0d4d8
+
+# ---------------------------------------------------------------------------
+# Joias
+# ---------------------------------------------------------------------------
+
+[item]
+id=pingente_de_osso
+nome=Pingente de Osso
+tipo=pingente
+nivel=2
+bonus=vida,8
+preco=14
+modelo=pingente
+cor=#e8dcc0
+
+[item]
+id=dente_de_tecelao
+nome=Dente de Tecelão
+tipo=pingente
+nivel=6
+bonus=res_veneno,10
+bonus=dano_pct,4
+preco=55
+modelo=dente
+cor=#d8e0d0
+
+[item]
+id=chip_da_arca
+nome=Chip da ARCA
+tipo=pingente
+nivel=12
+bonus=regen_energia,1
+bonus=mente,3
+preco=170
+modelo=chip
+cor=#40c060
+
+[item]
+id=anel_de_parafuso
+nome=Anel de Parafuso
+tipo=bugiganga
+nivel=1
+bonus=precisao,2
+preco=6
+modelo=anel
+cor=#a0a0a0
+
+[item]
+id=relogio_parado
+nome=Relógio Parado
+tipo=bugiganga
+nivel=4
+bonus=reducao_recarga,4
+preco=34
+modelo=relogio
+cor=#c0a060
+descricao=Parou às 4h17. Ninguém sabe de que dia.
+
+[item]
+id=bussola_quebrada
+nome=Bússola Quebrada
+genero=f
+tipo=bugiganga
+nivel=7
+bonus=achado_raro,10
+bonus=velocidade,3
+preco=70
+modelo=bussola
+cor=#b08040
+descricao=O ponteiro gira sem parar quando você chega perto dos muros.
+
+[item]
+id=cracha_da_arca
+nome=Crachá da ARCA
+tipo=bugiganga
+nivel=12
+bonus=bonus_xp,8
+bonus=mente,2
+preco=160
+modelo=cracha
+cor=#e0e0e0
+
+# ---------------------------------------------------------------------------
+# Únicos — nome próprio, bônus fixos
+# ---------------------------------------------------------------------------
+
+[item]
+id=a_lembranca
+nome=A Lembrança
+genero=f
+tipo=pingente
+nivel=1
+unico=1
+bonus=bonus_xp,10
+bonus=mente,1
+preco=1
+modelo=foto
+cor=#ffb53a
+descricao=Metade de uma foto. Uma mão segurando a sua. O resto foi rasgado.
+
+[item]
+id=ferrao_do_alfa
+nome=Ferrão do Alfa
+tipo=arma
+arma=leve
+nivel=3
+unico=1
+dano=5,10
+velocidade=1.3
+alcance=1.8
+bonus=res_veneno,15
+bonus=critico,4
+preco=60
+modelo=lamina_tecelao
+cor=#a0ff60
+descricao=Ainda pinga.
+
+[item]
+id=faca_do_primeiro
+nome=Faca do Primeiro
+genero=f
+tipo=arma
+arma=leve
+nivel=5
+unico=1
+dano=8,14
+velocidade=1.3
+alcance=1.7
+bonus=critico,8
+bonus=roubo_vida,3
+bonus=velocidade,5
+preco=120
+modelo=faca
+cor=#ffd080
+descricao=Gravado no cabo: "o primeiro a correr".
+
+[item]
+id=estilingue_do_nico
+nome=Estilingue do Nico
+tipo=arma
+arma=distancia
+nivel=4
+unico=1
+dano=6,12
+velocidade=1.1
+alcance=13
+bonus=critico,6
+bonus=achado_raro,15
+preco=90
+modelo=estilingue
+cor=#e05030
+descricao=Pintado de vermelho, com um N torto riscado na forquilha.
+
+[item]
+id=marreta_do_marreta
+nome=A Marreta do Marreta
+genero=f
+tipo=arma
+arma=pesada
+nivel=7
+unico=1
+dano=15,26
+velocidade=0.85
+alcance=2.1
+duas_maos=1
+bonus=fisico,3
+bonus=tenacidade,10
+preco=150
+modelo=marreta
+cor=#ffb040
+descricao=Ele disse que era emprestada.
+
+[item]
+id=coroa_da_mae
+nome=Coroa da Mãe
+genero=f
+tipo=cabeca
+nivel=7
+unico=1
+armadura=2,4
+bonus=vida,30
+bonus=res_veneno,25
+preco=180
+modelo=coroa
+cor=#9aff80
+descricao=Placas do crânio da Tecelã-Mãe. Você ouve um zumbido baixo quando usa.
+
+[item]
+id=olho_de_vidro
+nome=Olho de Vidro
+tipo=bugiganga
+nivel=10
+unico=1
+bonus=critico,6
+bonus=dano_critico,25
+bonus=precisao,10
+preco=240
+modelo=lente
+cor=#ff4060
+descricao=Ele ainda pisca, às vezes.
+
+[item]
+id=coracao_do_ceifador
+nome=Coração do Ceifador
+tipo=pingente
+nivel=13
+unico=1
+bonus=dano_pct,12
+bonus=roubo_vida,4
+bonus=espinhos,10
+preco=320
+modelo=engrenagem
+cor=#ff8030
+descricao=Um rolamento que não para de girar.
+
+[item]
+id=uniforme_de_arquiteto
+nome=Uniforme de Arquiteto
+tipo=corpo
+nivel=16
+unico=1
+armadura=5,9
+bonus=mente,4
+bonus=reducao_recarga,8
+bonus=vida,40
+preco=400
+modelo=jaleco
+cor=#f4f4f4
+descricao=Tem o seu nome bordado no peito.
+
+# ---------------------------------------------------------------------------
+# Consumíveis
+# ---------------------------------------------------------------------------
+
+[item]
+id=bandagem
+nome=Bandagem
+genero=f
+tipo=consumivel
+nivel=1
+pilha=10
+uso=cura,35,4
+preco=6
+modelo=bandagem
+cor=#f0ece0
+
+[item]
+id=pao_de_milho
+nome=Pão de Milho
+tipo=consumivel
+nivel=1
+pilha=10
+uso=cura,25,8
+preco=4
+modelo=pao
+cor=#e0b860
+
+[item]
+id=soro
+nome=Soro
+tipo=consumivel
+nivel=4
+pilha=10
+uso=cura,90
+preco=18
+modelo=frasco
+cor=#e04040
+
+[item]
+id=soro_concentrado
+nome=Soro Concentrado
+tipo=consumivel
+nivel=10
+pilha=10
+uso=cura,220
+preco=45
+modelo=frasco
+cor=#ff2060
+
+[item]
+id=cantil
+nome=Cantil
+tipo=consumivel
+nivel=1
+pilha=10
+uso=energia,30
+preco=5
+modelo=cantil
+cor=#6a8aa0
+
+[item]
+id=cafe_amargo
+nome=Café Amargo
+tipo=consumivel
+nivel=5
+pilha=10
+uso=energia,70
+preco=14
+modelo=caneca
+cor=#5a3a20
+
+[item]
+id=antidoto
+nome=Antídoto
+tipo=consumivel
+nivel=2
+pilha=10
+uso=antidoto,15
+preco=10
+modelo=frasco
+cor=#60e080
+
+[item]
+id=estimulante
+nome=Estimulante
+tipo=consumivel
+nivel=5
+pilha=5
+uso=furia,25,15
+preco=30
+modelo=seringa
+cor=#ffa020
+
+[item]
+id=casca_de_tecelao
+nome=Casca de Tecelão
+genero=f
+tipo=consumivel
+nivel=3
+pilha=5
+uso=pele,6,20
+preco=20
+modelo=casca
+cor=#7a8a70
+
+[item]
+id=tonico_de_fuga
+nome=Tônico de Fuga
+tipo=consumivel
+nivel=6
+pilha=5
+uso=rapidez,30,10
+preco=25
+modelo=frasco
+cor=#80c0ff
+
+[item]
+id=sinalizador_de_retorno
+nome=Sinalizador de Retorno
+tipo=consumivel
+nivel=1
+pilha=5
+uso=retorno
+preco=30
+modelo=sinalizador
+cor=#ff6030
+descricao=Acende e alguém do Pátio vem te buscar. Só de dia.
+
+[item]
+id=mapa_rascunhado
+nome=Mapa Rascunhado
+tipo=consumivel
+nivel=1
+pilha=5
+uso=mapa
+preco=40
+modelo=papel
+cor=#e8dcb0
+descricao=Os rabiscos do Caio sobre o setor de hoje. Às vezes ele acerta.
+
+# ---------------------------------------------------------------------------
+# Materiais — para a oficina e a enfermaria
+# ---------------------------------------------------------------------------
+
+[item]
+id=trapo
+nome=Trapo
+tipo=material
+nivel=1
+pilha=30
+preco=1
+modelo=trapo
+cor=#a09880
+
+[item]
+id=fio_de_tecelao
+nome=Fio de Tecelão
+tipo=material
+nivel=1
+pilha=30
+preco=2
+modelo=fio
+cor=#d0d8c8
+
+[item]
+id=placa_de_metal
+nome=Placa de Metal
+genero=f
+tipo=material
+nivel=1
+pilha=30
+preco=3
+modelo=placa
+cor=#8a8a84
+
+[item]
+id=fluido_acido
+nome=Fluido Ácido
+tipo=material
+nivel=1
+pilha=30
+preco=3
+modelo=frasco
+cor=#90ff40
+
+[item]
+id=circuito
+nome=Circuito
+tipo=material
+nivel=3
+pilha=30
+preco=5
+modelo=chip
+cor=#40a060
+
+[item]
+id=lente
+nome=Lente
+genero=f
+tipo=material
+nivel=3
+pilha=30
+preco=6
+modelo=lente
+cor=#a0d0ff
+
+[item]
+id=mola
+nome=Mola
+genero=f
+tipo=material
+nivel=1
+pilha=30
+preco=4
+modelo=mola
+cor=#b0b0b0
+
+[item]
+id=engrenagem
+nome=Engrenagem
+genero=f
+tipo=material
+nivel=5
+pilha=30
+preco=4
+modelo=engrenagem
+cor=#9a8060
+
+[item]
+id=nucleo_de_tecelao
+nome=Núcleo de Tecelão
+tipo=material
+nivel=2
+pilha=30
+preco=12
+modelo=nucleo
+cor=#ff5030
+descricao=Uma bolota quente que pulsa devagar. Caio quer todos que você achar.
+
+[item]
+id=fragmento_de_cristal
+nome=Fragmento de Cristal
+tipo=material
+nivel=10
+pilha=30
+preco=8
+modelo=cristal
+cor=#60e0ff
+
+# ---------------------------------------------------------------------------
+# Itens de missão
+# ---------------------------------------------------------------------------
+
+[item]
+id=nucleo_do_alfa
+nome=Núcleo do Alfa
+tipo=missao
+nivel=1
+preco=0
+modelo=nucleo
+cor=#ff8040
+descricao=Maior que os outros, e mais quente. Caio vai querer ver isso.
+
+[item]
+id=fragmento_hera
+nome=Fragmento do Padrão: Hera
+tipo=missao
+nivel=1
+preco=0
+modelo=fragmento
+cor=#80ff80
+descricao=Uma placa de concreto com um símbolo gravado. O primeiro de quatro.
+
+[item]
+id=fragmento_ferrugem
+nome=Fragmento do Padrão: Ferrugem
+tipo=missao
+nivel=1
+preco=0
+modelo=fragmento
+cor=#ffa060
+
+[item]
+id=fragmento_fosso
+nome=Fragmento do Padrão: Fosso
+tipo=missao
+nivel=1
+preco=0
+modelo=fragmento
+cor=#a0a0ff
+
+[item]
+id=fragmento_engrenagens
+nome=Fragmento do Padrão: Engrenagens
+tipo=missao
+nivel=1
+preco=0
+modelo=fragmento
+cor=#ffe060
+
+[item]
+id=gravador
+nome=Gravador Velho
+tipo=missao
+nivel=1
+preco=0
+modelo=gravador
+cor=#3a3a3a
+descricao=Veio sozinho no Monta-Cargas. A etiqueta tem o seu nome, na sua letra.
+
+[item]
+id=bussola_do_nico
+nome=Bússola do Nico
+genero=f
+tipo=missao
+nivel=1
+preco=0
+modelo=bussola
+cor=#d0a040
+descricao=Ele jura que ela aponta para casa.
+
+[item]
+id=chave_do_nucleo
+nome=Chave do Núcleo
+genero=f
+tipo=missao
+nivel=1
+preco=0
+modelo=chave
+cor=#40ffff
+descricao=Um cartão de cerâmica com quatro símbolos. Os quatro do padrão.
+
+[item]
+id=cracha_de_vasco
+nome=Crachá da Dra. Vasco
+tipo=missao
+nivel=1
+preco=0
+modelo=cracha
+cor=#ff4040
+descricao=Diretora do Projeto ÉDEN. Acesso total.
+
+[item]
+id=caderno_de_teo
+nome=Caderno do Teo
+tipo=missao
+nivel=1
+preco=0
+modelo=papel
+cor=#c0a070
+descricao=Dois anos de mapas, um por página. Nenhum igual ao outro.

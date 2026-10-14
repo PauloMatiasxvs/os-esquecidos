@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- O nucleo do jogo compilado fora do Unity, so para os testes xUnit.
+       Os fontes sao os mesmos de Assets/Scripts/Esquecidos.Nucleo, e o alvo
+       imita o Unity 6: .NET Standard 2.1 e C# 9. Se algo compila aqui,
+       compila la; se usa uma API que o Unity nao tem, quebra aqui primeiro. -->
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <RootNamespace>Esquecidos.Nucleo</RootNamespace>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Assets\Scripts\Esquecidos.Nucleo\**\*.cs" />
+  </ItemGroup>
+
+</Project>

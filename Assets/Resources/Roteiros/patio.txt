@@ -1,0 +1,287 @@
+# Conversas com a gente do Pátio.
+
+# ---------------------------------------------------------------------------
+# Duda
+# ---------------------------------------------------------------------------
+
+@duda_m01
+fala duda "Senta aí. Não, aí não, na caixa. Isso."
+fala duda "Olhos, ok. Dentes, ok. Nenhum osso quebrado. A caixa é mais gentil com uns do que com outros."
+fala duda "Eu sou a Duda. Se você voltar do labirinto com um pedaço faltando, é aqui que você vem."
+fala duda "Leva essas bandagens. Lá fora, sangrando, você aperta o número dela na barra e enrola rápido."
+da_item bandagem 3
+fala duda "Ah, e a mesa ali do lado é minha bancada. Me traz trapo e eu faço mais bandagem. Fluido de Tecelão eu transformo em antídoto."
+fala duda "Agora vai no Marreta. Você não vai sair daqui de mãos vazias."
+afinidade duda 1
+status falou_duda
+
+@duda_loja
+fala duda "O que eu tenho, eu vendo. O que eu não tenho, você traz que eu faço."
+abre_loja enfermaria
+
+@duda_cura
+se sucata 10 -> cobra
+fala duda "Sem sucata? Tudo bem. Hoje é por conta da casa. Hoje."
+cura
+fim
+rotulo cobra
+fala duda "Dez de sucata pelo remédio. Fica quieto."
+tira_sucata 10
+cura
+
+@duda_conversa
+fala duda "A maioria chega aqui com corte de ferrão. O veneno dos Tecelões não mata rápido. Mata devagar, se você deixar."
+fala duda "Antídoto ajuda. Correr ajuda mais."
+se status morreu_uma_vez -> ja_morreu
+fim
+rotulo ja_morreu
+fala duda "E você, da próxima vez que desmaiar lá fora, desmaia mais perto do portão. Carregar Corredor pesa."
+
+@duda_s05
+fala duda "Tenho uma ideia, mas preciso de você. O veneno dos Tecelões e o veneno que cura podem ser a mesma coisa, em quantidade diferente."
+fala duda "Me traz cinco frascos de fluido ácido dos Cuspidores e três núcleos de Tecelão. Eu tento fazer remédio de verdade."
+missao_inicia s05_remedio
+
+@duda_s05_entrega
+se nao item fluido_acido 5 -> falta
+se nao item nucleo_de_tecelao 3 -> falta
+tira_item fluido_acido 5
+tira_item nucleo_de_tecelao 3
+fala duda "Perfeito. Me dá um dia. Não, me dá uma hora."
+fala duda "Pronto. Soro de verdade. E agora eu sei fazer coisa melhor na bancada. Passa lá."
+afinidade duda 2
+status entregou_remedio
+fim
+rotulo falta
+fala duda "Ainda falta coisa. Cinco fluidos, três núcleos. Eu conto."
+
+# ---------------------------------------------------------------------------
+# Marreta
+# ---------------------------------------------------------------------------
+
+@marreta_m01
+fala marreta "Novato. Iara mandou você? Claro que mandou."
+fala marreta "Tudo que tem ponta, peso ou corda passa por esta oficina. Tudo."
+se classe guardiao -> guardiao
+se classe remendeiro -> remendeiro
+fala marreta "Mão leve, olho rápido. Corredor nato. Toma, uma bandana. Segura o suor e você parece mais perigoso."
+da_item bandana
+vai segue
+rotulo guardiao
+fala marreta "Ombro largo. Você aguenta peso. Toma: tampa de lixeira. Não ri. Já salvou mais gente que muita armadura."
+fala marreta "Cano de ferro usa as duas mãos, então a tampa espera na mochila até você trocar por uma arma de uma mão."
+da_item tampa_de_lixeira
+vai segue
+rotulo remendeiro
+fala marreta "Você é dos que pensa antes de bater. Toma uma aljava, pra levar mais pedra no estilingue."
+da_item aljava_de_couro
+rotulo segue
+fala marreta "Abre a mochila com I. Clica no item pra vestir. Simples."
+fala marreta "Depois vai no Teo, perto do portão leste. Ele quer ver se você bate em boneco antes de bater em bicho."
+afinidade marreta 1
+status falou_marreta
+
+@marreta_loja
+fala marreta "Olha, mas não toca no que não vai comprar."
+abre_loja oficina
+
+@marreta_conversa
+fala marreta "A bancada ali fora faz coisa que a loja não tem. Traz material: placa, mola, fio de Tecelão."
+fala marreta "Fio de Tecelão é o melhor material que existe. Mais forte que aço e flexível. Eu odeio de onde ele vem, mas não sou burro."
+
+@marreta_s04
+fala marreta "Tô montando uma coisa. Não pergunta o quê."
+fala marreta "Preciso de doze fios de Tecelão e quatro molas. As Sentinelas carregam mola dentro, se você abrir com cuidado. Ou sem cuidado."
+missao_inicia s04_sucata
+
+@marreta_s04_entrega
+se nao item fio_de_tecelao 12 -> falta
+se nao item mola 4 -> falta
+tira_item fio_de_tecelao 12
+tira_item mola 4
+fala marreta "Isso. Exatamente isso."
+fala marreta "Era pra mim, sabe. Uma marreta nova. Mas olha você aí, voltando do labirinto toda semana com esse cano torto."
+fala marreta "Leva. É emprestada. Devolve quando morrer."
+afinidade marreta 2
+status entregou_sucata
+fim
+rotulo falta
+fala marreta "Doze fios. Quatro molas. Eu sei contar."
+
+# ---------------------------------------------------------------------------
+# Teo
+# ---------------------------------------------------------------------------
+
+@teo_cedo
+fala teo "Novato! Que pressa é essa? Duda primeiro, depois Marreta. Depois a gente conversa."
+
+@teo_treino
+fala teo "Então você é o novato. Eu sou o Teo. Corredor-chefe."
+fala teo "Labirinto não perdoa quem hesita. Tá vendo aqueles bonecos ali, do lado da oficina? Derruba três."
+fala teo "Clica neles e segura que você bate sem parar. Ou aperta os números da barra pra usar o que você sabe fazer."
+dica "Clique num inimigo para atacar; segure o botão para continuar batendo. Shift + clique ataca parado na direção do cursor."
+
+@teo_pronto
+fala teo "Nada mal pra quem chegou hoje. Ainda bate de olho fechado, mas bate."
+afinidade teo 1
+status falou_teo
+
+@teo_companheiro
+se companheiro teo -> ja_vem
+fala teo "Quer companhia lá fora? Eu tô pronto."
+escolha "Vem comigo." -> vem "Hoje vou sozinho." -> nao
+rotulo vem
+companheiro teo
+fala teo "Então anda. E não me deixa pra trás."
+fim
+rotulo ja_vem
+escolha "Fica no Pátio dessa vez." -> fica "Continua comigo." -> nao
+rotulo fica
+companheiro nenhum
+fala teo "Beleza. Volta inteiro."
+rotulo nao
+
+@teo_dicas
+fala teo "Três coisas. Uma: rola. Espaço. No meio do rolamento nada te acerta, nem ferrão."
+fala teo "Duas: quando um bicho se encolhe, ele vai dar o bote. Sai da frente."
+fala teo "Três: anota tudo. Os muros mudam toda noite, mas os becos sem saída sempre escondem alguma coisa. Caixa, alavanca, terminal."
+fala teo "E quatro, que eu sempre esqueço: quando a sirene toca, você tem uma hora até os portões fecharem."
+
+@teo_teceloes
+fala teo "Os jovens andam em bando e mordem. Os grandes têm ferrão e dão bote. Os cuspidores ficam longe."
+fala teo "De noite sai outro tipo. Preto, rápido. A gente chama de Noturno. Ninguém que ficou pra ver voltou pra contar direito."
+
+@teo_noite_fim
+fala teo "Espera. Você passou a noite lá fora? Inteira? E voltou andando?"
+fala teo "Dois anos e ninguém conseguiu. Ninguém. Toma. Era do primeiro de nós. Ele gravou isso no cabo."
+afinidade teo 3
+status contou_noite
+
+# ---------------------------------------------------------------------------
+# Caio
+# ---------------------------------------------------------------------------
+
+@caio_m02
+fala caio "Isso... é o núcleo do Ferrão? Me dá aqui. Devagar. Devagar!"
+tira_item nucleo_do_alfa
+fala caio "Olha só. Tem circuito aqui dentro. Tecido vivo enrolado em circuito. Eles não nasceram. Alguém fez esses bichos."
+se nao item fragmento_hera -> sem_fragmento
+fala caio "E isso? Do marco da arena? ... Esse símbolo. Eu já vi ele. Nos meus mapas. Espera aí."
+vai segue
+rotulo sem_fragmento
+fala caio "Ah, e se você passar pelo marco da arena de novo, pega a placa do topo. Quero ver uma de perto."
+rotulo segue
+afinidade caio 2
+status entregou_nucleo
+
+@caio_m03
+se nao item fragmento_hera -> falta
+se nao item fragmento_ferrugem -> falta
+se nao item fragmento_fosso -> falta
+se nao item fragmento_engrenagens -> falta
+tira_item fragmento_hera
+tira_item fragmento_ferrugem
+tira_item fragmento_fosso
+tira_item fragmento_engrenagens
+status padrao_decifrado
+fim
+rotulo falta
+fala caio "Ainda falta placa. Preciso das quatro."
+
+@caio_loja
+fala caio "Mapas, sinalizadores, umas coisas que eu acho no caminho. Leva o que quiser, mas paga."
+abre_loja mapas
+
+@caio_s03
+fala caio "Toda noite os muros mudam, então meu mapa de ontem não serve pra hoje. Mas o jeito como eles mudam... isso tem padrão."
+fala caio "Cada trecho que você andar no labirinto fica no seu mapa. Traz pra mesa ali fora e eu copio. Quanto mais, melhor."
+missao_inicia s03_cartografo
+dica "A Mesa dos Mapas, na frente da Sala dos Mapas, recebe o que você mapeou no dia. Cada trecho novo vale experiência."
+
+@caio_padrao
+fala caio "Cada marco tem um símbolo. Quatro marcos, quatro setores, quatro portões. Não pode ser coincidência."
+fala caio "Traz as quatro placas. A Hera, a Ferrugem, o Fosso e as Engrenagens."
+
+@caio_conversa
+fala caio "Eu tenho setecentos e doze mapas. Nenhum igual ao outro. Ninguém acha isso estranho? Eu acho isso estranho."
+escolha "Entregar o que eu mapeei" -> entrega "Até mais" -> nada
+rotulo entrega
+entrega_mapas
+rotulo nada
+
+# ---------------------------------------------------------------------------
+# Nico
+# ---------------------------------------------------------------------------
+
+@nico_conversa
+se status devolveu_bussola -> amigo
+fala nico "Você é o novo? Eu era o novo antes de você. Agora não sou mais."
+fala nico "Quando eu crescer eu vou ser Corredor. O Teo diz que eu sou baixo demais. Eu acho que é inveja."
+fim
+rotulo amigo
+fala nico "A bússola ainda aponta pro mesmo lugar. Pra fora. Um dia eu vou atrás."
+
+@nico_s01
+fala nico "Ei... você vai pro setor leste? Eu... eu fui lá. Escondido. Atrás dos Corredores."
+fala nico "Eu deixei cair minha bússola. Ela aponta pra casa! Juro. Ela fica em algum beco de lá."
+fala nico "Não conta pro Teo. Por favor."
+missao_inicia s01_bussola
+
+@nico_s01_entrega
+tira_item bussola_do_nico
+fala nico "Você achou! Você achou!"
+fala nico "Olha, tá vendo? Ela aponta pra lá. Sempre pra lá. Pra fora do muro."
+fala nico "Toma. É meu estilingue. Eu pintei de vermelho. Agora é seu. É justo."
+afinidade nico 3
+status devolveu_bussola
+
+# ---------------------------------------------------------------------------
+# Bia
+# ---------------------------------------------------------------------------
+
+@bia_loja
+fala bia "Comida não cai do céu. Bom, cai da caixa. Dá no mesmo. Mas aqui ela é feita."
+abre_loja cozinha
+
+@bia_conversa
+fala bia "Pão de milho da plantação do Nico. Não é muito, mas segura a fome até a sirene."
+fala bia "E se você vir minha faca boa por aí, me devolve. Alguém pegou faz uns dias."
+
+@bia_s06
+fala bia "Alguém pegou minha melhor faca da cozinha. Se você souber de alguma faca de cozinha largada por aí... ou numa mão novata..."
+missao_inicia s06_faca
+
+@bia_s06_entrega
+se item faca_cozinha -> tem
+fala bia "Não tô vendo faca nenhuma na sua mochila. Se estiver na sua mão, guarda primeiro."
+fim
+rotulo tem
+tira_item faca_cozinha
+fala bia "Minha faca! Ou uma igualzinha. Tanto faz. Obrigada."
+fala bia "Toma uns pães. Por conta da casa."
+da_item pao_de_milho 5
+afinidade bia 2
+status devolveu_faca
+
+# ---------------------------------------------------------------------------
+# Zeca
+# ---------------------------------------------------------------------------
+
+@zeca_conversa
+fala zeca "Eu fico aqui. Toda noite. Eles arranham o portão norte, você sabia? Arranham e param. Arranham e param."
+se noite -> noite
+fim
+rotulo noite
+fala zeca "Escuta. Tá ouvindo? Ali. Arranhando."
+
+@zeca_s07
+fala zeca "Os pretos. Os Noturnos. Só saem depois que o portão fecha."
+fala zeca "Eu quero saber se eles sangram. Derruba seis e volta pra me contar."
+missao_inicia s07_noturnos
+
+@zeca_s07_fim
+fala zeca "Seis? E eles... sangram?"
+fala jogador "Sangram. Um óleo preto, quente."
+fala zeca "Então dá pra matar. Então dá pra dormir. Toma, guardei isso pra quem me desse essa notícia."
+afinidade zeca 2
+status contou_zeca

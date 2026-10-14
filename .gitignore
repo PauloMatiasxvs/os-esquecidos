@@ -1,0 +1,36 @@
+# ---- Unity ----
+# tudo aqui e gerado pelo editor ao abrir o projeto
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Bb]uild/
+/[Bb]uilds/
+/MemoryCaptures/
+/Recordings/
+/*.csproj
+/*.sln
+/*.slnx
+/*.user
+.vs/
+.idea/
+.vscode/
+*.pidb.meta
+*.pdb.meta
+sysinfo.txt
+crashlytics-build.properties
+
+# ---- .NET (nucleo e testes fora do Unity) ----
+bin/
+obj/
+TestResults/
+
+# ---- jogo exportado e capturas ----
+/dist/
+/capturas/
+
+# ---- sistema ----
+Thumbs.db
+desktop.ini
+.DS_Store

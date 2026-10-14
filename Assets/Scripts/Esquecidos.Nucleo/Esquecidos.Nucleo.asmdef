@@ -1,0 +1,14 @@
+{
+    "name": "Esquecidos.Nucleo",
+    "rootNamespace": "Esquecidos.Nucleo",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

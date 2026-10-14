@@ -1,0 +1,21 @@
+{
+    "name": "Esquecidos.Jogo",
+    "rootNamespace": "Esquecidos.Jogo",
+    "references": [
+        "Esquecidos.Nucleo",
+        "Esquecidos.Motor",
+        "Unity.RenderPipelines.Universal.Runtime",
+        "Unity.RenderPipelines.Core.Runtime",
+        "Unity.InputSystem",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
