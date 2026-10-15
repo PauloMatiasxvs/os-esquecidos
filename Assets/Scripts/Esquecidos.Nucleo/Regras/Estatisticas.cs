@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Esquecidos.Nucleo.Dados;
+using static Esquecidos.Nucleo.Idioma;
 
 namespace Esquecidos.Nucleo.Regras
 {
@@ -110,10 +111,10 @@ namespace Esquecidos.Nucleo.Regras
         {
             switch (a)
             {
-                case Atributo.Fisico: return "Físico";
-                case Atributo.Mente: return "Mente";
-                case Atributo.Ofensiva: return "Ofensiva";
-                default: return "Defesa";
+                case Atributo.Fisico: return T("Físico");
+                case Atributo.Mente: return T("Mente");
+                case Atributo.Ofensiva: return T("Ofensiva");
+                default: return T("Defesa");
             }
         }
 
@@ -123,40 +124,40 @@ namespace Esquecidos.Nucleo.Regras
             string v = valor >= 0 ? "+" + Formatar(valor) : Formatar(valor);
             switch (e)
             {
-                case Estat.Fisico: return $"{v} Físico";
+                case Estat.Fisico: return F("{0} Físico", v);
                 case Estat.Mente: return $"{v} Mente";
                 case Estat.Ofensiva: return $"{v} Ofensiva";
                 case Estat.Defesa: return $"{v} Defesa";
                 case Estat.Vida: return $"{v} Vida";
-                case Estat.RegenVida: return $"{v} Vida por segundo";
-                case Estat.Energia: return $"{v} Fôlego";
-                case Estat.RegenEnergia: return $"{v} Fôlego por segundo";
-                case Estat.Precisao: return $"{v} Precisão";
+                case Estat.RegenVida: return F("{0} Vida por segundo", v);
+                case Estat.Energia: return F("{0} Fôlego", v);
+                case Estat.RegenEnergia: return F("{0} Fôlego por segundo", v);
+                case Estat.Precisao: return F("{0} Precisão", v);
                 case Estat.Esquiva: return $"{v} Esquiva";
-                case Estat.Critico: return $"{v}% chance de crítico";
-                case Estat.DanoCritico: return $"{v}% dano crítico";
-                case Estat.DanoCorpoMin: return $"{v} dano corpo a corpo mínimo";
-                case Estat.DanoCorpoMax: return $"{v} dano corpo a corpo máximo";
-                case Estat.DanoDistMin: return $"{v} dano à distância mínimo";
-                case Estat.DanoDistMax: return $"{v} dano à distância máximo";
-                case Estat.DanoTecMin: return $"{v} dano de engenhoca mínimo";
-                case Estat.DanoTecMax: return $"{v} dano de engenhoca máximo";
+                case Estat.Critico: return F("{0}% chance de crítico", v);
+                case Estat.DanoCritico: return F("{0}% dano crítico", v);
+                case Estat.DanoCorpoMin: return F("{0} dano corpo a corpo mínimo", v);
+                case Estat.DanoCorpoMax: return F("{0} dano corpo a corpo máximo", v);
+                case Estat.DanoDistMin: return F("{0} dano à distância mínimo", v);
+                case Estat.DanoDistMax: return F("{0} dano à distância máximo", v);
+                case Estat.DanoTecMin: return F("{0} dano de engenhoca mínimo", v);
+                case Estat.DanoTecMax: return F("{0} dano de engenhoca máximo", v);
                 case Estat.DanoPct: return $"{v}% dano";
-                case Estat.AbsorcaoMin: return $"{v} absorção mínima";
-                case Estat.AbsorcaoMax: return $"{v} absorção máxima";
+                case Estat.AbsorcaoMin: return F("{0} absorção mínima", v);
+                case Estat.AbsorcaoMax: return F("{0} absorção máxima", v);
                 case Estat.Bloqueio: return $"{v}% bloqueio";
-                case Estat.Velocidade: return $"{v}% velocidade de movimento";
-                case Estat.VelocidadeAtaque: return $"{v}% velocidade de ataque";
+                case Estat.Velocidade: return F("{0}% velocidade de movimento", v);
+                case Estat.VelocidadeAtaque: return F("{0}% velocidade de ataque", v);
                 case Estat.Tenacidade: return $"{v} Tenacidade";
-                case Estat.ResVeneno: return $"{v}% resistência a veneno";
-                case Estat.ResFogo: return $"{v}% resistência a fogo";
-                case Estat.ResChoque: return $"{v}% resistência a choque";
-                case Estat.RouboVida: return $"{v}% do dano vira vida";
-                case Estat.ReducaoRecarga: return $"{v}% recarga mais rápida";
-                case Estat.BonusXp: return $"{v}% experiência";
-                case Estat.BonusSucata: return $"{v}% sucata encontrada";
-                case Estat.AchadoRaro: return $"{v}% chance de achado raro";
-                case Estat.Espinhos: return $"{v} dano devolvido ao ser atingido";
+                case Estat.ResVeneno: return F("{0}% resistência a veneno", v);
+                case Estat.ResFogo: return F("{0}% resistência a fogo", v);
+                case Estat.ResChoque: return F("{0}% resistência a choque", v);
+                case Estat.RouboVida: return F("{0}% do dano vira vida", v);
+                case Estat.ReducaoRecarga: return F("{0}% recarga mais rápida", v);
+                case Estat.BonusXp: return F("{0}% experiência", v);
+                case Estat.BonusSucata: return F("{0}% sucata encontrada", v);
+                case Estat.AchadoRaro: return F("{0}% chance de achado raro", v);
+                case Estat.Espinhos: return F("{0} dano devolvido ao ser atingido", v);
             }
             return $"{v} {e}";
         }

@@ -11,6 +11,7 @@ using Esquecidos.Nucleo.Regras;
 using Esquecidos.Nucleo.Roteiro;
 using Esquecidos.Nucleo.Simulacao;
 using MundoSim = Esquecidos.Nucleo.Simulacao.Mundo;
+using static Esquecidos.Nucleo.Idioma;
 
 namespace Esquecidos.Nucleo.Partidas
 {
@@ -62,6 +63,7 @@ namespace Esquecidos.Nucleo.Partidas
         public bool JogadorMorto { get; private set; }
 
         private (string mapa, string entrada)? _transicao;
+        private float _transicaoEm;
         private float _vidaGuardada = -1, _folegoGuardado = -1;
         private readonly Dictionary<(string, int), Poder> _poderesNoRank = new Dictionary<(string, int), Poder>();
         private int _lootPendente;
@@ -97,7 +99,7 @@ namespace Esquecidos.Nucleo.Partidas
             Ciclo.AvisoDePortao += () =>
             {
                 Despachante.Despachar(new NotCiclo("aviso"));
-                Mensagem("A sirene do Pátio tocou: os portões fecham em breve.", "#ffb040");
+                Mensagem(T("A sirene do Pátio tocou: os portões fecham em breve."), "#ffb040");
             };
             Ciclo.PortoesFecharam += () =>
             {
@@ -116,7 +118,7 @@ namespace Esquecidos.Nucleo.Partidas
         {
             SementeDoMundo = semente ?? new Random().Next(1, int.MaxValue);
             Rng = new Random(SementeDoMundo ^ 0x5eed);
-            Heroi = Personagem.Novo(Catalogo, classe, string.IsNullOrWhiteSpace(nome) ? "Novato" : nome.Trim());
+            Heroi = Personagem.Novo(Catalogo, classe, string.IsNullOrWhiteSpace(nome) ? T("Novato") : nome.Trim());
             if (aparencia != null)
             {
                 aparencia.Roupa = Heroi.Aparencia.Roupa;
@@ -135,10 +137,22 @@ namespace Esquecidos.Nucleo.Partidas
             }
         }
 
-        /// <summary>Pede uma troca de mapa. Acontece no fim do passo, fora da simulacao.</summary>
+        /// <summary>
+        /// Quanto a troca de mapa espera depois de pedida. O jogo usa uns
+        /// decimos de segundo para a tela escurecer antes: o tranco de montar
+        /// o mapa novo acontece no escuro. Os testes usam zero.
+        /// </summary>
+        public float AtrasoDeTransicao { get; set; }
+
+        public bool TransicaoPendente => _transicao.HasValue;
+
+        /// <summary>Pede uma troca de mapa. Acontece no fim do passo, fora da simulacao; o primeiro pedido vale.</summary>
         public void IrPara(string mapa, string entrada)
         {
+            if (_transicao.HasValue) return;
             _transicao = (mapa, entrada);
+            _transicaoEm = AtrasoDeTransicao;
+            Despachante.Despachar(new NotTransicao(mapa, entrada));
         }
 
         public void Passo(float dt)
@@ -165,9 +179,13 @@ namespace Esquecidos.Nucleo.Partidas
             AtualizarLootPendente();
             if (_transicao.HasValue)
             {
-                (string mapa, string entrada) = _transicao.Value;
-                _transicao = null;
-                EntrarNoMapa(mapa, entrada);
+                _transicaoEm -= dt;
+                if (_transicaoEm <= 0)
+                {
+                    (string mapa, string entrada) = _transicao.Value;
+                    _transicao = null;
+                    EntrarNoMapa(mapa, entrada);
+                }
             }
         }
 
@@ -208,6 +226,7 @@ namespace Esquecidos.Nucleo.Partidas
 
         public void EntrarNoMapa(string id, string entrada)
         {
+            _transicao = null;
             if (Jogador != null)
             {
                 _vidaGuardada = Jogador.Vida;
@@ -389,7 +408,7 @@ namespace Esquecidos.Nucleo.Partidas
                     Jogador.Energia = Jogador.EnergiaMax;
                 }
                 Despachante.Despachar(new NotNivelSubiu(Heroi.Nivel));
-                Mensagem($"Nível {Heroi.Nivel}! +{Catalogo.Regras.PontosAtributoPorNivel * subiu} pontos de atributo, +{Catalogo.Regras.PontosPoderPorNivel * subiu} de poder.", "#ffd25a");
+                Mensagem(F("Nível {0}! +{1} pontos de atributo, +{2} de poder.", Heroi.Nivel, Catalogo.Regras.PontosAtributoPorNivel * subiu, Catalogo.Regras.PontosPoderPorNivel * subiu), "#ffd25a");
                 Diario.Reavaliar();
             }
             Despachante.Despachar(new NotFichaMudou());
@@ -452,13 +471,13 @@ namespace Esquecidos.Nucleo.Partidas
                 if (!Mundo.AreaOcupada(o.Bloqueio)) Mundo.DefinirLigado(o, o.Ciclo > 0.5f);
             AtualizarPortoes();
             Despachante.Despachar(new NotCiclo("amanheceu"));
-            Mensagem($"Amanheceu. Dia {Ciclo.Dia} no labirinto.", "#ffe9b0");
+            Mensagem(F("Amanheceu. Dia {0} no labirinto.", Ciclo.Dia), "#ffe9b0");
             if (!Mapa.Seguro && Jogador != null && Jogador.Vivo)
             {
                 Contar("noites_sobrevividas");
                 Diario.DefinirStatus("sobreviveu_uma_noite");
                 GanharXp(60 * Mapa.Nivel);
-                Mensagem("Você sobreviveu a uma noite no labirinto.", "#ffd25a");
+                Mensagem(T("Você sobreviveu a uma noite no labirinto."), "#ffd25a");
             }
         }
 
@@ -470,10 +489,10 @@ namespace Esquecidos.Nucleo.Partidas
             Despachante.Despachar(new NotCiclo("anoiteceu"));
             if (Mapa.Seguro)
             {
-                Mensagem("A noite caiu. Os portões estão fechados até o amanhecer.", "#9fb4ff");
+                Mensagem(T("A noite caiu. Os portões estão fechados até o amanhecer."), "#9fb4ff");
                 return;
             }
-            Mensagem("A noite caiu e os portões se fecharam. Agora são eles que caçam.", "#ff6a5a");
+            Mensagem(T("A noite caiu e os portões se fecharam. Agora são eles que caçam."), "#ff6a5a");
             foreach (Surgimento s in Mapa.Surgimentos.Where(x => x.Noturno)) Surgir(s);
         }
 
@@ -496,7 +515,7 @@ namespace Esquecidos.Nucleo.Partidas
             if (!mexeu) return;
             Despachante.Despachar(new NotCiclo("muros"));
             Despachante.Despachar(new NotTremor(0.35f));
-            Mensagem("Os muros estão se movendo.", "#c8b8a0");
+            Mensagem(T("Os muros estão se movendo."), "#c8b8a0");
         }
     }
 }

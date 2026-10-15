@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Esquecidos.Nucleo.Dados;
 using Esquecidos.Nucleo.Regras;
+using static Esquecidos.Nucleo.Idioma;
 
 namespace Esquecidos.Nucleo.Itens
 {
@@ -192,17 +193,17 @@ namespace Esquecidos.Nucleo.Itens
         {
             switch (t)
             {
-                case TipoItem.Arma: return "Arma";
-                case TipoItem.Secundaria: return "Mão secundária";
-                case TipoItem.Cabeca: return "Cabeça";
-                case TipoItem.Corpo: return "Corpo";
-                case TipoItem.Maos: return "Mãos";
-                case TipoItem.Pes: return "Pés";
-                case TipoItem.Pingente: return "Pingente";
-                case TipoItem.Bugiganga: return "Bugiganga";
-                case TipoItem.Consumivel: return "Consumível";
-                case TipoItem.Material: return "Material";
-                default: return "Item de missão";
+                case TipoItem.Arma: return T("Arma");
+                case TipoItem.Secundaria: return T("Mão secundária");
+                case TipoItem.Cabeca: return T("Cabeça");
+                case TipoItem.Corpo: return T("Corpo");
+                case TipoItem.Maos: return T("Mãos");
+                case TipoItem.Pes: return T("Pés");
+                case TipoItem.Pingente: return T("Pingente");
+                case TipoItem.Bugiganga: return T("Bugiganga");
+                case TipoItem.Consumivel: return T("Consumível");
+                case TipoItem.Material: return T("Material");
+                default: return T("Item de missão");
             }
         }
     }
@@ -311,7 +312,8 @@ namespace Esquecidos.Nucleo.Itens
                 else if (!a.Prefixo && complemento == null) complemento = a.NomePara(b);
             }
             string nome = b.Nome;
-            if (adjetivo != null) nome += " " + adjetivo;
+            // Em portugues o adjetivo vem depois ("Faca Afiada"); em ingles, antes ("Sharp Knife").
+            if (adjetivo != null) nome = Idioma.EmPortugues ? nome + " " + adjetivo : adjetivo + " " + nome;
             if (complemento != null) nome += " " + complemento;
             return nome;
         }
@@ -320,11 +322,11 @@ namespace Esquecidos.Nucleo.Itens
         {
             switch (r)
             {
-                case Raridade.Comum: return "Comum";
-                case Raridade.Reforcado: return "Reforçado";
-                case Raridade.Raro: return "Raro";
-                case Raridade.Reliquia: return "Relíquia";
-                default: return "Único";
+                case Raridade.Comum: return T("Comum");
+                case Raridade.Reforcado: return T("Reforçado");
+                case Raridade.Raro: return T("Raro");
+                case Raridade.Reliquia: return T("Relíquia");
+                default: return T("Único");
             }
         }
 
@@ -371,17 +373,17 @@ namespace Esquecidos.Nucleo.Itens
             ItemBase b = c.Item(item.Base);
             var linhas = new List<string>();
             string tipo = ItemBase.ExibirTipo(b.Tipo);
-            if (b.Tipo == TipoItem.Arma) tipo += b.DuasMaos ? " de duas mãos" : "";
-            linhas.Add(b.Equipavel ? $"{NomeDaRaridade(item.Raridade)} · {tipo} · nível {item.Nivel}" : tipo);
+            if (b.Tipo == TipoItem.Arma) tipo += b.DuasMaos ? T(" de duas mãos") : "";
+            linhas.Add(b.Equipavel ? F("{0} · {1} · nível {2}", NomeDaRaridade(item.Raridade), tipo, item.Nivel) : tipo);
             if (b.Tipo == TipoItem.Arma)
             {
-                linhas.Add($"Dano {Nomes.Formatar(b.DanoMin)}–{Nomes.Formatar(b.DanoMax)} · {b.VelocidadeAtaque:0.0#} golpes/s");
+                linhas.Add(F("Dano {0}–{1} · {2:0.0#} golpes/s", Nomes.Formatar(b.DanoMin), Nomes.Formatar(b.DanoMax), b.VelocidadeAtaque));
             }
-            if (b.ArmaduraMax > 0) linhas.Add($"Absorção {Nomes.Formatar(b.ArmaduraMin)}–{Nomes.Formatar(b.ArmaduraMax)}");
+            if (b.ArmaduraMax > 0) linhas.Add(F("Absorção {0}–{1}", Nomes.Formatar(b.ArmaduraMin), Nomes.Formatar(b.ArmaduraMax)));
             foreach ((Estat estat, float valor) in b.Bonus) linhas.Add(Nomes.Exibir(estat, valor));
             foreach (AfixoRolado r in item.Afixos) linhas.Add(Nomes.Exibir(c.Afixo(r.Afixo).Estat, r.Valor));
             if (b.Uso != null) linhas.Add(DescreverUso(b.Uso));
-            foreach ((Atributo atributo, int valor) in b.Requisitos) linhas.Add($"Requer {Nomes.Exibir(atributo)} {valor}");
+            foreach ((Atributo atributo, int valor) in b.Requisitos) linhas.Add(F("Requer {0} {1}", Nomes.Exibir(atributo), valor));
             if (!string.IsNullOrEmpty(b.Descricao)) linhas.Add("“" + b.Descricao + "”");
             return linhas;
         }
@@ -390,13 +392,13 @@ namespace Esquecidos.Nucleo.Itens
         {
             switch (u.Efeito)
             {
-                case "cura": return u.Duracao > 0 ? $"Usar: recupera {u.Valor:0} de vida em {u.Duracao:0} s" : $"Usar: recupera {u.Valor:0} de vida";
-                case "energia": return $"Usar: recupera {u.Valor:0} de fôlego";
-                case "antidoto": return "Usar: remove veneno e sangramento";
-                case "furia": return $"Usar: +{u.Valor:0}% dano por {u.Duracao:0} s";
-                case "pele": return $"Usar: +{u.Valor:0} absorção por {u.Duracao:0} s";
-                case "mapa": return "Usar: revela o setor atual no mapa";
-                case "retorno": return "Usar: volta ao Pátio (não funciona de noite)";
+                case "cura": return u.Duracao > 0 ? F("Usar: recupera {0:0} de vida em {1:0} s", u.Valor, u.Duracao) : F("Usar: recupera {0:0} de vida", u.Valor);
+                case "energia": return F("Usar: recupera {0:0} de fôlego", u.Valor);
+                case "antidoto": return T("Usar: remove veneno e sangramento");
+                case "furia": return F("Usar: +{0:0}% dano por {1:0} s", u.Valor, u.Duracao);
+                case "pele": return F("Usar: +{0:0} absorção por {1:0} s", u.Valor, u.Duracao);
+                case "mapa": return T("Usar: revela o setor atual no mapa");
+                case "retorno": return T("Usar: volta ao Pátio (não funciona de noite)");
             }
             return "Usar: " + u.Efeito;
         }

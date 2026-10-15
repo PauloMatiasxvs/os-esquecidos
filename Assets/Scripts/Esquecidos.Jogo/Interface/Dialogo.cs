@@ -7,6 +7,7 @@ using Esquecidos.Nucleo.Simulacao;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using static Esquecidos.Nucleo.Idioma;
 
 namespace Esquecidos.Jogo.Interface
 {
@@ -162,7 +163,7 @@ namespace Esquecidos.Jogo.Interface
                     if (agora % 3 == 0 && agora < _atual.Texto.Length && _atual.Quem != null) _ui.P.Sons.UI("fala");
                 }
                 _continuar.enabled = agora >= _atual.Texto.Length && Time.unscaledTime % 1 < 0.6f;
-                if (_aoEscolher == null && (Controles.Desceu(Key.Space) || Controles.Desceu(Key.Enter) || Controles.Desceu(Key.F) || (Controles.Controle?.buttonSouth.wasPressedThisFrame ?? false)))
+                if (_aoEscolher == null && (Controles.Desceu(Acao.Rolar) || Controles.Desceu(Key.Enter) || Controles.Desceu(Acao.Interagir) || (Controles.Controle?.buttonSouth.wasPressedThisFrame ?? false)))
                     Avancar();
             }
             else
@@ -188,11 +189,11 @@ namespace Esquecidos.Jogo.Interface
         }
 
         /// <summary>Modo de teste: termina a fala da tela ou clica na primeira escolha.</summary>
-        public void PularParaTeste()
+        public void PularParaTeste(int escolha = 0)
         {
             if (_botoes.Count > 0 && !MostrandoTopicos)
             {
-                _botoes[0].onClick.Invoke();
+                _botoes[Mathf.Clamp(escolha, 0, _botoes.Count - 1)].onClick.Invoke();
                 return;
             }
             if (_atual != null) _letras = _atual.Texto.Length;
@@ -260,10 +261,10 @@ namespace Esquecidos.Jogo.Interface
             _texto.rectTransform.anchoredPosition = new Vector2(236, -58);
             _texto.fontStyle = FontStyle.Italic;
             NpcDef def = _ui.P.Partida.Catalogo.Npc(npc.NpcId);
-            _texto.text = $"{def.Titulo}. Sobre o que você quer falar?";
+            _texto.text = F("{0}. Sobre o que você quer falar?", def.Titulo);
             var nomes = new List<string>();
             foreach (DialogoDef t in topicos) nomes.Add(t.Topico);
-            nomes.Add("Até mais");
+            nomes.Add(T("Até mais"));
             LimparOpcoes();
             _aoEscolher = i =>
             {
@@ -290,36 +291,55 @@ namespace Esquecidos.Jogo.Interface
     }
 
     /// <summary>Caixa de dica do tutorial, no alto da tela; some sozinha.</summary>
+    /// <summary>
+    /// Dica do tutorial: um cartao no canto direito, embaixo do relogio, longe
+    /// do meio da tela. Fica o tempo de ler (conta so quando nao tem conversa
+    /// nem janela aberta por cima), some esmaecendo, e um clique fecha.
+    /// </summary>
     public sealed class CaixaDeDica
     {
+        private readonly Interface _ui;
         private readonly RectTransform _caixa;
+        private readonly CanvasGroup _grupo;
         private readonly Text _texto;
         private float _resta;
 
+        private const float Largura = 430;
+
         public CaixaDeDica(Interface ui, Transform pai)
         {
-            Image fundo = IU.Painel(pai, "dica", new Color(0.08f, 0.07f, 0.04f, 0.92f));
-            _caixa = fundo.rectTransform.Lugar(new Vector2(0.5f, 1), new Vector2(0.5f, 1), new Vector2(0, -150), new Vector2(900, 96));
-            Text titulo = IU.Texto(_caixa, "titulo", "DICA", 16, IU.Ambar);
-            titulo.rectTransform.Lugar(new Vector2(0, 1), new Vector2(0, 1), new Vector2(18, -10), new Vector2(200, 22));
-            _texto = IU.Texto(_caixa, "texto", "", 20, IU.CorTexto);
-            _texto.rectTransform.Lugar(new Vector2(0, 1), new Vector2(0, 1), new Vector2(18, -34), new Vector2(864, 60));
-            IU.Eventos(fundo.gameObject).AoClicar = () => _resta = 0;
+            _ui = ui;
+            Image fundo = IU.Painel(pai, "dica", new Color(0.08f, 0.07f, 0.04f, 0.9f));
+            _caixa = fundo.rectTransform.Lugar(new Vector2(1, 1), new Vector2(1, 1), new Vector2(-20, -340), new Vector2(Largura, 96));
+            _grupo = fundo.gameObject.AddComponent<CanvasGroup>();
+            Text titulo = IU.Texto(_caixa, "titulo", T("DICA"), 15, IU.Ambar);
+            titulo.rectTransform.Lugar(new Vector2(0, 1), new Vector2(0, 1), new Vector2(14, -8), new Vector2(200, 20));
+            Text fechar = IU.Texto(_caixa, "fechar", T("clique para fechar"), 13, IU.CorFraca, TextAnchor.UpperRight);
+            fechar.rectTransform.Lugar(new Vector2(1, 1), new Vector2(1, 1), new Vector2(-12, -9), new Vector2(200, 20));
+            _texto = IU.Texto(_caixa, "texto", "", 18, IU.CorTexto);
+            _texto.rectTransform.Lugar(new Vector2(0, 1), new Vector2(0, 1), new Vector2(14, -30), new Vector2(Largura - 28, 60));
+            IU.Eventos(fundo.gameObject).AoClicar = () => _resta = Mathf.Min(_resta, 0.4f);
             _caixa.gameObject.SetActive(false);
         }
 
         public void Mostrar(string texto)
         {
             _texto.text = texto;
-            _resta = 14;
+            // O tempo de ler: quatro segundos e mais um pouco por letra.
+            _resta = Mathf.Clamp(4f + texto.Length * 0.06f, 6f, 16f);
             _caixa.gameObject.SetActive(true);
-            float altura = Mathf.Max(96, _texto.preferredHeight + 48);
-            _caixa.sizeDelta = new Vector2(900, altura);
+            _grupo.alpha = 1;
+            float altura = Mathf.Max(80, _texto.preferredHeight + 42);
+            _texto.rectTransform.sizeDelta = new Vector2(Largura - 28, altura - 36);
+            _caixa.sizeDelta = new Vector2(Largura, altura);
         }
 
         public void Atualizar(float dt)
         {
             if (!_caixa.gameObject.activeSelf) return;
+            bool coberta = _ui.Dialogo.Aberto || _ui.JanelaAberta || _ui.Pausado;
+            _grupo.alpha = coberta ? 0.25f : Mathf.Clamp01(_resta / 0.6f);
+            if (coberta) return;
             _resta -= dt;
             if (_resta <= 0) _caixa.gameObject.SetActive(false);
         }

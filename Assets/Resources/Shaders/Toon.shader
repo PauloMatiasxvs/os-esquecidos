@@ -110,7 +110,8 @@ Shader "Esquecidos/Toon"
                 o.positionCS = p.positionCS;
                 o.positionWS = p.positionWS;
                 o.normalWS = TransformObjectToWorldNormal(i.normalOS);
-                o.color = i.color;
+                // As cores das malhas sao escritas em sRGB (como no editor de cor); o projeto e linear.
+                o.color = half4(SRGBToLinear(i.color.rgb), i.color.a);
                 o.fog = ComputeFogFactor(p.positionCS.z);
                 return o;
             }
@@ -200,7 +201,7 @@ Shader "Esquecidos/Toon"
                 }
                 o.positionCS = cs;
                 o.positionWS = TransformObjectToWorld(i.positionOS.xyz);
-                o.color = i.color;
+                o.color = half4(SRGBToLinear(i.color.rgb), i.color.a);
                 o.fog = ComputeFogFactor(cs.z);
                 return o;
             }

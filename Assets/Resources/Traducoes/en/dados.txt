@@ -1,0 +1,1417 @@
+# Traducao para o ingles: dados. O texto em portugues e a chave; a linha com "= " e a traducao.
+
+Corredor
+= Runner
+
+Rápido, crítico, faz sangrar
+= Fast, critical, makes them bleed
+
+Corredores mapeiam o labirinto de dia e voltam antes dos portões fecharem. Vivem de velocidade: acertam primeiro, abrem feridas e somem antes do revide.
+= Runners map the maze by day and come back before the gates close. They live on speed: strike first, open wounds and vanish before the counterattack.
+
+Guardião
+= Warden
+
+Resistente, golpes pesados, controle
+= Tough, heavy blows, control
+
+Guardiões seguram a porta enquanto os outros correm. Carregam o que for pesado o bastante para amassar um Tecelão e aguentam o que vier de volta.
+= Wardens hold the door while the others run. They carry whatever is heavy enough to dent a Weaver and take whatever comes back.
+
+Remendeiro
+= Tinker
+
+À distância, engenhocas, cura
+= Ranged, gadgets, healing
+
+Remendeiros fazem de tudo com sucata: curativo, bomba, armadilha, até um drone que atira. Brigam de longe, com a cabeça.
+= Tinkers make anything out of scrap: bandages, bombs, traps, even a drone that shoots. They fight from afar, with their heads.
+
+Faca de Cozinha
+= Kitchen Knife
+
+Saiu da cozinha da Bia. Ela ainda quer de volta.
+= It came from Bia's kitchen. She still wants it back.
+
+Machete
+= Machete
+
+Faca de Osso
+= Bone Knife
+
+Lâmina de Tecelão
+= Weaver Blade
+
+Arrancada da pata de um Tecelão. Ainda está quente.
+= Torn from a Weaver's leg. Still warm.
+
+Facão da ARCA
+= ARCA Cleaver
+
+Garra de Cerâmica
+= Ceramic Claw
+
+Cano de Ferro
+= Iron Pipe
+
+Pesado, enferrujado, honesto.
+= Heavy, rusty, honest.
+
+Taco com Pregos
+= Nail Bat
+
+Marreta
+= Sledgehammer
+
+Viga Dentada
+= Toothed Girder
+
+Martelo Hidráulico
+= Hydraulic Hammer
+
+Punho de Concreto
+= Concrete Fist
+
+Lança de Bambu
+= Bamboo Spear
+
+Lança de Vergalhão
+= Rebar Spear
+
+Forcado
+= Pitchfork
+
+Arpão de Tecelão
+= Weaver Harpoon
+
+Estilingue
+= Slingshot
+
+Forquilha, câmara de pneu e muita paciência.
+= A forked stick, a tire tube and a lot of patience.
+
+Estilingue Reforçado
+= Reinforced Slingshot
+
+Besta Improvisada
+= Makeshift Crossbow
+
+Lança-Dardos
+= Dart Launcher
+
+Besta de Repetição
+= Repeating Crossbow
+
+Bastão de Choque
+= Shock Baton
+
+A ponta estala quando você aperta o botão.
+= The tip crackles when you press the button.
+
+Cassetete da ARCA
+= ARCA Truncheon
+
+Tampa de Lixeira
+= Trash Can Lid
+
+Escudo de Porta
+= Door Shield
+
+Escudo de Placas
+= Plated Shield
+
+Escudo Antimotim
+= Riot Shield
+
+Aljava de Couro
+= Leather Quiver
+
+Aljava Reforçada
+= Reinforced Quiver
+
+Bandana
+= Bandana
+
+Capuz de Lona
+= Canvas Hood
+
+Capacete de Obra
+= Hard Hat
+
+Máscara de Gás
+= Gas Mask
+
+Capacete de Sucata
+= Scrap Helmet
+
+Capacete da ARCA
+= ARCA Helmet
+
+Camisa Rasgada
+= Torn Shirt
+
+Jaqueta de Couro
+= Leather Jacket
+
+Colete Remendado
+= Patched Vest
+
+Peitoral de Sucata
+= Scrap Breastplate
+
+Colete de Tecelão
+= Weaver Vest
+
+Armadura da ARCA
+= ARCA Armor
+
+Luvas de Pano
+= Cloth Gloves
+
+Luvas de Couro
+= Leather Gloves
+
+Manoplas
+= Gauntlets
+
+Luvas da ARCA
+= ARCA Gloves
+
+Tênis Gasto
+= Worn Sneakers
+
+Botas de Trabalho
+= Work Boots
+
+Botas de Corredor
+= Runner Boots
+
+Botas da ARCA
+= ARCA Boots
+
+Pingente de Osso
+= Bone Pendant
+
+Dente de Tecelão
+= Weaver Tooth
+
+Chip da ARCA
+= ARCA Chip
+
+Anel de Parafuso
+= Bolt Ring
+
+Relógio Parado
+= Stopped Watch
+
+Parou às 4h17. Ninguém sabe de que dia.
+= It stopped at 4:17. Nobody knows on which day.
+
+Bússola Quebrada
+= Broken Compass
+
+O ponteiro gira sem parar quando você chega perto dos muros.
+= The needle spins nonstop whenever you get close to the walls.
+
+Crachá da ARCA
+= ARCA Badge
+
+A Lembrança
+= The Keepsake
+
+Metade de uma foto. Uma mão segurando a sua. O resto foi rasgado.
+= Half of a photo. A hand holding yours. The rest was torn off.
+
+Ferrão do Alfa
+= Alpha's Stinger
+
+Ainda pinga.
+= Still dripping.
+
+Faca do Primeiro
+= The First One's Knife
+
+Gravado no cabo: "o primeiro a correr".
+= Carved on the handle: "the first to run".
+
+Estilingue do Nico
+= Nico's Slingshot
+
+Pintado de vermelho, com um N torto riscado na forquilha.
+= Painted red, with a crooked N scratched into the fork.
+
+A Marreta do Marreta
+= Marreta's Sledgehammer
+
+Ele disse que era emprestada.
+= He said it was a loan.
+
+Coroa da Mãe
+= Mother's Crown
+
+Placas do crânio da Tecelã-Mãe. Você ouve um zumbido baixo quando usa.
+= Plates from the Weaver Mother's skull. You hear a low hum when you wear it.
+
+Olho de Vidro
+= Glass Eye
+
+Ele ainda pisca, às vezes.
+= It still blinks, sometimes.
+
+Coração do Ceifador
+= Reaper's Heart
+
+Um rolamento que não para de girar.
+= A bearing that never stops spinning.
+
+Uniforme de Arquiteto
+= Architect's Uniform
+
+Tem o seu nome bordado no peito.
+= Your name is embroidered on the chest.
+
+Bandagem
+= Bandage
+
+Pão de Milho
+= Cornbread
+
+Soro
+= Saline
+
+Soro Concentrado
+= Concentrated Saline
+
+Cantil
+= Canteen
+
+Café Amargo
+= Bitter Coffee
+
+Antídoto
+= Antidote
+
+Estimulante
+= Stimulant
+
+Casca de Tecelão
+= Weaver Shell
+
+Tônico de Fuga
+= Escape Tonic
+
+Sinalizador de Retorno
+= Return Flare
+
+Acende e alguém do Pátio vem te buscar. Só de dia.
+= Light it and someone from the Yard comes to get you. Daytime only.
+
+Mapa Rascunhado
+= Rough Map
+
+Os rabiscos do Caio sobre o setor de hoje. Às vezes ele acerta.
+= Caio's scribbles about today's sector. Sometimes he gets it right.
+
+Trapo
+= Rag
+
+Fio de Tecelão
+= Weaver Thread
+
+Placa de Metal
+= Metal Plate
+
+Fluido Ácido
+= Acid Fluid
+
+Circuito
+= Circuit
+
+Lente
+= Lens
+
+Mola
+= Spring
+
+Engrenagem
+= Gear
+
+Núcleo de Tecelão
+= Weaver Core
+
+Uma bolota quente que pulsa devagar. Caio quer todos que você achar.
+= A warm lump that pulses slowly. Caio wants every one you find.
+
+Fragmento de Cristal
+= Crystal Shard
+
+Núcleo do Alfa
+= Alpha Core
+
+Maior que os outros, e mais quente. Caio vai querer ver isso.
+= Bigger than the others, and warmer. Caio will want to see this.
+
+Fragmento do Padrão: Hera
+= Pattern Fragment: Ivy
+
+Uma placa de concreto com um símbolo gravado. O primeiro de quatro.
+= A concrete plate with a symbol carved into it. The first of four.
+
+Fragmento do Padrão: Ferrugem
+= Pattern Fragment: Rust
+
+Fragmento do Padrão: Fosso
+= Pattern Fragment: Pit
+
+Fragmento do Padrão: Engrenagens
+= Pattern Fragment: Gears
+
+Gravador Velho
+= Old Recorder
+
+Veio sozinho no Monta-Cargas. A etiqueta tem o seu nome, na sua letra.
+= It came up alone in the Lift. The label has your name on it, in your handwriting.
+
+Bússola do Nico
+= Nico's Compass
+
+Ele jura que ela aponta para casa.
+= He swears it points home.
+
+Chave do Núcleo
+= Core Key
+
+Um cartão de cerâmica com quatro símbolos. Os quatro do padrão.
+= A ceramic card with four symbols. The four from the pattern.
+
+Crachá da Dra. Vasco
+= Dr. Vasco's Badge
+
+Diretora do Projeto ÉDEN. Acesso total.
+= Director of Project EDEN. Full access.
+
+Caderno do Teo
+= Teo's Notebook
+
+Dois anos de mapas, um por página. Nenhum igual ao outro.
+= Two years of maps, one per page. No two alike.
+
+Afiado
+= Sharp
+
+Afiada
+= Sharp
+
+Brutal
+= Brutal
+
+Ligeiro
+= Swift
+
+Ligeira
+= Swift
+
+Certeiro
+= Accurate
+
+Certeira
+= Accurate
+
+Cruel
+= Cruel
+
+Sedento
+= Thirsty
+
+Sedenta
+= Thirsty
+
+Serrilhado
+= Serrated
+
+Serrilhada
+= Serrated
+
+Calibrado
+= Calibrated
+
+Calibrada
+= Calibrated
+
+Reforçado
+= Reinforced
+
+Reforçada
+= Reinforced
+
+Acolchoado
+= Padded
+
+Acolchoada
+= Padded
+
+Leve
+= Light
+
+Espinhoso
+= Thorny
+
+Espinhosa
+= Thorny
+
+Isolado
+= Insulated
+
+Isolada
+= Insulated
+
+Vedado
+= Sealed
+
+Vedada
+= Sealed
+
+Chamuscado
+= Scorched
+
+Chamuscada
+= Scorched
+
+Brilhante
+= Gleaming
+
+Gasto
+= Worn
+
+Gasta
+= Worn
+
+Antigo
+= Ancient
+
+Antiga
+= Ancient
+
+do Corredor
+= of the Runner
+
+do Guardião
+= of the Warden
+
+do Remendeiro
+= of the Tinker
+
+da Vigília
+= of Vigilance
+
+da Muralha
+= of the Wall
+
+do Fôlego
+= of Breath
+
+da Recuperação
+= of Recovery
+
+da Pressa
+= of Haste
+
+da Noite
+= of the Night
+
+do Tecelão
+= of the Weaver
+
+Soco
+= Punch
+
+Golpe
+= Strike
+
+O ataque da arma leve na mão.
+= The attack of the light weapon in your hand.
+
+Pancada
+= Smash
+
+Devagar e pesado: empurra o que estiver na frente.
+= Slow and heavy: pushes back whatever is in front.
+
+Estocada
+= Thrust
+
+Alcança longe, numa linha estreita.
+= Reaches far, in a narrow line.
+
+Disparo
+= Shot
+
+Pedra, prego ou dardo, o que a arma atirar.
+= Stone, nail or dart, whatever the weapon fires.
+
+Descarga
+= Discharge
+
+O bastão estala e o alvo trava por um instante.
+= The baton crackles and the target locks up for a moment.
+
+Rolamento
+= Roll
+
+Rola para o lado e nada encosta em você no meio do giro. Cancela o fim de um golpe. (Espaço)
+= Roll to the side and nothing touches you mid-roll. Cancels the end of an attack. (Space)
+
+Corte Duplo
+= Double Cut
+
+Dois cortes em sequência que deixam a ferida sangrando.
+= Two cuts in a row that leave the wound bleeding.
+
+Disparada
+= Dash
+
+Atravessa a distância num tiro e corta quem estiver no caminho.
+= Crosses the distance in a flash and cuts whoever is in the way.
+
+Faca Arremessada
+= Thrown Knife
+
+Lança facas no alvo. Mais pontos, mais facas.
+= Throws knives at the target. More points, more knives.
+
+Passo Fantasma
+= Ghost Step
+
+Por alguns segundos você corre mais rápido do que eles enxergam.
+= For a few seconds you run faster than they can see.
+
+Ferida Aberta
+= Open Wound
+
+Um corte fundo e preciso. O alvo sangra muito por muito tempo.
+= A deep, precise cut. The target bleeds a lot for a long time.
+
+Olho de Corredor
+= Runner's Eye
+
+Você para de pensar e só enxerga as aberturas. Mais dano por um tempo.
+= You stop thinking and only see the openings. More damage for a while.
+
+Tempestade de Lâminas
+= Blade Storm
+
+Gira com a lâmina estendida e corta tudo em volta.
+= Spin with the blade outstretched and cut everything around you.
+
+Salto do Corredor
+= Runner's Leap
+
+Pula por cima do bando e cai no meio dele. Quem estiver perto fica exposto.
+= Jump over the pack and land in the middle of it. Whoever is close is left exposed.
+
+Golpe Pesado
+= Heavy Blow
+
+Um golpe com o corpo inteiro. Empurra longe e atordoa.
+= A blow with your whole body. Knocks back far and stuns.
+
+Grito de Guerra
+= War Cry
+
+Um berro que expõe os inimigos perto e endurece a sua pele.
+= A roar that exposes nearby enemies and hardens your skin.
+
+Investida de Ombro
+= Shoulder Charge
+
+Corre de ombro à frente. O primeiro que encostar cai atordoado.
+= Charge shoulder first. The first one you hit falls stunned.
+
+Pele de Ferro
+= Iron Skin
+
+Você trava os músculos e o golpe escorrega.
+= You lock your muscles and the blow slides off.
+
+Giro Brutal
+= Brutal Spin
+
+Gira a arma pesada e manda longe o que estiver em volta.
+= Swing the heavy weapon around and send everything nearby flying.
+
+Fúria Cega
+= Blind Fury
+
+Para de sentir dor e começa a bater mais forte.
+= Stop feeling pain and start hitting harder.
+
+Salto Esmagador
+= Crushing Leap
+
+Salta e desce com tudo. A pancada atordoa quem estiver perto.
+= Leap and come down hard. The impact stuns whoever is close.
+
+Terremoto
+= Earthquake
+
+Pisa tão forte que o chão racha. Tudo perto fica lento.
+= Stomp so hard the ground cracks. Everything nearby slows down.
+
+Frasco Ácido
+= Acid Flask
+
+Joga um frasco que estoura e deixa uma poça que corrói.
+= Throw a flask that bursts and leaves a corroding puddle.
+
+Remendo Rápido
+= Quick Patch
+
+Faz um curativo de campo em segundos. Cura agora e mais um pouco depois.
+= Field-dress a wound in seconds. Heals now and a little more afterwards.
+
+Bomba de Pregos
+= Nail Bomb
+
+Uma lata cheia de pregos e pólvora. Explode depois de um segundo.
+= A can full of nails and gunpowder. It explodes after a second.
+
+Armadilha de Mola
+= Spring Trap
+
+Arma uma armadilha no chão. Quem pisar fica preso.
+= Set a trap on the ground. Whoever steps on it gets stuck.
+
+Drone Remendado
+= Patched Drone
+
+Liga um drone feito de peças de Sentinela. Ele te segue e atira no que chegar perto.
+= Switch on a drone made from Sentinel parts. It follows you and shoots whatever comes close.
+
+Dardo Sonífero
+= Sleep Dart
+
+Um dardo com o que sobrou do sedativo da enfermaria. O alvo apaga por um tempo.
+= A dart with what is left of the infirmary's sedative. The target passes out for a while.
+
+Chuva de Pedras
+= Stone Rain
+
+Dispara um punhado de pedras em leque com o estilingue.
+= Fire a handful of stones in a fan with the slingshot.
+
+Sinalizador
+= Flare
+
+Acende um sinalizador de emergência no chão. Fogo branco que queima por segundos.
+= Light an emergency flare on the ground. White fire that burns for a few seconds.
+
+Mordida
+= Bite
+
+Ferrão
+= Sting
+
+Bote
+= Lunge
+
+Cuspe Ácido
+= Acid Spit
+
+Teia
+= Web
+
+Ninhada
+= Brood
+
+Laser
+= Laser
+
+Rajada
+= Burst
+
+Garra
+= Claw
+
+Salto
+= Leap
+
+Cassetete
+= Truncheon
+
+Taser
+= Taser
+
+Rifle
+= Rifle
+
+Martelo
+= Hammer
+
+Lâmina Giratória
+= Spinning Blade
+
+Investida do Ceifador
+= Reaper's Charge
+
+Raio
+= Lightning
+
+Chamado
+= Summon
+
+Pisão
+= Stomp
+
+Salto Colossal
+= Colossal Leap
+
+Míssil
+= Missile
+
+Leque de Laser
+= Laser Fan
+
+Reforços
+= Reinforcements
+
+Tiro de Drone
+= Drone Shot
+
+Boneco de Treino
+= Training Dummy
+
+Saco de areia, cabo de vassoura e uma cara pintada que lembra o Teo.
+= A sandbag, a broomstick and a painted face that looks like Teo.
+
+Tecelão Jovem
+= Young Weaver
+
+Do tamanho de um cachorro. Andam em bando.
+= The size of a dog. They move in packs.
+
+Tecelão
+= Weaver
+
+Metade bicho, metade máquina. Tece os muros de noite.
+= Half beast, half machine. It weaves the walls at night.
+
+Tecelão Cuspidor
+= Spitter Weaver
+
+Fica de longe e cospe o mesmo ácido que dissolve concreto.
+= Keeps its distance and spits the same acid that dissolves concrete.
+
+Tecelão Noturno
+= Night Weaver
+
+Só aparece depois que os portões fecham. Mais rápido que você.
+= Only shows up after the gates close. Faster than you.
+
+Tecelão Blindado
+= Armored Weaver
+
+Placas de aço onde deveria haver pele. Golpe fraco nem arranha.
+= Steel plates where skin should be. A weak blow doesn't even scratch it.
+
+Rastejador
+= Crawler
+
+Sobem pelas paredes do Fosso. Você ouve antes de ver.
+= They climb up the walls of the Pit. You hear them before you see them.
+
+Sentinela
+= Sentinel
+
+Olho voador. Quando ela te vê, todo o setor fica sabendo.
+= A flying eye. When it sees you, the whole sector knows.
+
+Engrenado
+= Geared
+
+Pernas de pistão e um martelo no lugar do braço. Choque faz ele travar.
+= Piston legs and a hammer instead of an arm. Shock makes it seize up.
+
+Vigia Mecânico
+= Mechanical Lookout
+
+Fica no alto dos destroços e atira em tudo que se mexe.
+= Sits on top of the wreckage and shoots everything that moves.
+
+Cinzento
+= Ashen
+
+Já foi alguém. A Cinza levou o resto.
+= It used to be someone. The Ash took the rest.
+
+Cinzento Bruto
+= Ashen Brute
+
+A doença inchou tudo. Inclusive a força.
+= The disease swelled everything. Including the strength.
+
+Guarda da ARCA
+= ARCA Guard
+
+Visor branco, cassetete, nenhuma pergunta.
+= White visor, truncheon, no questions.
+
+Atirador da ARCA
+= ARCA Marksman
+
+Mira laser vermelha. Se você vê o ponto no peito, já é tarde.
+= Red laser sight. If you see the dot on your chest, it's already too late.
+
+Ferrão, o Alfa
+= Stinger, the Alpha
+
+O maior do setor de hera. Os Corredores o chamam de Ferrão desde que ele levou o Davi.
+= The biggest in the ivy sector. The Runners have called it Stinger ever since it took Davi.
+
+A Tecelã-Mãe
+= The Weaver Mother
+
+De onde vêm os outros. O ninho dela ocupa o coração do setor de ferrugem.
+= Where the others come from. Her nest fills the heart of the rust sector.
+
+Olho-de-Vidro
+= Glass-Eye
+
+A sentinela-mãe. Vê o Fosso inteiro de uma vez.
+= The mother sentinel. It sees the whole Pit at once.
+
+O Ceifador
+= The Reaper
+
+Corta os muros velhos para os Tecelões tecerem os novos. E corta o que estiver no caminho.
+= It cuts down the old walls so the Weavers can weave new ones. And it cuts whatever is in the way.
+
+O Tecelão Primordial
+= The Primordial Weaver
+
+O primeiro Tecelão. O molde de todos os outros. Dorme enrolado em volta do Núcleo.
+= The first Weaver. The mold for all the others. It sleeps coiled around the Core.
+
+Executor ÉDEN
+= EDEN Executor
+
+O último protocolo da Dra. Vasco. Se o experimento falhar, ele apaga o experimento.
+= Dr. Vasco's last protocol. If the experiment fails, it erases the experiment.
+
+Teo
+= Teo
+
+Iara
+= Iara
+
+Líder do Pátio
+= Leader of the Yard
+
+Chefe dos Corredores
+= Head of the Runners
+
+Remendeira
+= Medic
+
+Mestre da Oficina
+= Workshop Master
+
+Cartógrafo
+= Cartographer
+
+O mais novo
+= The youngest
+
+Cozinheira
+= Cook
+
+Vigia do Portão Norte
+= North Gate Lookout
+
+Primeiro dia
+= First day
+
+Sobre a gravação
+= About the recording
+
+O que fazer agora?
+= What do I do now?
+
+Sobre o Pátio
+= About the Yard
+
+Sobre você
+= About you
+
+Os registros
+= The records
+
+A verdade nos terminais
+= The truth in the terminals
+
+Treino
+= Training
+
+Pronto
+= Ready
+
+Ainda não
+= Not yet
+
+Vem comigo
+= Come with me
+
+Dicas de Corredor
+= Runner tips
+
+Sobre os Tecelões
+= About the Weavers
+
+Uma noite lá fora
+= A night outside
+
+Primeira consulta
+= First checkup
+
+Negociar
+= Trade
+
+Me remenda?
+= Patch me up?
+
+Remédio de verdade
+= Real medicine
+
+Os ingredientes
+= The ingredients
+
+Sobre a enfermaria
+= About the infirmary
+
+Algo para se defender
+= Something to defend myself
+
+Sucata boa
+= Good scrap
+
+Trouxe a sucata
+= I brought the scrap
+
+Sobre a oficina
+= About the workshop
+
+O núcleo do Alfa
+= The Alpha core
+
+Os fragmentos
+= The fragments
+
+Mapas para o Caio
+= Maps for Caio
+
+O padrão
+= The pattern
+
+Sobre os mapas
+= About the maps
+
+A bússola
+= The compass
+
+Achei!
+= Found it!
+
+Conversar
+= Chat
+
+A faca da cozinha
+= The kitchen knife
+
+Devolver a faca
+= Return the knife
+
+O que ronda à noite
+= What prowls at night
+
+Feito
+= Done
+
+Primeiro Dia
+= First Day
+
+Você acordou dentro de uma jaula de metal subindo no escuro. Lá em cima, um jardim cercado por muros enormes e gente que também não lembra de nada.
+= You woke up inside a metal cage rising through the dark. Up top, a garden surrounded by enormous walls and people who don't remember anything either.
+
+Fale com a Iara, debaixo da árvore velha.
+= Talk to Iara, under the old tree.
+
+Deixe a Duda dar uma olhada em você na enfermaria, a noroeste.
+= Let Duda take a look at you in the infirmary, to the northwest.
+
+Arranje algo para se defender com o Marreta, na oficina a nordeste.
+= Get something to defend yourself from Marreta, at the workshop to the northeast.
+
+Derrube três bonecos de treino ao lado da oficina.
+= Knock down three training dummies next to the workshop.
+
+Fale com o Teo, perto do portão leste.
+= Talk to Teo, near the east gate.
+
+Corredores de Hera
+= Ivy Corridors
+
+O Caio quer estudar um núcleo de Tecelão. Não um qualquer: o do Ferrão, o maior do setor leste.
+= Caio wants to study a Weaver core. Not just any one: Stinger's, the biggest in the east sector.
+
+Atravesse o portão leste até o Setor 1.
+= Go through the east gate to Sector 1.
+
+Abata cinco Tecelões Jovens.
+= Kill five Young Weavers.
+
+Ache a arena no fundo do setor, abra a grade e derrube Ferrão, o Alfa.
+= Find the arena at the back of the sector, open the gate and bring down Stinger, the Alpha.
+
+Leve o núcleo do Alfa ao Caio, na Sala dos Mapas (sudeste do Pátio).
+= Take the Alpha core to Caio, in the Map Room (southeast of the Yard).
+
+O Padrão
+= The Pattern
+
+Cada setor tem um marco de concreto, e cada marco guarda uma placa com um símbolo. O Caio acha que os quatro símbolos juntos são uma chave.
+= Every sector has a concrete marker, and every marker holds a plate with a symbol. Caio thinks the four symbols together are a key.
+
+Pegue o fragmento no marco do Setor 1.
+= Take the fragment from the Sector 1 marker.
+
+Portão sul: derrube a Tecelã-Mãe no Setor 2 e pegue o fragmento do marco.
+= South gate: bring down the Weaver Mother in Sector 2 and take the fragment from the marker.
+
+Portão oeste: derrube o Olho-de-Vidro no Setor 3 e pegue o fragmento.
+= West gate: bring down Glass-Eye in Sector 3 and take the fragment.
+
+Portão norte: derrube o Ceifador no Setor 4 e pegue o fragmento.
+= North gate: bring down the Reaper in Sector 4 and take the fragment.
+
+Leve os quatro fragmentos ao Caio.
+= Take the four fragments to Caio.
+
+A Voz na Caixa
+= The Voice in the Box
+
+O Monta-Cargas subiu fora de época, sem ninguém dentro. Só um gravador velho com o seu nome na etiqueta.
+= The Lift came up out of schedule, with nobody inside. Just an old recorder with your name on the label.
+
+Ouça o gravador. (Use o Monta-Cargas, no centro do Pátio.)
+= Listen to the recorder. (Use the Lift, in the center of the Yard.)
+
+Fale com a Iara.
+= Talk to Iara.
+
+A Saída
+= The Way Out
+
+Os quatro símbolos formam a chave do Núcleo, embaixo do setor das engrenagens. Do outro lado, a ARCA.
+= The four symbols form the key to the Core, beneath the gear sector. On the other side, ARCA.
+
+Atravesse a passagem norte do Setor 4 e desça ao Núcleo.
+= Go through the north passage of Sector 4 and descend into the Core.
+
+Derrube o Tecelão Primordial.
+= Bring down the Primordial Weaver.
+
+Siga pela passagem norte do Núcleo até o laboratório da ARCA.
+= Follow the Core's north passage to the ARCA laboratory.
+
+Detenha o Executor ÉDEN.
+= Stop the EDEN Executor.
+
+Decida o destino do Pátio.
+= Decide the fate of the Yard.
+
+A Bússola do Nico
+= Nico's Compass
+
+O Nico jura que a bússola dele aponta para casa. Ele a perdeu quando seguiu escondido os Corredores até o setor leste.
+= Nico swears his compass points home. He lost it when he secretly followed the Runners into the east sector.
+
+Ache a bússola do Nico em algum beco do Setor 1.
+= Find Nico's compass in some dead end of Sector 1.
+
+Devolva a bússola ao Nico.
+= Give the compass back to Nico.
+
+Uma Noite Lá Fora
+= A Night Outside
+
+Ninguém que ficou no labirinto depois da sirene voltou para contar. O Teo acha que alguém precisa ser o primeiro.
+= Nobody who stayed in the maze after the siren ever came back to tell the tale. Teo thinks someone has to be the first.
+
+Sobreviva a uma noite inteira dentro do labirinto, do anoitecer até o amanhecer.
+= Survive a whole night inside the maze, from dusk until dawn.
+
+Conte ao Teo.
+= Tell Teo.
+
+Os muros mudam toda noite, mas o Caio insiste: se juntar mapas suficientes, o padrão aparece.
+= The walls change every night, but Caio insists: gather enough maps and the pattern will show.
+
+Entregue 40 trechos de mapa na Mesa dos Mapas.
+= Deliver 40 map sections at the Map Table.
+
+Entregue 120 trechos de mapa.
+= Deliver 120 map sections.
+
+Sucata Boa
+= Good Scrap
+
+O Marreta quer construir alguma coisa grande e não conta o quê.
+= Marreta wants to build something big and won't say what.
+
+Junte 12 fios de Tecelão.
+= Collect 12 Weaver threads.
+
+Junte 4 molas (as Sentinelas carregam algumas).
+= Collect 4 springs (Sentinels carry some).
+
+Leve tudo ao Marreta.
+= Take it all to Marreta.
+
+Remédio de Verdade
+= Real Medicine
+
+A Duda acha que dá para fazer um antídoto decente com o próprio veneno dos Tecelões.
+= Duda thinks you can make a decent antidote from the Weavers' own venom.
+
+Junte 5 frascos de fluido ácido (os Cuspidores carregam).
+= Collect 5 flasks of acid fluid (Spitters carry them).
+
+Junte 3 núcleos de Tecelão.
+= Collect 3 Weaver cores.
+
+Leve tudo à Duda.
+= Take it all to Duda.
+
+A Faca da Cozinha
+= The Kitchen Knife
+
+Alguém pegou a melhor faca da Bia. Ela tem um palpite de quem foi.
+= Someone took Bia's best knife. She has a hunch who it was.
+
+Devolva uma faca de cozinha à Bia.
+= Give a kitchen knife back to Bia.
+
+O Que Ronda à Noite
+= What Prowls at Night
+
+O Zeca passa as noites ouvindo os Tecelões arranharem o portão norte. Ele quer saber se eles sangram.
+= Zeca spends his nights listening to the Weavers scratch at the north gate. He wants to know if they bleed.
+
+Abata 6 Tecelões Noturnos (só saem depois que os portões fecham).
+= Kill 6 Night Weavers (they only come out after the gates close).
+
+Conte ao Zeca.
+= Tell Zeca.
+
+A Verdade nos Terminais
+= The Truth in the Terminals
+
+Os terminais da ARCA espalhados pelo labirinto guardam registros. A Iara quer saber o que eles dizem.
+= The ARCA terminals scattered around the maze hold records. Iara wants to know what they say.
+
+Leia seis registros nos terminais do labirinto.
+= Read six records at the terminals in the maze.
+
+Conte à Iara o que leu.
+= Tell Iara what you read.
+
+Oficina do Marreta
+= Marreta's Workshop
+
+Enfermaria da Duda
+= Duda's Infirmary
+
+Cozinha da Bia
+= Bia's Kitchen
+
+Sala dos Mapas
+= Map Room
+
+Setor 1 — Corredores de Hera
+= Sector 1 — Ivy Corridors
+
+O setor mais perto do Pátio. Hera nos muros, Tecelões jovens em bando.
+= The sector closest to the Yard. Ivy on the walls, young Weavers in packs.
+
+Setor 2 — Ninho de Ferrugem
+= Sector 2 — Rust Nest
+
+Placas de metal soltas, canos rompidos e o cheiro doce do ninho.
+= Loose metal plates, burst pipes and the sweet smell of the nest.
+
+Setor 3 — O Fosso
+= Sector 3 — The Pit
+
+O chão aqui some em buracos que ninguém viu o fundo. Os Rastejadores sobem por eles.
+= The floor here vanishes into holes nobody has seen the bottom of. The Crawlers climb up through them.
+
+Setor 4 — As Engrenagens
+= Sector 4 — The Gears
+
+Os muros aqui são máquinas. Dá para ouvir o labirinto inteiro trabalhando.
+= The walls here are machines. You can hear the whole maze working.
+
+O Núcleo
+= The Core
+
+Embaixo das engrenagens, o lugar de onde todos os Tecelões saem. Cabos, cristais, e um zumbido que não para.
+= Beneath the gears, the place all the Weavers come from. Cables, crystals, and a hum that never stops.
+
+Laboratório ÉDEN
+= EDEN Laboratory
+
+Paredes brancas, luz fria e janelas que dão para o labirinto inteiro. Sempre estiveram olhando.
+= White walls, cold light and windows overlooking the whole maze. They were always watching.
+
+Riscado no concreto
+= Scratched into the concrete
+
+Dia 41. O muro que estava aqui ontem agora está duas celas para o leste.\nEu vi um deles tecendo. Não constrói: costura. Fio cinza saindo da barriga, endurecendo em concreto.\nSe alguém achar isso, o portão fecha às sete e meia. Não confie no relógio do sol. Confie na sirene.\n— D.
+= Day 41. The wall that was here yesterday is now two cells to the east.\nI saw one of them weaving. It doesn't build: it sews. Grey thread coming out of its belly, hardening into concrete.\nIf anyone finds this, the gate closes at seven thirty. Don't trust the sun. Trust the siren.\n— D.
+
+Desconhecido
+= Unknown
+
+Ordem de serviço 0017
+= Work order 0017
+
+PROJETO ÉDEN · SETOR 1\nConfiguração inicial: 81 células, hera ornamental, densidade de ameaça BAIXA.\nObjetivo: aclimatação. Sujeitos devem sentir que o setor 1 é vencível.\nObs. do Arquiteto: "Eles precisam de esperança para que o medo tenha onde se apoiar."
+= PROJECT EDEN · SECTOR 1\nInitial setup: 81 cells, ornamental ivy, threat density LOW.\nGoal: acclimatization. Subjects must feel that sector 1 can be beaten.\nArchitect's note: "They need hope so that fear has something to lean on."
+
+ARCA — Engenharia
+= ARCA — Engineering
+
+Manual de manutenção — Unidade Matriz
+= Maintenance manual — Matrix Unit
+
+A Unidade Matriz (apelido interno: "Mãe") produz em média 3 Tecelões por ciclo.\nTecelões são tecido de hospedeiro cinzento estabilizado sobre esqueleto de liga.\nNão estão vivos. Também não estão mortos. Recomendamos não discutir isso com a equipe nova.
+= The Matrix Unit (internal nickname: "Mother") produces 3 Weavers per cycle on average.\nWeavers are stabilized ashen host tissue over an alloy skeleton.\nThey are not alive. They are not dead either. We recommend not discussing this with new staff.
+
+ARCA — Biotecnologia
+= ARCA — Biotechnology
+
+Relatório de comportamento, grupo B
+= Behavior report, group B
+
+Os sujeitos formaram hierarquia em 9 dias. Elegeram uma líder (sujeito B-07, "Iara").\nCriaram regras, um cemitério e um muro com nomes.\nNinguém programou isso. É exatamente o que estamos medindo: o que sobra de humano quando se apaga a memória.
+= The subjects formed a hierarchy in 9 days. They elected a leader (subject B-07, "Iara").\nThey created rules, a cemetery and a wall of names.\nNobody programmed that. It is exactly what we are measuring: what is left of a human when memory is erased.
+
+Dra. H. Vasco
+= Dr. H. Vasco
+
+Bilhete dobrado
+= Folded note
+
+Se a caixa trouxer alguém chamado Nico, fala pra ele que a mãe dele tentou.\nFala que ela pediu pra ir junto e não deixaram.\nFala que a bússola aponta pra onde ela está.
+= If the box brings someone called Nico, tell him his mother tried.\nTell him she asked to go with him and they wouldn't let her.\nTell him the compass points to where she is.
+
+Especificação — Sentinela S-4
+= Specification — Sentinel S-4
+
+Drone autônomo de observação. Cada Sentinela transmite 220 horas de vídeo por mês para o laboratório.\nPrioridade de gravação: situações de risco, conflito e decisão moral.\nA unidade Olho-de-Vidro coordena as Sentinelas do Setor 3 e não deve ser exposta aos sujeitos.
+= Autonomous observation drone. Each Sentinel transmits 220 hours of video per month to the laboratory.\nRecording priority: situations of risk, conflict and moral decision.\nThe Glass-Eye unit coordinates the Sector 3 Sentinels and must not be exposed to the subjects.
+
+ARCA — Vigilância
+= ARCA — Surveillance
+
+O que é a Cinza
+= What the Ash is
+
+Síndrome de Desagregação Neural, chamada popularmente de "a Cinza".\nA pele acinzenta primeiro. Depois a memória. Depois o nome. O corpo continua andando.\nTaxa de contaminação global estimada: 94%.\nImunes conhecidos: 312. Todos com menos de 19 anos.
+= Neural Disaggregation Syndrome, popularly called "the Ash".\nThe skin greys first. Then the memory. Then the name. The body keeps walking.\nEstimated global contamination rate: 94%.\nKnown immunes: 312. All under 19 years old.
+
+ARCA — Saúde Pública (arquivo)
+= ARCA — Public Health (archive)
+
+Mensagem interna
+= Internal message
+
+Helena, eu desenhei os muros e eu desenhei os Tecelões. Não vou desenhar a próxima fase.\nVocê quer que eles tenham medo o bastante para o cérebro deles mostrar o caminho da cura.\nEu quero saber o que acontece com eles quando a gente tiver o que quer.
+= Helena, I designed the walls and I designed the Weavers. I will not design the next phase.\nYou want them to be afraid enough for their brains to show the way to the cure.\nI want to know what happens to them once we have what we want.
+
+Arquiteto-chefe "Dédalo"
+= Chief Architect "Daedalus"
+
+Unidade de demolição C-1
+= Demolition unit C-1
+
+O Ceifador remove muros antigos antes da reconfiguração noturna.\nSensores de presença desativados por decisão da diretoria em 3 de março.\n(Anotação à mão: "eles mandaram desligar os sensores. Quem estiver no caminho, fica no caminho.")
+= The Reaper removes old walls before the nightly reconfiguration.\nPresence sensors disabled by board decision on March 3.\n(Handwritten note: "they ordered the sensors off. Whoever is in the way stays in the way.")
+
+Cronograma de reconfiguração
+= Reconfiguration schedule
+
+20:00 — fechamento dos portões do Pátio.\n21:00 a 05:00 — movimentação de muros a cada hora. Tecelões noturnos liberados.\n06:00 — abertura. A planta do dia é gerada a partir da semente do ciclo.\nNinguém deve ver a mesma planta duas vezes. Isso é importante.
+= 20:00 — Yard gates close.\n21:00 to 05:00 — walls move every hour. Night Weavers released.\n06:00 — opening. The day's layout is generated from the cycle seed.\nNobody should ever see the same layout twice. This is important.
+
+ARCA — Operações
+= ARCA — Operations
+
+Termo de entrada
+= Entry agreement
+
+Eu, abaixo assinado, Arquiteto-chefe do Projeto ÉDEN, solicito minha inclusão como sujeito no Pátio, com aplicação completa do Protocolo Lete.\nDeixo um gravador para ser entregue no momento oportuno.\nAssinatura: [rasurada]\nDeferido: Dra. H. Vasco. "Que seja. Talvez ele ache a saída que ele mesmo escondeu."
+= I, the undersigned, Chief Architect of Project EDEN, request my inclusion as a subject in the Yard, with full application of the Lethe Protocol.\nI leave a recorder to be delivered at the right moment.\nSignature: [scratched out]\nApproved: Dr. H. Vasco. "So be it. Maybe he'll find the way out he hid himself."
+
+ARCA — Recursos Humanos
+= ARCA — Human Resources
+
+Unidade Primordial
+= Primordial Unit
+
+O primeiro Tecelão foi construído sobre o corpo do paciente zero da Cinza.\nEle não obedece a comandos. Ele obedece ao Núcleo.\nO Núcleo é o servidor que guarda os mapas neurais de todos os sujeitos, desde o primeiro dia.
+= The first Weaver was built over the body of the Ash's patient zero.\nIt does not obey commands. It obeys the Core.\nThe Core is the server that stores the neural maps of every subject, since day one.
+
+Contenção, ala leste
+= Containment, east wing
+
+Três hospedeiros cinzentos escaparam da ala de cultura de tecido.\nNão tentem conversar. Eles às vezes repetem palavras. Não significa que entendem.\nUm deles repetia um nome. Davi.
+= Three ashen hosts escaped from the tissue culture wing.\nDo not try to talk to them. They sometimes repeat words. That does not mean they understand.\nOne of them kept repeating a name. Davi.
+
+ARCA — Segurança
+= ARCA — Security
+
+Diário da diretora
+= Director's journal
+
+Mais cem dias. Os mapas neurais do grupo B estão quase completos.\nSe a cura funcionar, ninguém vai perguntar como a gente chegou nela.\nSe não funcionar, ninguém vai sobrar para perguntar.
+= A hundred more days. The neural maps of group B are almost complete.\nIf the cure works, nobody will ask how we got there.\nIf it doesn't, there will be nobody left to ask.
+
+Projeto ÉDEN — resumo
+= Project EDEN — summary
+
+Hipótese: o padrão de atividade cerebral dos imunes sob estresse extremo contém a chave da resistência à Cinza.\nMétodo: ambiente hostil controlado (o Labirinto), apagamento de memória (Protocolo Lete), observação contínua.\nO Pátio é o grupo de controle. O Labirinto é o experimento.
+= Hypothesis: the brain activity pattern of immunes under extreme stress holds the key to resisting the Ash.\nMethod: controlled hostile environment (the Maze), memory erasure (Lethe Protocol), continuous observation.\nThe Yard is the control group. The Maze is the experiment.
+
+ARCA — Diretoria
+= ARCA — Board of Directors
+
+Ficha de funcionário
+= Staff file
+
+Arquiteto-chefe. Codinome: Dédalo.\nResponsável pelo desenho do Labirinto, dos Tecelões e da porta do Núcleo.\nObservação: incluiu sem autorização uma "chave de saída" baseada nos quatro marcos de setor. Diretoria decidiu manter. "Esperança é parte do teste."
+= Chief Architect. Codename: Daedalus.\nResponsible for designing the Maze, the Weavers and the Core door.\nNote: included without authorization an "exit key" based on the four sector markers. The board decided to keep it. "Hope is part of the test."
+
+Janela da sala de controle
+= Control room window
+
+Do outro lado do vidro, o mundo de verdade: cidade apagada, estradas vazias, cinza até o horizonte.\nO Labirinto é o lugar mais seguro que sobrou.\nTalvez por isso a gente nunca tenha conseguido sair.
+= On the other side of the glass, the real world: a dark city, empty roads, ash all the way to the horizon.\nThe Maze is the safest place left.\nMaybe that's why we never managed to leave.
+
+Anotação na moldura
+= Note on the frame
+
+Protocolo Executor
+= Executor Protocol
+
+Se um sujeito alcançar a sala de controle sem autorização, ativar o Executor.\nO experimento não pode ser contaminado pelo conhecimento de si mesmo.\nSe eu estiver errada, que pelo menos tenha sido por uma boa razão.
+= If a subject reaches the control room without authorization, activate the Executor.\nThe experiment cannot be contaminated by knowledge of itself.\nIf I am wrong, at least let it have been for a good reason.

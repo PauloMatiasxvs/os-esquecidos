@@ -95,6 +95,63 @@ namespace Esquecidos.Nucleo.Dados
         /// o tipo de erro que so apareceria no meio da partida; aqui ele aparece
         /// na carga, com o nome do que falta.
         /// </summary>
+        /// <summary>Passa cada texto de jogador do catalogo pela funcao e guarda o resultado.</summary>
+        public void PassarTextos(Func<string, string> f)
+        {
+            foreach (Classe c in Classes.Values)
+            {
+                c.Nome = f(c.Nome);
+                c.Papel = f(c.Papel);
+                c.Descricao = f(c.Descricao);
+            }
+            foreach (ItemBase i in Itens.Values)
+            {
+                i.Nome = f(i.Nome);
+                i.Descricao = f(i.Descricao);
+            }
+            foreach (Afixo a in Afixos.Values)
+            {
+                a.NomeMasculino = f(a.NomeMasculino);
+                a.NomeFeminino = f(a.NomeFeminino);
+            }
+            foreach (Poder p in Poderes.Values)
+            {
+                p.Nome = f(p.Nome);
+                p.Descricao = f(p.Descricao);
+            }
+            foreach (InimigoDef d in Inimigos.Values)
+            {
+                d.Nome = f(d.Nome);
+                d.Descricao = f(d.Descricao);
+            }
+            foreach (NpcDef n in Npcs.Values) n.Titulo = f(n.Titulo);
+            foreach (DialogoDef d in Dialogos) d.Topico = f(d.Topico);
+            foreach (MissaoDef m in Missoes.Values)
+            {
+                m.Nome = f(m.Nome);
+                m.Descricao = f(m.Descricao);
+                foreach (EtapaDeMissao e in m.Etapas) e.Texto = f(e.Texto);
+            }
+            foreach (LojaDef l in Lojas.Values) l.Nome = f(l.Nome);
+            foreach (SetorDef s in Setores.Values)
+            {
+                s.Nome = f(s.Nome);
+                s.Descricao = f(s.Descricao);
+            }
+            foreach (RegistroDef r in Registros.Values)
+            {
+                r.Titulo = f(r.Titulo);
+                r.Texto = f(r.Texto);
+                r.Autor = f(r.Autor);
+            }
+        }
+
+        /// <summary>Traduz o catalogo para o idioma atual (nao faz nada em portugues).</summary>
+        public void Traduzir()
+        {
+            if (!Idioma.EmPortugues) PassarTextos(Idioma.T);
+        }
+
         public List<string> Validar(Func<string, bool> roteiroExiste = null)
         {
             var erros = new List<string>();

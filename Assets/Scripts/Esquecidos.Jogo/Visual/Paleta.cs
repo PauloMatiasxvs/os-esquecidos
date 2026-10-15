@@ -63,7 +63,7 @@ namespace Esquecidos.Jogo.Visual
                         m.SetFloat("_Ferrugem", 0.5f);
                         break;
                     case "laboratorio":
-                        m.SetColor("_CorBase", new Color(0.66f, 0.69f, 0.72f));
+                        m.SetColor("_CorBase", new Color(0.36f, 0.39f, 0.44f));
                         m.SetFloat("_Hera", 0f);
                         m.SetFloat("_Musgo", 0f);
                         m.SetFloat("_Lab", 1f);

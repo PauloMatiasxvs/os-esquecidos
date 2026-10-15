@@ -46,15 +46,15 @@ estat_por_atributo=ofensiva,esquiva,0.4
 estat=critico,4
 estat_por_atributo=ofensiva,critico,0.7
 
-estat=dano_corpo_min,1
-estat=dano_corpo_max,3
+estat=dano_corpo_min,2
+estat=dano_corpo_max,4
 estat_por_nivel=dano_corpo_min,0.4
 estat_por_nivel=dano_corpo_max,0.6
 estat_por_atributo=fisico,dano_corpo_min,1
 estat_por_atributo=fisico,dano_corpo_max,1.2
 
-estat=dano_dist_min,1
-estat=dano_dist_max,2
+estat=dano_dist_min,2
+estat=dano_dist_max,3
 estat_por_nivel=dano_dist_min,0.4
 estat_por_nivel=dano_dist_max,0.6
 estat_por_atributo=ofensiva,dano_dist_min,0.8

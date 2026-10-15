@@ -38,8 +38,8 @@ namespace Esquecidos.Jogo
         public void Atualizar(float dt, bool interfaceAberta)
         {
             CameraDoJogo cam = _p.Camera;
-            if (Controles.Desceu(Key.Q)) cam.Girar(-1);
-            if (Controles.Desceu(Key.E)) cam.Girar(1);
+            if (Controles.Desceu(Acao.GirarEsquerda)) cam.Girar(-1);
+            if (Controles.Desceu(Acao.GirarDireita)) cam.Girar(1);
             float roda = Controles.Roda;
             bool sobreUi = EventSystem.current != null && EventSystem.current.IsPointerOverGameObject();
             if (Mathf.Abs(roda) > 0.01f && !sobreUi) cam.Aproximar(Mathf.Sign(roda));
@@ -122,15 +122,15 @@ namespace Esquecidos.Jogo
 
             if ((Controles.CliqueDireitoDesceu || (Controles.CliqueDireitoSegurado && Partida.Jogador != null && !Partida.Jogador.Ocupado)) && !sobreUi)
                 Partida.UsarBarra(1, ponto, alvo);
-            Key[] teclas = { Key.Digit1, Key.Digit2, Key.Digit3, Key.Digit4, Key.Digit5, Key.Digit6 };
+            Acao[] teclas = { Acao.Barra1, Acao.Barra2, Acao.Barra3, Acao.Barra4, Acao.Barra5, Acao.Barra6 };
             for (int i = 0; i < teclas.Length; i++)
                 if (Controles.Desceu(teclas[i])) Partida.UsarBarra(2 + i, ponto, alvo);
-            if (Controles.Desceu(Key.Space))
+            if (Controles.Desceu(Acao.Rolar))
             {
                 V2 rumo = m.sqrMagnitude > 0.01f ? Util.Plano(Partida.Jogador != null ? Util.Mundo(Partida.Jogador.Pos) + dir3 : PontoNoChao) : ponto;
                 Partida.Esquivar(rumo);
             }
-            if (Controles.Desceu(Key.F)) Partida.InteragirComOMaisProximo();
+            if (Controles.Desceu(Acao.Interagir)) Partida.InteragirComOMaisProximo();
 
             if (gp != null) Controle_(gp, dir3);
         }

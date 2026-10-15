@@ -64,6 +64,8 @@ namespace Esquecidos.Nucleo.Roteiro
                 if (atual == null) throw new FormatException($"{arquivo}:{n + 1} comando fora de roteiro (falta '@nome')");
                 List<string> partes = Tokenizar(bruta, arquivo, n + 1);
                 var linha = new LinhaDeRoteiro { Comando = partes[0], Args = partes.Skip(1).ToArray(), Numero = n + 1, Arquivo = arquivo };
+                if (!Idioma.EmPortugues)
+                    foreach (int i in Traduziveis(linha)) linha.Args[i] = Idioma.T(linha.Args[i]);
                 if (linha.Comando == "rotulo")
                 {
                     if (linha.Args.Length != 1) throw new FormatException($"{arquivo}:{n + 1} 'rotulo' precisa de um nome");
@@ -72,6 +74,32 @@ namespace Esquecidos.Nucleo.Roteiro
                 atual.Linhas.Add(linha);
             }
             return lista;
+        }
+
+        /// <summary>
+        /// Quais argumentos da linha sao texto para o jogador ler: a fala, a
+        /// narracao, as opcoes da escolha, a legenda, a dica, e o nome de quem
+        /// fala quando nao e um id de personagem ("Sua voz", "Dra. Vasco").
+        /// </summary>
+        public static IEnumerable<int> Traduziveis(LinhaDeRoteiro l)
+        {
+            string[] a = l.Args;
+            switch (l.Comando)
+            {
+                case "fala":
+                    if (a.Length > 0 && (a[0].Contains(" ") || a[0].Any(char.IsUpper))) yield return 0;
+                    if (a.Length > 1) yield return 1;
+                    break;
+                case "narra":
+                case "legenda":
+                case "dica":
+                    if (a.Length > 0) yield return 0;
+                    break;
+                case "escolha":
+                    for (int i = 0; i + 1 < a.Length; i++)
+                        if (a[i + 1] == "->" && a[i] != "->") yield return i;
+                    break;
+            }
         }
 
         public static List<string> Tokenizar(string linha, string arquivo = "?", int numero = 0)

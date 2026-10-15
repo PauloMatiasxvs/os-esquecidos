@@ -272,7 +272,7 @@ namespace Esquecidos.Nucleo.Mapas
             {
                 Id = 0,
                 Tipo = TipoObjeto.Porta,
-                Nome = "Grade da arena",
+                Nome = Idioma.T("Grade da arena"),
                 Pos = retPorta.Centro,
                 Direcao = arestaPorta.Item3 == 0 ? MathF.PI / 2 : 0,
                 TemBloqueio = true,
@@ -280,7 +280,7 @@ namespace Esquecidos.Nucleo.Mapas
                 BloqueiaLigado = false,
                 Ligado = def.Alavancas == 0,
                 Interativo = def.Alavancas > 0,
-                Mensagem = def.Alavancas > 1 ? $"Trancada. {def.Alavancas} alavancas mexem nessa grade." : "Trancada. Alguma alavanca abre isso.",
+                Mensagem = def.Alavancas > 1 ? Idioma.F("Trancada. {0} alavancas mexem nessa grade.", def.Alavancas) : Idioma.T("Trancada. Alguma alavanca abre isso."),
                 Modelo = "grade",
                 Altura = mapa.AlturaDosMuros * 0.55f,
                 Largura = T - Espessura,
@@ -323,7 +323,7 @@ namespace Esquecidos.Nucleo.Mapas
                 var alavanca = new ObjetoDeCena
                 {
                     Tipo = TipoObjeto.Alavanca,
-                    Nome = "Alavanca",
+                    Nome = Idioma.T("Alavanca"),
                     Pos = pos,
                     Direcao = dir,
                     RaioInteracao = 2.2f,
@@ -340,7 +340,7 @@ namespace Esquecidos.Nucleo.Mapas
                 mapa.Objetos.Add(new ObjetoDeCena
                 {
                     Tipo = TipoObjeto.Bau,
-                    Nome = "Caixa de suprimentos",
+                    Nome = Idioma.T("Caixa de suprimentos"),
                     Pos = pos,
                     Direcao = dir,
                     RaioInteracao = 2f,
@@ -361,7 +361,7 @@ namespace Esquecidos.Nucleo.Mapas
                 mapa.Objetos.Add(new ObjetoDeCena
                 {
                     Tipo = TipoObjeto.Terminal,
-                    Nome = "Terminal da ARCA",
+                    Nome = Idioma.T("Terminal da ARCA"),
                     Pos = pos,
                     Direcao = dir,
                     RaioInteracao = 2f,
@@ -378,7 +378,7 @@ namespace Esquecidos.Nucleo.Mapas
             mapa.Objetos.Add(new ObjetoDeCena
             {
                 Tipo = TipoObjeto.Marco,
-                Nome = "Marco do " + def.Nome.Split('—')[0].Trim(),
+                Nome = Idioma.F("Marco do {0}", def.Nome.Split('—')[0].Trim()),
                 Pos = centroArena + new Vector2(0, T * 0.9f),
                 RaioInteracao = 2.6f,
                 Modelo = "marco",
@@ -478,7 +478,7 @@ namespace Esquecidos.Nucleo.Mapas
             var o = new ObjetoDeCena
             {
                 Tipo = TipoObjeto.MuroMovel,
-                Nome = "Muro",
+                Nome = Idioma.T("Muro"),
                 Pos = r.Centro,
                 Direcao = a.Item3 == 0 ? MathF.PI / 2 : 0,
                 Interativo = false,
@@ -573,7 +573,7 @@ namespace Esquecidos.Nucleo.Mapas
             var portao = new ObjetoDeCena
             {
                 Tipo = TipoObjeto.Porta,
-                Nome = sul ? "Portão do Pátio" : "Passagem",
+                Nome = sul ? Idioma.T("Portão do Pátio") : Idioma.T("Passagem"),
                 Pos = new Vector2(xc, meio),
                 TemBloqueio = true,
                 Bloqueio = new Retangulo(x0 + e, meio - 0.6f, x1 - e, meio + 0.6f),
@@ -592,7 +592,7 @@ namespace Esquecidos.Nucleo.Mapas
             mapa.Objetos.Add(new ObjetoDeCena
             {
                 Tipo = TipoObjeto.Saida,
-                Nome = sul ? "Voltar ao Pátio" : "Seguir em frente",
+                Nome = sul ? Idioma.T("Voltar ao Pátio") : Idioma.T("Seguir em frente"),
                 Pos = new Vector2(xc, sul ? fim + 2.5f : fim - 2.5f),
                 RaioInteracao = 2.4f,
                 Destino = sul ? def.Retorno().mapa : def.Proximo,

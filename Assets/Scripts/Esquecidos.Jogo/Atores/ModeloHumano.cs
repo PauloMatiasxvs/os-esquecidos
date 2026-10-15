@@ -21,10 +21,13 @@ namespace Esquecidos.Jogo.Atores
         public Color? CorLuvas;
         public Color? CorBotas;
         public Color? CorOlhos;
+        /// <summary>Modelo do item nos pes e nas maos ("botas", "tenis", "luvas", "manoplas"); nulo e o padrao.</summary>
+        public string ModeloBotas;
+        public string ModeloLuvas;
 
         public string Chave()
         {
-            return string.Join("|", Ap.Pele, Ap.Cabelo, Ap.Penteado, Ap.Roupa, Ap.Calca, Ap.Botas, Ap.Acessorio, Ap.Porte.ToString("0.00"), Tipo,
+            return string.Join("|", Ap.Pele, Ap.Cabelo, Ap.Penteado, Ap.Roupa, Ap.Calca, Ap.Botas, Ap.Acessorio, Ap.Porte.ToString("0.00"), Tipo, ModeloBotas, ModeloLuvas,
                 Chapeu, Util.Hex(CorChapeu), Veste, CorVeste.HasValue ? Util.Hex(CorVeste.Value) : "-",
                 CorLuvas.HasValue ? Util.Hex(CorLuvas.Value) : "-", CorBotas.HasValue ? Util.Hex(CorBotas.Value) : "-",
                 CorOlhos.HasValue ? Util.Hex(CorOlhos.Value) : "-");
@@ -97,6 +100,7 @@ namespace Esquecidos.Jogo.Atores
             c.Esfera(new Vector3(-Ombro * w, 0.47f, 0), new Vector3(0.075f, 0.07f, 0.08f), 6, 8);
             c.Esfera(new Vector3(Ombro * w, 0.47f, 0), new Vector3(0.075f, 0.07f, 0.08f), 6, 8);
             c.Cor(pele).Tubo(new Vector3(0, 0.48f, 0), new Vector3(0, 0.6f, 0.01f), 0.055f, 0.05f, 8);
+            if (!cinzento && !guarda) Camisa(c, d, roupa, w);
             Veste(c, d, roupa, w);
             Acessorio(c, a.Acessorio, w);
             if (cinzento)
@@ -116,32 +120,115 @@ namespace Esquecidos.Jogo.Atores
             for (int lado = -1; lado <= 1; lado += 2)
             {
                 bool mangaLonga = d.Veste == "jaqueta" || d.Veste == "jaleco" || guarda || d.Veste == "peitoral";
-                c.Cor(roupa).Capsula(Vector3.zero, new Vector3(0, -Braco, 0), 0.056f * w, 0.05f * w, 8);
+                Color manga = d.Veste == "jaleco" ? new Color(0.94f, 0.94f, 0.95f) : roupa;
+                c.Cor(manga).Capsula(Vector3.zero, new Vector3(0, -Braco, 0), 0.056f * w, 0.05f * w, 8);
+                if (!mangaLonga && !cinzento)
+                {
+                    // Barra da manga curta: um anel mais largo que o braco, e o braco de fora.
+                    c.Cor(Util.Escurecer(manga, 0.82f)).Tubo(new Vector3(0, -Braco * 0.55f, 0), new Vector3(0, -Braco * 0.68f, 0), 0.062f * w, 0.06f * w, 8);
+                    c.Cor(pele).Capsula(new Vector3(0, -Braco * 0.68f, 0), new Vector3(0, -Braco, 0), 0.047f * w, 0.046f * w, 8);
+                }
                 if (guarda) c.Cor(new Color(0.88f, 0.9f, 0.92f)).Esfera(new Vector3(0, -0.02f, 0), new Vector3(0.09f, 0.07f, 0.09f), 5, 8);
+                if (d.Veste == "peitoral")
+                {
+                    // Ombreira de placas, a peca que mais muda a silhueta.
+                    c.Cor(Util.Escurecer(roupa, 0.85f)).Esfera(new Vector3(lado * 0.015f, -0.01f, 0), new Vector3(0.095f, 0.07f, 0.095f), 5, 8);
+                    c.Cor(Util.Escurecer(roupa, 0.6f)).Tubo(new Vector3(0, -0.045f, 0), new Vector3(0, -0.06f, 0), 0.09f, 0.086f, 8);
+                }
+                if (d.Veste == "jaqueta") c.Cor(Util.Escurecer(roupa, 0.7f)).Tubo(new Vector3(0, -Braco + 0.02f, 0), new Vector3(0, -Braco - 0.02f, 0), 0.058f * w, 0.058f * w, 8);
                 Mesh braco = c.Gerar("braco");
                 c.Limpar();
-                c.Cor(mangaLonga ? roupa : pele).Capsula(Vector3.zero, new Vector3(0, -Antebraco, 0), 0.048f * w, 0.04f * w, 8);
-                c.Cor(maos).Esfera(new Vector3(0, -Antebraco - 0.045f, 0.01f), new Vector3(0.05f, 0.06f, 0.045f), 5, 8);
-                // Polegar, para a mao nao parecer bola.
-                c.Esfera(new Vector3(lado * -0.035f, -Antebraco - 0.03f, 0.035f), new Vector3(0.018f, 0.03f, 0.018f), 3, 5);
+                c.Cor(mangaLonga ? manga : pele).Capsula(Vector3.zero, new Vector3(0, -Antebraco, 0), 0.048f * w, 0.04f * w, 8);
+                if (mangaLonga) c.Cor(Util.Escurecer(manga, 0.75f)).Tubo(new Vector3(0, -Antebraco + 0.035f, 0), new Vector3(0, -Antebraco + 0.005f, 0), 0.047f * w, 0.046f * w, 8);
+                Mao(c, d.ModeloLuvas, maos, lado);
                 Mesh antebraco = c.Gerar("antebraco");
                 c.Limpar();
                 if (lado < 0) { p.BracoE = braco; p.AntebracoE = antebraco; }
                 else { p.BracoD = braco; p.AntebracoD = antebraco; }
 
                 c.Cor(calca).Capsula(Vector3.zero, new Vector3(0, -Coxa, 0), 0.08f * w, 0.065f * w, 8);
+                // Bolso lateral: a calca deixa de ser um tubo liso.
+                c.Cor(Util.Escurecer(calca, 0.8f)).Caixa(new Vector3(lado * 0.07f * w, -0.16f, 0), new Vector3(0.02f, 0.11f, 0.09f), 0.01f);
                 Mesh coxa = c.Gerar("coxa");
                 c.Limpar();
                 c.Cor(calca).Capsula(Vector3.zero, new Vector3(0, -Canela + 0.1f, 0), 0.062f * w, 0.05f * w, 8);
-                c.Cor(botas).Tubo(new Vector3(0, -Canela + 0.16f, 0), new Vector3(0, -Canela - 0.02f, 0), 0.058f * w, 0.055f * w, 8);
-                c.Caixa(new Vector3(0, -Canela - 0.035f, 0.05f), new Vector3(0.1f * w, 0.07f, 0.24f), 0.025f);
-                c.Cor(Util.Escurecer(botas, 0.5f)).Caixa(new Vector3(0, -Canela - 0.068f, 0.05f), new Vector3(0.104f * w, 0.015f, 0.245f));
+                // Joelho gasto, mais escuro.
+                c.Cor(Util.Escurecer(calca, 0.78f)).Esfera(new Vector3(0, -0.01f, 0.045f * w), new Vector3(0.05f * w, 0.05f, 0.025f), 4, 6);
+                Calcado(c, d.ModeloBotas, botas, w);
                 Mesh canela = c.Gerar("canela");
                 c.Limpar();
                 if (lado < 0) { p.CoxaE = coxa; p.CanelaE = canela; }
                 else { p.CoxaD = coxa; p.CanelaD = canela; }
             }
             return p;
+        }
+
+        /// <summary>Gola, barra e bolso: a roupa de baixo de todo mundo.</summary>
+        private static void Camisa(ConstrutorDeMalha c, DadosDeHumano d, Color roupa, float w)
+        {
+            Color escura = Util.Escurecer(roupa, 0.78f);
+            // Gola em V aberta, duas abas inclinadas.
+            for (int l = -1; l <= 1; l += 2)
+            {
+                c.Empurrar(new Vector3(l * 0.045f, 0.47f, 0.095f * w), Quaternion.Euler(-20, 0, l * 35));
+                c.Cor(escura).Caixa(Vector3.zero, new Vector3(0.07f, 0.03f, 0.04f), 0.008f);
+                c.Puxar();
+            }
+            // Barra da camisa por cima do cinto.
+            c.Cor(escura).Tubo(new Vector3(0, 0.025f, 0), new Vector3(0, 0.055f, 0), 0.165f * w, 0.165f * w, 12);
+            if (d.Veste == null && d.Ap.Acessorio != "avental" && d.Ap.Acessorio != "avental_couro")
+            {
+                c.Cor(escura).Caixa(new Vector3(-0.09f * w, 0.36f, 0.123f * w), new Vector3(0.07f, 0.075f, 0.01f), 0.004f);
+                c.Cor(Util.Escurecer(roupa, 0.65f));
+                for (int i = 0; i < 3; i++) c.Esfera(new Vector3(0, 0.2f + i * 0.09f, 0.122f * w), Vector3.one * 0.008f, 2, 4);
+            }
+        }
+
+        /// <summary>Mao com dedos juntos e polegar; luva com punho; manopla de placas, maior.</summary>
+        private static void Mao(ConstrutorDeMalha c, string modelo, Color cor, int lado)
+        {
+            float y = -Antebraco - 0.045f;
+            if (modelo == "manoplas")
+            {
+                c.Cor(cor).Tubo(new Vector3(0, -Antebraco + 0.06f, 0), new Vector3(0, -Antebraco - 0.01f, 0), 0.05f, 0.056f, 8);
+                c.Caixa(new Vector3(0, y - 0.005f, 0.012f), new Vector3(0.09f, 0.1f, 0.075f), 0.02f);
+                c.Cor(Util.Escurecer(cor, 0.6f)).Caixa(new Vector3(0, y + 0.02f, 0.05f), new Vector3(0.092f, 0.012f, 0.012f));
+                c.Cor(cor).Esfera(new Vector3(lado * -0.045f, y + 0.015f, 0.04f), new Vector3(0.022f, 0.035f, 0.022f), 3, 5);
+                return;
+            }
+            if (modelo == "luvas") c.Cor(Util.Escurecer(cor, 0.8f)).Tubo(new Vector3(0, -Antebraco + 0.03f, 0), new Vector3(0, -Antebraco - 0.005f, 0), 0.046f, 0.048f, 8);
+            c.Cor(cor).Esfera(new Vector3(0, y, 0.01f), new Vector3(0.05f, 0.06f, 0.045f), 5, 8);
+            c.Esfera(new Vector3(0, y - 0.045f, 0.022f), new Vector3(0.042f, 0.03f, 0.03f), 4, 6);
+            c.Esfera(new Vector3(lado * -0.035f, y + 0.015f, 0.035f), new Vector3(0.018f, 0.03f, 0.018f), 3, 5);
+        }
+
+        /// <summary>Bota de cano alto com cadarco, tenis de sola branca, ou o calcado comum.</summary>
+        private static void Calcado(ConstrutorDeMalha c, string modelo, Color cor, float w)
+        {
+            float pe = -Canela;
+            switch (modelo)
+            {
+                case "tenis":
+                    c.Cor(cor).Tubo(new Vector3(0, pe + 0.07f, 0), new Vector3(0, pe - 0.02f, 0), 0.056f * w, 0.055f * w, 8);
+                    c.Caixa(new Vector3(0, pe - 0.03f, 0.05f), new Vector3(0.1f * w, 0.065f, 0.24f), 0.03f);
+                    c.Cor(new Color(0.93f, 0.92f, 0.88f)).Caixa(new Vector3(0, pe - 0.066f, 0.05f), new Vector3(0.106f * w, 0.022f, 0.25f), 0.008f);
+                    c.Cor(Util.Escurecer(cor, 0.55f)).Caixa(new Vector3(0.052f * w, pe - 0.035f, 0.04f), new Vector3(0.006f, 0.02f, 0.14f));
+                    c.Caixa(new Vector3(-0.052f * w, pe - 0.035f, 0.04f), new Vector3(0.006f, 0.02f, 0.14f));
+                    break;
+                case "botas":
+                    c.Cor(cor).Tubo(new Vector3(0, pe + 0.22f, 0), new Vector3(0, pe - 0.02f, 0), 0.064f * w, 0.058f * w, 8);
+                    c.Cor(Util.Escurecer(cor, 0.75f)).Tubo(new Vector3(0, pe + 0.22f, 0), new Vector3(0, pe + 0.19f, 0), 0.068f * w, 0.068f * w, 8);
+                    c.Cor(cor).Caixa(new Vector3(0, pe - 0.035f, 0.055f), new Vector3(0.11f * w, 0.075f, 0.26f), 0.03f);
+                    c.Cor(Util.Escurecer(cor, 0.45f)).Caixa(new Vector3(0, pe - 0.072f, 0.055f), new Vector3(0.114f * w, 0.02f, 0.265f));
+                    c.Cor(Color.Lerp(cor, Color.white, 0.35f));
+                    for (int i = 0; i < 3; i++) c.Caixa(new Vector3(0, pe + 0.04f + i * 0.05f, 0.06f * w), new Vector3(0.05f, 0.008f, 0.01f));
+                    break;
+                default:
+                    c.Cor(cor).Tubo(new Vector3(0, pe + 0.16f, 0), new Vector3(0, pe - 0.02f, 0), 0.058f * w, 0.055f * w, 8);
+                    c.Caixa(new Vector3(0, pe - 0.035f, 0.05f), new Vector3(0.1f * w, 0.07f, 0.24f), 0.025f);
+                    c.Cor(Util.Escurecer(cor, 0.5f)).Caixa(new Vector3(0, pe - 0.068f, 0.05f), new Vector3(0.104f * w, 0.015f, 0.245f));
+                    break;
+            }
         }
 
         private static void Veste(ConstrutorDeMalha c, DadosDeHumano d, Color roupa, float w)
@@ -151,6 +238,12 @@ namespace Esquecidos.Jogo.Atores
                 case "colete":
                     c.Cor(Util.Escurecer(roupa, 0.8f)).Caixa(new Vector3(0, 0.3f, 0.005f), new Vector3(0.42f * w, 0.36f, 0.26f * w), 0.06f);
                     c.Cor(new Color(0.75f, 0.7f, 0.55f)).Caixa(new Vector3(0.09f * w, 0.33f, 0.135f * w), new Vector3(0.08f, 0.09f, 0.01f));
+                    // Bolsos de baixo e as alcas sobre os ombros.
+                    c.Cor(Util.Escurecer(roupa, 0.62f));
+                    c.Caixa(new Vector3(-0.1f * w, 0.18f, 0.137f * w), new Vector3(0.09f, 0.08f, 0.02f), 0.01f);
+                    c.Caixa(new Vector3(0.1f * w, 0.18f, 0.137f * w), new Vector3(0.09f, 0.08f, 0.02f), 0.01f);
+                    c.Caixa(new Vector3(-0.11f * w, 0.48f, 0), new Vector3(0.06f, 0.02f, 0.26f * w), 0.008f);
+                    c.Caixa(new Vector3(0.11f * w, 0.48f, 0), new Vector3(0.06f, 0.02f, 0.26f * w), 0.008f);
                     break;
                 case "peitoral":
                     c.Cor(roupa).Caixa(new Vector3(0, 0.34f, 0.01f), new Vector3(0.44f * w, 0.32f, 0.28f * w), 0.05f);
@@ -160,6 +253,11 @@ namespace Esquecidos.Jogo.Atores
                 case "jaqueta":
                     c.Cor(Util.Escurecer(roupa, 0.9f)).Caixa(new Vector3(0, 0.08f, 0), new Vector3(0.34f * w, 0.1f, 0.23f * w), 0.04f);
                     c.Cor(Util.Escurecer(roupa, 0.6f)).Caixa(new Vector3(0, 0.3f, 0.125f * w), new Vector3(0.02f, 0.4f, 0.01f));
+                    // Gola alta e bolsos com aba.
+                    c.Cor(Util.Escurecer(roupa, 0.85f)).Tubo(new Vector3(0, 0.46f, -0.005f), new Vector3(0, 0.54f, 0.0f), 0.085f * w, 0.075f * w, 10);
+                    c.Cor(Util.Escurecer(roupa, 0.7f));
+                    c.Caixa(new Vector3(-0.1f * w, 0.17f, 0.124f * w), new Vector3(0.08f, 0.015f, 0.02f), 0.004f);
+                    c.Caixa(new Vector3(0.1f * w, 0.17f, 0.124f * w), new Vector3(0.08f, 0.015f, 0.02f), 0.004f);
                     break;
                 case "jaleco":
                     c.Cor(new Color(0.94f, 0.94f, 0.95f)).Caixa(new Vector3(0, 0.12f, 0), new Vector3(0.36f * w, 0.36f, 0.25f * w), 0.05f);
@@ -197,20 +295,30 @@ namespace Esquecidos.Jogo.Atores
             // Orelhas e nariz.
             c.Esfera(new Vector3(-0.103f, y - 0.005f, 0), new Vector3(0.018f, 0.032f, 0.022f), 4, 6);
             c.Esfera(new Vector3(0.103f, y - 0.005f, 0), new Vector3(0.018f, 0.032f, 0.022f), 4, 6);
-            c.Cor(Util.Escurecer(pele, 0.92f)).Esfera(new Vector3(0, y - 0.015f, 0.112f), new Vector3(0.018f, 0.03f, 0.025f), 4, 6);
-            // Olhos: branco, iris escura; olho de cinzento brilha.
+            // Nariz: ponte e ponta.
+            c.Cor(Util.Escurecer(pele, 0.94f)).Esfera(new Vector3(0, y, 0.108f), new Vector3(0.012f, 0.03f, 0.014f), 4, 6);
+            c.Esfera(new Vector3(0, y - 0.02f, 0.114f), new Vector3(0.019f, 0.016f, 0.02f), 4, 6);
+            // Bochechas levemente coradas.
+            c.Cor(Color.Lerp(pele, new Color(0.85f, 0.4f, 0.35f), cinzento ? 0f : 0.14f));
+            c.Esfera(new Vector3(-0.052f, y - 0.022f, 0.082f), new Vector3(0.03f, 0.022f, 0.02f), 4, 6);
+            c.Esfera(new Vector3(0.052f, y - 0.022f, 0.082f), new Vector3(0.03f, 0.022f, 0.02f), 4, 6);
+            // Olhos: branco, iris, brilho, palpebra por cima. Olho de cinzento brilha.
             Color olho = d.CorOlhos ?? new Color(0.1f, 0.07f, 0.05f);
             bool brilha = cinzento || d.CorOlhos.HasValue;
             for (int l = -1; l <= 1; l += 2)
             {
-                c.Cor(new Color(0.92f, 0.9f, 0.86f)).Esfera(new Vector3(l * 0.038f, y + 0.015f, 0.096f), new Vector3(0.019f, 0.013f, 0.012f), 4, 6);
+                c.Cor(new Color(0.92f, 0.9f, 0.86f)).Esfera(new Vector3(l * 0.038f, y + 0.015f, 0.096f), new Vector3(0.02f, 0.014f, 0.012f), 4, 6);
                 if (brilha) c.Cor(olho, 0f);
                 else c.Cor(olho);
-                c.Esfera(new Vector3(l * 0.038f, y + 0.015f, 0.105f), new Vector3(0.01f, 0.011f, 0.006f), 3, 5);
+                c.Esfera(new Vector3(l * 0.038f, y + 0.014f, 0.105f), new Vector3(0.011f, 0.012f, 0.006f), 3, 5);
+                if (!brilha) c.Cor(new Color(0.95f, 0.95f, 0.95f)).Esfera(new Vector3(l * 0.038f + 0.004f, y + 0.019f, 0.11f), Vector3.one * 0.0035f, 2, 4);
+                c.Cor(Util.Escurecer(pele, 0.82f)).Caixa(new Vector3(l * 0.038f, y + 0.027f, 0.1f), new Vector3(0.042f, 0.007f, 0.016f), 0.003f);
                 // Sobrancelha.
-                c.Cor(Util.Escurecer(cabelo, 0.8f)).Caixa(new Vector3(l * 0.04f, y + 0.042f, 0.1f), new Vector3(0.038f, 0.008f, 0.012f), 0.002f);
+                c.Cor(Util.Escurecer(cabelo, 0.8f)).Caixa(new Vector3(l * 0.04f, y + 0.045f, 0.1f), new Vector3(0.04f, 0.009f, 0.012f), 0.002f);
             }
-            c.Cor(Util.Escurecer(pele, 0.6f)).Caixa(new Vector3(0, y - 0.058f, 0.1f), new Vector3(0.036f, 0.006f, 0.01f));
+            // Boca: linha escura e labio de baixo.
+            c.Cor(Util.Escurecer(pele, 0.55f)).Caixa(new Vector3(0, y - 0.056f, 0.101f), new Vector3(0.038f, 0.006f, 0.01f));
+            c.Cor(Color.Lerp(pele, new Color(0.7f, 0.32f, 0.3f), 0.35f)).Caixa(new Vector3(0, y - 0.064f, 0.099f), new Vector3(0.03f, 0.009f, 0.012f), 0.003f);
 
             if (guarda)
             {
@@ -281,6 +389,10 @@ namespace Esquecidos.Jogo.Atores
                 default:
                     c.Esfera(new Vector3(0, y + 0.035f, -0.01f), new Vector3(0.112f, 0.11f, 0.118f), 8, 12);
                     c.Caixa(new Vector3(0, y + 0.07f, 0.07f), new Vector3(0.17f, 0.05f, 0.06f), 0.02f);
+                    // Costeletas e uma mecha caindo na testa.
+                    c.Caixa(new Vector3(-0.1f, y - 0.01f, 0.03f), new Vector3(0.016f, 0.05f, 0.03f), 0.006f);
+                    c.Caixa(new Vector3(0.1f, y - 0.01f, 0.03f), new Vector3(0.016f, 0.05f, 0.03f), 0.006f);
+                    c.Tubo(new Vector3(0.02f, y + 0.09f, 0.09f), new Vector3(0.045f, y + 0.05f, 0.112f), 0.02f, 0.006f, 5);
                     return;
             }
         }

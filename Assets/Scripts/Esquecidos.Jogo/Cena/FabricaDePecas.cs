@@ -17,7 +17,7 @@ namespace Esquecidos.Jogo.Cena
         private static readonly Color Madeira = new Color(0.42f, 0.29f, 0.18f);
         private static readonly Color MadeiraClara = new Color(0.58f, 0.44f, 0.29f);
         private static readonly Color MadeiraVelha = new Color(0.36f, 0.31f, 0.25f);
-        private static readonly Color Ferro = new Color(0.36f, 0.36f, 0.38f);
+        private static readonly Color Ferro = new Color(0.44f, 0.44f, 0.46f);
         private static readonly Color Ferrugem = new Color(0.46f, 0.24f, 0.12f);
         private static readonly Color PedraCor = new Color(0.46f, 0.45f, 0.42f);
         private static readonly Color Folha = new Color(0.22f, 0.36f, 0.13f);
@@ -241,9 +241,9 @@ namespace Esquecidos.Jogo.Cena
 
         private static void Arvore(ConstrutorDeMalha c, Random rng, bool velha)
         {
-            float s = velha ? 2.6f : 1f;
+            float s = velha ? 1.9f : 1f;
             Color casca = velha ? new Color(0.3f, 0.24f, 0.18f) : new Color(0.34f, 0.26f, 0.19f);
-            float altura = (velha ? 6.5f : 3.4f) + R(rng, -0.4f, 0.6f);
+            float altura = (velha ? 5.4f : 3.4f) + R(rng, -0.4f, 0.6f);
             c.Cor(casca).Tubo(Vector3.zero, new Vector3(R(rng, -0.2f, 0.2f), altura, R(rng, -0.2f, 0.2f)), 0.32f * s, 0.16f * s, 10);
             if (velha)
             {
@@ -273,7 +273,7 @@ namespace Esquecidos.Jogo.Cena
                 for (int i = 0; i < 9; i++)
                 {
                     float a = i * 0.7f;
-                    Vector3 topo = new Vector3(Mathf.Cos(a) * 3.2f, altura * 0.85f, Mathf.Sin(a) * 3.2f);
+                    Vector3 topo = new Vector3(Mathf.Cos(a) * 2.4f, altura * 0.85f, Mathf.Sin(a) * 2.4f);
                     c.Tubo(topo, topo + Vector3.down * R(rng, 1.5f, 3.5f), 0.04f, 0.015f, 4);
                 }
             }
@@ -505,9 +505,9 @@ namespace Esquecidos.Jogo.Cena
 
         private static void MontaCargas(ConstrutorDeMalha c)
         {
-            Color metal = new Color(0.32f, 0.33f, 0.35f);
-            c.Cor(new Color(0.06f, 0.06f, 0.07f)).Caixa(new Vector3(0, 0.02f, 0), new Vector3(5.4f, 0.04f, 5.4f));
-            c.Cor(new Color(0.25f, 0.25f, 0.27f));
+            Color metal = new Color(0.46f, 0.47f, 0.5f);
+            c.Cor(new Color(0.12f, 0.12f, 0.13f)).Caixa(new Vector3(0, 0.02f, 0), new Vector3(5.4f, 0.04f, 5.4f));
+            c.Cor(new Color(0.36f, 0.35f, 0.36f));
             for (int i = 0; i < 9; i++) c.Caixa(new Vector3(-2.4f + i * 0.6f, 0.05f, 0), new Vector3(0.06f, 0.04f, 5.2f));
             c.Cor(metal);
             foreach (float x in new[] { -2.6f, 2.6f })

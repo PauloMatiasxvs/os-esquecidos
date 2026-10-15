@@ -9,6 +9,7 @@ using Esquecidos.Nucleo.Regras;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using static Esquecidos.Nucleo.Idioma;
 
 namespace Esquecidos.Jogo.Interface
 {
@@ -157,7 +158,7 @@ namespace Esquecidos.Jogo.Interface
             // Atalho: com o mouse em cima de um poder, 1..6 poe ele na barra.
             if (_poderSobMouse != null && _abertas.Contains("poderes"))
             {
-                Key[] teclas = { Key.Digit1, Key.Digit2, Key.Digit3, Key.Digit4, Key.Digit5, Key.Digit6 };
+                Acao[] teclas = { Acao.Barra1, Acao.Barra2, Acao.Barra3, Acao.Barra4, Acao.Barra5, Acao.Barra6 };
                 for (int i = 0; i < teclas.Length; i++)
                     if (Controles.Desceu(teclas[i]) && Partida.Heroi.RankDe(_poderSobMouse) > 0)
                     {
@@ -275,7 +276,7 @@ namespace Esquecidos.Jogo.Interface
                 string l = linhas[i];
                 sb.Append('\n');
                 if (i == 0) sb.Append(IU.Cor(l, "#a8a090"));
-                else if (l.StartsWith("Requer"))
+                else if (l.StartsWith(T("Requer"), System.StringComparison.Ordinal))
                 {
                     bool atende = Partida.Heroi.AtendeRequisitos(b, C, out _);
                     sb.Append(IU.Cor(l, atende ? "#a8a090" : "#ff6050"));
@@ -300,7 +301,7 @@ namespace Esquecidos.Jogo.Interface
             if (slot == null) return null;
             Item atual = Partida.Heroi.Equipado[(int)slot.Value];
             if (atual == null || atual == item) return null;
-            return IU.Cor("EQUIPADO AGORA\n", "#8a8070") + TextoDoItem(atual);
+            return IU.Cor(T("EQUIPADO AGORA\n"), "#8a8070") + TextoDoItem(atual);
         }
 
         // ------------------------------------------------------------------ slots de item
@@ -371,20 +372,20 @@ namespace Esquecidos.Jogo.Interface
 
         private static readonly (SlotEquip slot, string rotulo, Vector2 pos)[] SlotsDeEquipamento =
         {
-            (SlotEquip.Cabeca, "cabeça", new Vector2(150, -56)),
-            (SlotEquip.Pingente, "pingente", new Vector2(236, -76)),
-            (SlotEquip.Arma, "arma", new Vector2(40, -150)),
+            (SlotEquip.Cabeca, T("cabeça"), new Vector2(150, -56)),
+            (SlotEquip.Pingente, T("pingente"), new Vector2(236, -76)),
+            (SlotEquip.Arma, T("arma"), new Vector2(40, -150)),
             (SlotEquip.Corpo, "corpo", new Vector2(150, -146)),
-            (SlotEquip.Secundaria, "mão 2", new Vector2(260, -150)),
-            (SlotEquip.Maos, "mãos", new Vector2(40, -240)),
-            (SlotEquip.Bugiganga1, "bugiganga", new Vector2(150, -236)),
-            (SlotEquip.Bugiganga2, "bugiganga", new Vector2(260, -240)),
-            (SlotEquip.Pes, "pés", new Vector2(150, -326)),
+            (SlotEquip.Secundaria, T("mão 2"), new Vector2(260, -150)),
+            (SlotEquip.Maos, T("mãos"), new Vector2(40, -240)),
+            (SlotEquip.Bugiganga1, T("bugiganga"), new Vector2(150, -236)),
+            (SlotEquip.Bugiganga2, T("bugiganga"), new Vector2(260, -240)),
+            (SlotEquip.Pes, T("pés"), new Vector2(150, -326)),
         };
 
         private void Inventario()
         {
-            RectTransform j = Janela("inventario", "Mochila", new Vector2(1, 0.5f), new Vector2(-30, 40), new Vector2(620, 860));
+            RectTransform j = Janela("inventario", T("Mochila"), new Vector2(1, 0.5f), new Vector2(-30, 40), new Vector2(620, 860));
             j.pivot = new Vector2(1, 0.5f);
             Nucleo.Regras.Personagem h = Partida.Heroi;
             RectTransform eq = IU.Novo(j, "equipamento").Lugar(new Vector2(0.5f, 1), new Vector2(0.5f, 1), new Vector2(0, -52), new Vector2(380, 420));
@@ -415,7 +416,7 @@ namespace Esquecidos.Jogo.Interface
             // Resumo dos numeros que importam.
             Ficha f = Partida.Jogador?.Estat ?? h.Calcular(C);
             Text resumo = IU.Texto(j, "resumo",
-                $"Vida {Mathf.RoundToInt(f[Estat.Vida])}   Fôlego {Mathf.RoundToInt(f[Estat.Energia])}   Absorção {f[Estat.AbsorcaoMin]:0}–{f[Estat.AbsorcaoMax]:0}   Esquiva {f[Estat.Esquiva]:0}",
+                F("Vida {0}   Fôlego {1}   Absorção {2:0}–{3:0}   Esquiva {4:0}", Mathf.RoundToInt(f[Estat.Vida]), Mathf.RoundToInt(f[Estat.Energia]), f[Estat.AbsorcaoMin], f[Estat.AbsorcaoMax], f[Estat.Esquiva]),
                 17, IU.CorFraca, TextAnchor.MiddleCenter);
             resumo.rectTransform.Lugar(new Vector2(0.5f, 1), new Vector2(0.5f, 1), new Vector2(0, -470), new Vector2(580, 26));
 
@@ -436,9 +437,9 @@ namespace Esquecidos.Jogo.Interface
                     });
                 if (_segurando == i) s.color = IU.Ambar;
             }
-            Text sucata = IU.Texto(j, "sucata", $"⚙ {h.Sucata} de sucata", 20, new Color(0.95f, 0.8f, 0.45f));
+            Text sucata = IU.Texto(j, "sucata", F("⚙ {0} de sucata", h.Sucata), 20, new Color(0.95f, 0.8f, 0.45f));
             sucata.rectTransform.Lugar(new Vector2(0, 0), new Vector2(0, 0), new Vector2(24, 16), new Vector2(300, 30));
-            Button org = IU.Botao(j, "organizar", "Organizar", () =>
+            Button org = IU.Botao(j, "organizar", T("Organizar"), () =>
             {
                 h.Mochila.Organizar(C);
                 Sujar();
@@ -446,7 +447,7 @@ namespace Esquecidos.Jogo.Interface
             org.GetComponent<RectTransform>().Lugar(new Vector2(1, 0), new Vector2(1, 0), new Vector2(-24, 14), new Vector2(140, 36));
             if (_segurando >= 0)
             {
-                Button fora = IU.Botao(j, "jogar", "Jogar fora", () =>
+                Button fora = IU.Botao(j, "jogar", T("Jogar fora"), () =>
                 {
                     int e = _segurando;
                     Soltar();
@@ -460,7 +461,7 @@ namespace Esquecidos.Jogo.Interface
         private string Rodape(Item item)
         {
             ItemBase b = C.Item(item.Base);
-            string acao = _loja != null ? "botão direito: vender" : _abertas.Contains("guarda") ? "botão direito: guardar no baú" : b.Equipavel ? "botão direito: equipar" : b.Uso != null ? "botão direito: usar" : "";
+            string acao = _loja != null ? T("botão direito: vender") : _abertas.Contains("guarda") ? T("botão direito: guardar no baú") : b.Equipavel ? T("botão direito: equipar") : b.Uso != null ? T("botão direito: usar") : "";
             return acao.Length > 0 ? "\n" + IU.Cor($"<size=14>{acao} · clique: mover</size>", "#8a8070") : "";
         }
 
@@ -495,18 +496,18 @@ namespace Esquecidos.Jogo.Interface
             string id = Partida.Heroi.Barra[espaco];
             if (id == null)
             {
-                MostrarDica("Espaço vazio.\n" + IU.Cor("<size=14>Na janela de poderes (K), passe o mouse num poder e aperte 1–6 para pôr aqui.</size>", "#8a8070"));
+                MostrarDica(T("Espaço vazio.\n") + IU.Cor(T("<size=14>Na janela de poderes (K), passe o mouse num poder e aperte 1–6 para pôr aqui.</size>"), "#8a8070"));
                 return;
             }
             if (id == "ataque")
             {
                 Poder p = Partida.PoderBasico();
-                MostrarDica($"<b>{p.Nome}</b>\nO ataque da arma na mão.\n" + IU.Cor("clique esquerdo em um inimigo; Shift + clique ataca parado", "#8a8070"));
+                MostrarDica(F("<b>{0}</b>\nO ataque da arma na mão.\n", p.Nome) + IU.Cor(T("clique esquerdo em um inimigo; Shift + clique ataca parado"), "#8a8070"));
                 return;
             }
             if (C.Itens.TryGetValue(id, out ItemBase b))
             {
-                MostrarDica(TextoDoItem(new Item(id)) + "\n" + IU.Cor($"na mochila: {Partida.Heroi.Mochila.Contar(id)}", "#8a8070"));
+                MostrarDica(TextoDoItem(new Item(id)) + "\n" + IU.Cor(F("na mochila: {0}", Partida.Heroi.Mochila.Contar(id)), "#8a8070"));
                 return;
             }
             MostrarDica(TextoDoPoder(C.Poder(id)));
@@ -538,21 +539,21 @@ namespace Esquecidos.Jogo.Interface
 
         private void Personagem()
         {
-            RectTransform j = Janela("personagem", "Personagem", new Vector2(0, 0.5f), new Vector2(30, 40), new Vector2(520, 820));
+            RectTransform j = Janela("personagem", T("Personagem"), new Vector2(0, 0.5f), new Vector2(30, 40), new Vector2(520, 820));
             j.pivot = new Vector2(0, 0.5f);
             Nucleo.Regras.Personagem h = Partida.Heroi;
             Ficha f = Partida.Jogador?.Estat ?? h.Calcular(C);
             Classe classe = C.Classe(h.Classe);
-            Text cab = IU.Texto(j, "cab", $"<b>{h.Nome}</b>   {classe.Nome}, nível {h.Nivel}\n{IU.Cor(classe.Papel, "#a8a090")}", 21, IU.CorTexto);
+            Text cab = IU.Texto(j, "cab", F("<b>{0}</b>   {1}, nível {2}\n{3}", h.Nome, classe.Nome, h.Nivel, IU.Cor(classe.Papel, "#a8a090")), 21, IU.CorTexto);
             cab.rectTransform.Lugar(new Vector2(0, 1), new Vector2(0, 1), new Vector2(28, -58), new Vector2(470, 60));
-            Text pontos = IU.Texto(j, "pontos", h.PontosDeAtributo > 0 ? IU.Cor($"{h.PontosDeAtributo} pontos para distribuir", IU.Ambar) : "", 19, IU.CorTexto);
+            Text pontos = IU.Texto(j, "pontos", h.PontosDeAtributo > 0 ? IU.Cor(F("{0} pontos para distribuir", h.PontosDeAtributo), IU.Ambar) : "", 19, IU.CorTexto);
             pontos.rectTransform.Lugar(new Vector2(0, 1), new Vector2(0, 1), new Vector2(28, -120), new Vector2(470, 26));
             (Atributo a, string desc)[] atributos =
             {
-                (Atributo.Fisico, "vida, dano corpo a corpo"),
-                (Atributo.Mente, "fôlego, engenhocas, cura"),
-                (Atributo.Ofensiva, "precisão, crítico, dano à distância"),
-                (Atributo.Defesa, "absorção, esquiva, tenacidade"),
+                (Atributo.Fisico, T("vida, dano corpo a corpo")),
+                (Atributo.Mente, T("fôlego, engenhocas, cura")),
+                (Atributo.Ofensiva, T("precisão, crítico, dano à distância")),
+                (Atributo.Defesa, T("absorção, esquiva, tenacidade")),
             };
             for (int i = 0; i < atributos.Length; i++)
             {
@@ -574,25 +575,25 @@ namespace Esquecidos.Jogo.Interface
             }
             var linhas = new List<string>
             {
-                $"Vida {Mathf.RoundToInt(f[Estat.Vida])}  ({f[Estat.RegenVida]:0.0}/s)",
-                $"Fôlego {Mathf.RoundToInt(f[Estat.Energia])}  ({f[Estat.RegenEnergia]:0.0}/s)",
-                $"Dano corpo a corpo {f[Estat.DanoCorpoMin] + (Partida.Jogador?.Arma?.Arma != ClasseArma.Distancia ? Partida.Jogador?.Arma?.DanoMin ?? 0 : 0):0}–{f[Estat.DanoCorpoMax] + (Partida.Jogador?.Arma?.Arma != ClasseArma.Distancia ? Partida.Jogador?.Arma?.DanoMax ?? 0 : 0):0}",
-                $"Dano à distância {f[Estat.DanoDistMin] + (Partida.Jogador?.Arma?.Arma == ClasseArma.Distancia ? Partida.Jogador.Arma.DanoMin : 0):0}–{f[Estat.DanoDistMax] + (Partida.Jogador?.Arma?.Arma == ClasseArma.Distancia ? Partida.Jogador.Arma.DanoMax : 0):0}",
-                $"Dano de engenhoca {f[Estat.DanoTecMin]:0}–{f[Estat.DanoTecMax]:0}",
-                $"Precisão {f[Estat.Precisao]:0}   Esquiva {f[Estat.Esquiva]:0}",
-                $"Crítico {f[Estat.Critico]:0.#}%   dano crítico ×{C.Regras.MultiplicadorCritico + f[Estat.DanoCritico] / 100f:0.00}",
-                $"Absorção {f[Estat.AbsorcaoMin]:0.#}–{f[Estat.AbsorcaoMax]:0.#}   Bloqueio {f[Estat.Bloqueio]:0}%",
-                $"Resistências: veneno {f[Estat.ResVeneno]:0}%  fogo {f[Estat.ResFogo]:0}%  choque {f[Estat.ResChoque]:0}%",
-                $"Velocidade {100 + f[Estat.Velocidade]:0}%   Ataque {100 + f[Estat.VelocidadeAtaque]:0}%",
+                F("Vida {0}  ({1:0.0}/s)", Mathf.RoundToInt(f[Estat.Vida]), f[Estat.RegenVida]),
+                F("Fôlego {0}  ({1:0.0}/s)", Mathf.RoundToInt(f[Estat.Energia]), f[Estat.RegenEnergia]),
+                F("Dano corpo a corpo {0:0}–{1:0}", f[Estat.DanoCorpoMin] + (Partida.Jogador?.Arma?.Arma != ClasseArma.Distancia ? Partida.Jogador?.Arma?.DanoMin ?? 0 : 0), f[Estat.DanoCorpoMax] + (Partida.Jogador?.Arma?.Arma != ClasseArma.Distancia ? Partida.Jogador?.Arma?.DanoMax ?? 0 : 0)),
+                F("Dano à distância {0:0}–{1:0}", f[Estat.DanoDistMin] + (Partida.Jogador?.Arma?.Arma == ClasseArma.Distancia ? Partida.Jogador.Arma.DanoMin : 0), f[Estat.DanoDistMax] + (Partida.Jogador?.Arma?.Arma == ClasseArma.Distancia ? Partida.Jogador.Arma.DanoMax : 0)),
+                F("Dano de engenhoca {0:0}–{1:0}", f[Estat.DanoTecMin], f[Estat.DanoTecMax]),
+                F("Precisão {0:0}   Esquiva {1:0}", f[Estat.Precisao], f[Estat.Esquiva]),
+                F("Crítico {0:0.#}%   dano crítico ×{1:0.00}", f[Estat.Critico], C.Regras.MultiplicadorCritico + f[Estat.DanoCritico] / 100f),
+                F("Absorção {0:0.#}–{1:0.#}   Bloqueio {2:0}%", f[Estat.AbsorcaoMin], f[Estat.AbsorcaoMax], f[Estat.Bloqueio]),
+                F("Resistências: veneno {0:0}%  fogo {1:0}%  choque {2:0}%", f[Estat.ResVeneno], f[Estat.ResFogo], f[Estat.ResChoque]),
+                F("Velocidade {0:0}%   Ataque {1:0}%", 100 + f[Estat.Velocidade], 100 + f[Estat.VelocidadeAtaque]),
             };
-            if (f[Estat.RouboVida] > 0) linhas.Add($"Roubo de vida {f[Estat.RouboVida]:0.#}%");
-            if (f[Estat.ReducaoRecarga] > 0) linhas.Add($"Recarga {f[Estat.ReducaoRecarga]:0}% mais rápida");
-            if (f[Estat.AchadoRaro] > 0) linhas.Add($"Achado raro +{f[Estat.AchadoRaro]:0}%");
-            if (f[Estat.BonusXp] > 0) linhas.Add($"Experiência +{f[Estat.BonusXp]:0}%");
+            if (f[Estat.RouboVida] > 0) linhas.Add(F("Roubo de vida {0:0.#}%", f[Estat.RouboVida]));
+            if (f[Estat.ReducaoRecarga] > 0) linhas.Add(F("Recarga {0:0}% mais rápida", f[Estat.ReducaoRecarga]));
+            if (f[Estat.AchadoRaro] > 0) linhas.Add(F("Achado raro +{0:0}%", f[Estat.AchadoRaro]));
+            if (f[Estat.BonusXp] > 0) linhas.Add(F("Experiência +{0:0}%", f[Estat.BonusXp]));
             int xpProx = C.Regras.XpTotalPara(h.Nivel + 1);
             linhas.Add("");
-            linhas.Add(IU.Cor($"Experiência {h.Xp} / {xpProx}", "#e0c890"));
-            linhas.Add(IU.Cor($"Inimigos derrotados {Partida.Contador("inimigos_mortos")}   Noites lá fora {Partida.Contador("noites_sobrevividas")}   Mortes {Partida.Contador("mortes")}", "#8a8070"));
+            linhas.Add(IU.Cor(F("Experiência {0} / {1}", h.Xp, xpProx), "#e0c890"));
+            linhas.Add(IU.Cor(F("Inimigos derrotados {0}   Noites lá fora {1}   Mortes {2}", Partida.Contador("inimigos_mortos"), Partida.Contador("noites_sobrevividas"), Partida.Contador("mortes")), "#8a8070"));
             Text est = IU.Texto(j, "estat", string.Join("\n", linhas), 18, IU.CorTexto);
             est.rectTransform.Lugar(new Vector2(0, 1), new Vector2(0, 1), new Vector2(28, -400), new Vector2(470, 400));
         }
@@ -611,13 +612,13 @@ namespace Esquecidos.Jogo.Interface
             if (p.RankMaximo > 1) sb.Append(IU.Cor($"  rank {rank}/{p.RankMaximo}", "#e0c890"));
             sb.Append('\n').Append(p.Descricao);
             var detalhes = new List<string>();
-            if (ef.Custo > 0) detalhes.Add($"{ef.Custo:0} de fôlego");
-            if (ef.Recarga > 0) detalhes.Add($"recarga {ef.Recarga:0.#}s");
+            if (ef.Custo > 0) detalhes.Add(F("{0:0} de fôlego", ef.Custo));
+            if (ef.Recarga > 0) detalhes.Add(F("recarga {0:0.#}s", ef.Recarga));
             if (ef.Fonte != FonteDeDano.Nenhuma && ef.Tipo != TipoPoder.Reforco && ef.Tipo != TipoPoder.Invocacao)
-                detalhes.Add($"dano ×{ef.Multiplicador:0.00} ({(ef.Fonte == FonteDeDano.Corpo ? "corpo a corpo" : ef.Fonte == FonteDeDano.Distancia ? "distância" : "engenhoca")})");
+                detalhes.Add(F("dano ×{0:0.00} ({1})", ef.Multiplicador, ef.Fonte == FonteDeDano.Corpo ? T("corpo a corpo") : ef.Fonte == FonteDeDano.Distancia ? T("distância") : T("engenhoca")));
             if (ef.Efeito != null) detalhes.Add($"{Hud.NomeDoEfeito(ef.Efeito.Nome).Item1} {ef.Efeito.Duracao:0.#}s");
-            if (ef.Raio > 0) detalhes.Add($"raio {ef.Raio:0.#}m");
-            if (ef.ArmasExigidas.Count > 0) detalhes.Add("arma " + string.Join("/", ef.ArmasExigidas.Select(Partida.NomeDaClasseDeArma)));
+            if (ef.Raio > 0) detalhes.Add(F("raio {0:0.#}m", ef.Raio));
+            if (ef.ArmasExigidas.Count > 0) detalhes.Add(F("arma {0}", string.Join("/", ef.ArmasExigidas.Select(Partida.NomeDaClasseDeArma))));
             if (detalhes.Count > 0) sb.Append('\n').Append(IU.Cor(string.Join(" · ", detalhes), "#9fd0ff"));
             string motivo = h.MotivoParaNaoAprender(p);
             if (rank == 0) sb.Append('\n').Append(IU.Cor(motivo == null ? "Pode aprender agora." : "Ainda não: " + motivo, motivo == null ? "#8fe08f" : "#ff8060"));
@@ -628,9 +629,9 @@ namespace Esquecidos.Jogo.Interface
 
         private void Poderes()
         {
-            RectTransform j = Janela("poderes", "Poderes", new Vector2(0.5f, 0.5f), new Vector2(0, 40), new Vector2(760, 820));
+            RectTransform j = Janela("poderes", T("Poderes"), new Vector2(0.5f, 0.5f), new Vector2(0, 40), new Vector2(760, 820));
             Nucleo.Regras.Personagem h = Partida.Heroi;
-            Text pts = IU.Texto(j, "pontos", h.PontosDePoder > 0 ? IU.Cor($"{h.PontosDePoder} pontos de poder", IU.Ambar) : IU.Cor("sem pontos — ganhe nível", "#8a8070"), 19, IU.CorTexto, TextAnchor.UpperCenter);
+            Text pts = IU.Texto(j, "pontos", h.PontosDePoder > 0 ? IU.Cor(F("{0} pontos de poder", h.PontosDePoder), IU.Ambar) : IU.Cor(T("sem pontos — ganhe nível"), "#8a8070"), 19, IU.CorTexto, TextAnchor.UpperCenter);
             pts.rectTransform.Lugar(new Vector2(0.5f, 1), new Vector2(0.5f, 1), new Vector2(0, -50), new Vector2(700, 26));
             string[] abas = { "corredor", "guardiao", "remendeiro" };
             for (int i = 0; i < abas.Length; i++)
@@ -660,7 +661,7 @@ namespace Esquecidos.Jogo.Interface
             foreach (Poder p in lista) NoDePoder(area, p, h);
             // Comuns: o rolamento.
             Poder rol = C.Poder("rolamento");
-            Text comum = IU.Texto(j, "comum", $"{IconesDePoder.Simbolo("rolamento")} {rol.Nome} (Espaço) — todos sabem. {IU.Cor("Clique em cima de um poder e depois num espaço da barra para trocar.", "#8a8070")}", 16, IU.CorFraca, TextAnchor.LowerCenter);
+            Text comum = IU.Texto(j, "comum", IconesDePoder.Simbolo("rolamento") + " " + F("{0} ({1}) — todos sabem.", rol.Nome, Controles.Nome(Acao.Rolar)) + " " + IU.Cor(T("Clique em cima de um poder e depois num espaço da barra para trocar."), "#8a8070"), 16, IU.CorFraca, TextAnchor.LowerCenter);
             comum.rectTransform.Lugar(new Vector2(0.5f, 0), new Vector2(0.5f, 0), new Vector2(0, 14), new Vector2(700, 40));
         }
 
@@ -678,7 +679,7 @@ namespace Esquecidos.Jogo.Interface
             icone.rectTransform.Lugar(new Vector2(0, 0.5f), new Vector2(0, 0.5f), new Vector2(10, 0), new Vector2(72, 72));
             Text sim = IU.Texto(icone.transform, "sim", IconesDePoder.Simbolo(p.Id), 38, rank > 0 ? Color.white : new Color(0.6f, 0.6f, 0.6f), TextAnchor.MiddleCenter);
             sim.rectTransform.Esticar();
-            Text nome = IU.Texto(no.transform, "nome", $"<b>{p.Nome}</b>\n{IU.Cor($"rank {rank}/{p.RankMaximo}", rank > 0 ? "#e0c890" : "#7a7060")}   {IU.Cor($"nív. {p.NivelMinimo}", h.Nivel >= p.NivelMinimo ? "#8a8070" : "#c06050")}", 18, IU.CorTexto);
+            Text nome = IU.Texto(no.transform, "nome", $"<b>{p.Nome}</b>\n{IU.Cor(F("rank {0}/{1}", rank, p.RankMaximo), rank > 0 ? "#e0c890" : "#7a7060")}   {IU.Cor(F("nív. {0}", p.NivelMinimo), h.Nivel >= p.NivelMinimo ? "#8a8070" : "#c06050")}", 18, IU.CorTexto);
             nome.rectTransform.Lugar(new Vector2(0, 1), new Vector2(0, 1), new Vector2(92, -12), new Vector2(160, 80));
             if (pode)
             {

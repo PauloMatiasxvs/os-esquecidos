@@ -4,6 +4,7 @@ using System.Linq;
 using System.Numerics;
 using Esquecidos.Nucleo.Dados;
 using Esquecidos.Nucleo.Regras;
+using static Esquecidos.Nucleo.Idioma;
 
 namespace Esquecidos.Nucleo.Simulacao
 {
@@ -315,7 +316,7 @@ namespace Esquecidos.Nucleo.Simulacao
             if (fase > Fase)
             {
                 Fase = fase;
-                m.Despachante.Despachar(new NotTexto(e.Pos, Fase == 3 ? "FÚRIA" : "A fera se enfurece", "#ff5040"));
+                m.Despachante.Despachar(new NotTexto(e.Pos, Fase == 3 ? T("FÚRIA") : T("A fera se enfurece"), "#ff5040"));
                 m.Despachante.Despachar(new NotSom(e.Def?.Voz + "_rugido", e.Pos));
                 m.Despachante.Despachar(new NotTremor(0.8f));
                 m.AplicarEfeito(e, "rapidez", 9999, Fase == 3 ? 35 : 15, e.Id);

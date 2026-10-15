@@ -13,6 +13,12 @@ namespace Esquecidos.Jogo
         private static void Comecar()
         {
             if (Object.FindAnyObjectByType<Principal>() != null) return;
+            Recomecar();
+        }
+
+        /// <summary>Monta o jogo do zero (na abertura, e de novo quando o idioma muda).</summary>
+        public static void Recomecar()
+        {
             var raiz = new GameObject("Os Esquecidos");
             Object.DontDestroyOnLoad(raiz);
             raiz.AddComponent<Principal>();

@@ -168,7 +168,7 @@ namespace Esquecidos.Jogo
             {
                 case Tema.Laboratorio:
                     corSol = new Color(0.82f, 0.9f, 1f);
-                    intensidade = 0.8f;
+                    intensidade = 0.75f;
                     elevacao = 64;
                     azimute = 30;
                     ambCeu = new Color(0.36f, 0.4f, 0.47f);

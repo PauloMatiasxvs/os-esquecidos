@@ -9,6 +9,7 @@ using Esquecidos.Nucleo.Simulacao;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using static Esquecidos.Nucleo.Idioma;
 
 namespace Esquecidos.Jogo.Interface
 {
@@ -53,6 +54,20 @@ namespace Esquecidos.Jogo.Interface
 
         private readonly List<TextoFlutuante> _flutuantes = new List<TextoFlutuante>();
         private readonly Stack<Text> _poolFlutuantes = new Stack<Text>();
+
+        /// <summary>Tamanho do texto e de toda a interface (1 = normal): a resolucao de referencia encolhe e tudo cresce.</summary>
+        public void EscalaDoTexto(float escala)
+        {
+            var cs = GetComponent<CanvasScaler>();
+            if (cs != null) cs.referenceResolution = new Vector2(1920, 1080) / Mathf.Clamp(escala, 0.7f, 1.6f);
+        }
+
+        /// <summary>Esconde toda a interface do jogo (HUD, dicas, mensagens, nomes): para fotos.</summary>
+        public void MostrarCamadas(bool sim)
+        {
+            _camadaHud.gameObject.SetActive(sim);
+            _camadaMundo.gameObject.SetActive(sim);
+        }
 
         public bool JanelaAberta => Janelas != null && Janelas.Alguma;
         public bool JanelaPausa => JanelaAberta;
@@ -192,7 +207,7 @@ namespace Esquecidos.Jogo.Interface
 
         private void Teclas()
         {
-            if (P.Estado == EstadoDoJogo.Menu || P.Estado == EstadoDoJogo.Creditos) return;
+            if (P.Estado == EstadoDoJogo.Menu || P.Estado == EstadoDoJogo.Creditos || Menus.CapturandoTecla) return;
             if (Controles.Desceu(Key.Escape) || (Controles.Controle?.startButton.wasPressedThisFrame ?? false))
             {
                 if (Dialogo.Aberto && Dialogo.PodeFechar) Dialogo.Fechar();
@@ -202,13 +217,13 @@ namespace Esquecidos.Jogo.Interface
                 return;
             }
             if (P.Estado != EstadoDoJogo.Jogando || Menus.Pausado || Partida.EmCena) return;
-            if (Controles.Desceu(Key.I) || (Controles.Controle?.selectButton.wasPressedThisFrame ?? false)) Janelas.Alternar("inventario");
-            if (Controles.Desceu(Key.C)) Janelas.Alternar("personagem");
-            if (Controles.Desceu(Key.K)) Janelas.Alternar("poderes");
-            if (Controles.Desceu(Key.J)) Janelas.Alternar("diario");
-            if (Controles.Desceu(Key.M) || Controles.Desceu(Key.Tab)) Janelas.Alternar("mapa");
-            if (Controles.Desceu(Key.F5)) P.Salvar();
-            if (Controles.Desceu(Key.F9)) P.Continuar();
+            if (Controles.Desceu(Acao.Mochila) || (Controles.Controle?.selectButton.wasPressedThisFrame ?? false)) Janelas.Alternar("inventario");
+            if (Controles.Desceu(Acao.Personagem)) Janelas.Alternar("personagem");
+            if (Controles.Desceu(Acao.Poderes)) Janelas.Alternar("poderes");
+            if (Controles.Desceu(Acao.Diario)) Janelas.Alternar("diario");
+            if (Controles.Desceu(Acao.Mapa) || Controles.Desceu(Key.Tab)) Janelas.Alternar("mapa");
+            if (Controles.Desceu(Acao.Salvar)) P.Salvar();
+            if (Controles.Desceu(Acao.Carregar)) P.CarregarEspacoAtual();
         }
 
         // ------------------------------------------------------------------ servicos
@@ -261,16 +276,27 @@ namespace Esquecidos.Jogo.Interface
             _legendaDur = segundos;
         }
 
-        public void Piscar(float segundos)
+        private bool _emTransicao;
+
+        /// <summary>Troca de mapa pedida: escurece a tela antes do mapa novo ser montado.</summary>
+        public void EscurecerParaTrocar(float segundos)
         {
-            _escuroVel = 1 / Mathf.Max(0.05f, segundos * 0.5f);
-            Color e = _escuro.color;
-            e.a = 1;
-            _escuro.color = e;
-            _escuroAlvo = 0;
+            _emTransicao = true;
+            _escuroAlvo = 1;
+            _escuroVel = 1 / Mathf.Max(0.05f, segundos);
         }
 
-        public void MapaMudou(Mapa mapa) => Hud.MapaMudou(mapa);
+        public void MapaMudou(Mapa mapa)
+        {
+            Hud.MapaMudou(mapa);
+            if (_emTransicao)
+            {
+                // Mapa montado no escuro: agora clareia devagar.
+                _emTransicao = false;
+                _escuroAlvo = 0;
+                _escuroVel = 1 / 0.45f;
+            }
+        }
 
         public void MostrarMenuPrincipal()
         {
@@ -432,8 +458,8 @@ namespace Esquecidos.Jogo.Interface
         public void Executar(NotMissao n)
         {
             if (Demo) return;
-            if (n.Nova) Mensagem($"Nova missão: {n.Missao.Nome}", "#ffd25a");
-            else if (n.Concluida) Mensagem($"Missão concluída: {n.Missao.Nome}", "#ffd25a");
+            if (n.Nova) Mensagem(F("Nova missão: {0}", n.Missao.Nome), "#ffd25a");
+            else if (n.Concluida) Mensagem(F("Missão concluída: {0}", n.Missao.Nome), "#ffd25a");
             else Mensagem($"{n.Missao.Nome}: {n.Texto}", "#e0c890");
             Hud.MissaoMudou();
         }
@@ -441,7 +467,7 @@ namespace Esquecidos.Jogo.Interface
         public void Executar(NotNivelSubiu n)
         {
             if (Demo) return;
-            MostrarLegenda($"Nível {n.Nivel}", 2.5f);
+            MostrarLegenda(F("Nível {0}", n.Nivel), 2.5f);
             if (P.Partida.Jogador != null)
                 Efeitos.Particulas.Brilhos(Util.Mundo(P.Partida.Jogador.Pos, 1), 40, new Color(1f, 0.85f, 0.4f), 0.8f, 3);
         }
@@ -456,7 +482,7 @@ namespace Esquecidos.Jogo.Interface
 
         public void Executar(NotRegistroNovo n)
         {
-            if (!Demo) Mensagem($"Registro guardado no diário: {n.Registro.Titulo}", "#9fd0ff");
+            if (!Demo) Mensagem(F("Registro guardado no diário: {0}", n.Registro.Titulo), "#9fd0ff");
         }
     }
 }

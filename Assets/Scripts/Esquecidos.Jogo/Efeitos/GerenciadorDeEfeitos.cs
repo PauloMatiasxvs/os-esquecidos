@@ -6,6 +6,7 @@ using Esquecidos.Nucleo.Comandos;
 using Esquecidos.Nucleo.Regras;
 using Esquecidos.Nucleo.Simulacao;
 using UnityEngine;
+using static Esquecidos.Nucleo.Idioma;
 
 namespace Esquecidos.Jogo.Efeitos
 {
@@ -74,7 +75,7 @@ namespace Esquecidos.Jogo.Efeitos
             bool jogador = n.Alvo == _p.Partida.Jogador;
             if (n.Esquivou)
             {
-                _p.UI.Flutuante(pos + Vector3.up * 0.4f, n.Valor <= 0 && n.Fonte != null && !jogador ? "errou" : "esquivou", new Color(0.75f, 0.78f, 0.8f), 0.8f);
+                _p.UI.Flutuante(pos + Vector3.up * 0.4f, n.Valor <= 0 && n.Fonte != null && !jogador ? T("errou") : T("esquivou"), new Color(0.75f, 0.78f, 0.8f), 0.8f);
                 return;
             }
             Vector3 de = n.Fonte != null && V(n.Fonte) != null ? V(n.Fonte).PosicaoVisual : pos - Vector3.forward;
@@ -98,7 +99,7 @@ namespace Esquecidos.Jogo.Efeitos
                 if (n.Bloqueou)
                 {
                     Particulas.Faiscas(pos, -dir, 10, new Color(0.9f, 0.95f, 1f));
-                    _p.UI.Flutuante(pos + Vector3.up * 0.5f, "bloqueou", new Color(0.7f, 0.85f, 1f), 0.8f);
+                    _p.UI.Flutuante(pos + Vector3.up * 0.5f, T("bloqueou"), new Color(0.7f, 0.85f, 1f), 0.8f);
                 }
                 switch (n.Elemento)
                 {
@@ -482,7 +483,7 @@ namespace Esquecidos.Jogo.Efeitos
         public void Executar(NotPoderNegado n)
         {
             VisualDeEntidade v = V(n.Entidade);
-            if (v != null && n.Motivo != "atordoado") _p.UI.Flutuante(v.PosicaoVisual + Vector3.up * 2.2f, n.Motivo, new Color(0.6f, 0.8f, 1f), 0.75f);
+            if (v != null && n.Motivo != "atordoado") _p.UI.Flutuante(v.PosicaoVisual + Vector3.up * 2.2f, T(n.Motivo), new Color(0.6f, 0.8f, 1f), 0.75f);
         }
     }
 }

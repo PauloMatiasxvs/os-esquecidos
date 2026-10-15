@@ -1,0 +1,1000 @@
+# Traducao para o ingles: interface. O texto em portugues e a chave; a linha com "= " e a traducao.
+
+errou
+= miss
+
+esquivou
+= dodged
+
+bloqueou
+= blocked
+
+{0}. Sobre o que você quer falar?
+= {0}. What do you want to talk about?
+
+DICA
+= TIP
+
+clique para fechar
+= click to close
+
+nível máximo
+= max level
+
+{0}  <size=20><color=#b0a890>{1} · nível {2}</color></size>
+= {0}  <size=20><color=#b0a890>{1} · level {2}</color></size>
+
+  portões fechando!
+=   gates closing!
+
+nível {0}
+= level {0}
+
+clique: falar com {0}
+= click: talk to {0}
+
+clique: pegar {0}
+= click: pick up {0}
+
+clique: {0}
+= click: {0}
+
+{0}: falar com {1}
+= {0}: talk to {1}
+
+Nova missão: {0}
+= New quest: {0}
+
+Missão concluída: {0}
+= Quest complete: {0}
+
+Nível {0}
+= Level {0}
+
+Registro guardado no diário: {0}
+= Record saved to the journal: {0}
+
+Requer
+= Requires
+
+EQUIPADO AGORA\n
+= EQUIPPED NOW\n
+
+cabeça
+= head
+
+mão 2
+= off-hand
+
+mãos
+= hands
+
+pés
+= feet
+
+Mochila
+= Backpack
+
+Vida {0}   Fôlego {1}   Absorção {2:0}–{3:0}   Esquiva {4:0}
+= Life {0}   Stamina {1}   Absorb {2:0}–{3:0}   Dodge {4:0}
+
+⚙ {0} de sucata
+= ⚙ {0} scrap
+
+Organizar
+= Sort
+
+Jogar fora
+= Drop
+
+botão direito: vender
+= right click: sell
+
+botão direito: guardar no baú
+= right click: store in the chest
+
+botão direito: equipar
+= right click: equip
+
+botão direito: usar
+= right click: use
+
+Espaço vazio.\n
+= Empty slot.\n
+
+<size=14>Na janela de poderes (K), passe o mouse num poder e aperte 1–6 para pôr aqui.</size>
+= <size=14>In the powers window (K), hover a power and press 1–6 to put it here.</size>
+
+<b>{0}</b>\nO ataque da arma na mão.\n
+= <b>{0}</b>\nThe attack of the weapon in your hand.\n
+
+clique esquerdo em um inimigo; Shift + clique ataca parado
+= left click on an enemy; Shift + click attacks in place
+
+na mochila: {0}
+= in backpack: {0}
+
+Personagem
+= Character
+
+<b>{0}</b>   {1}, nível {2}\n{3}
+= <b>{0}</b>   {1}, level {2}\n{3}
+
+{0} pontos para distribuir
+= {0} points to spend
+
+vida, dano corpo a corpo
+= life, melee damage
+
+fôlego, engenhocas, cura
+= stamina, gadgets, healing
+
+precisão, crítico, dano à distância
+= accuracy, critical, ranged damage
+
+absorção, esquiva, tenacidade
+= absorb, dodge, tenacity
+
+Vida {0}  ({1:0.0}/s)
+= Life {0}  ({1:0.0}/s)
+
+Fôlego {0}  ({1:0.0}/s)
+= Stamina {0}  ({1:0.0}/s)
+
+Dano corpo a corpo {0:0}–{1:0}
+= Melee damage {0:0}–{1:0}
+
+Dano à distância {0:0}–{1:0}
+= Ranged damage {0:0}–{1:0}
+
+Dano de engenhoca {0:0}–{1:0}
+= Gadget damage {0:0}–{1:0}
+
+Precisão {0:0}   Esquiva {1:0}
+= Accuracy {0:0}   Dodge {1:0}
+
+Crítico {0:0.#}%   dano crítico ×{1:0.00}
+= Critical {0:0.#}%   critical damage ×{1:0.00}
+
+Absorção {0:0.#}–{1:0.#}   Bloqueio {2:0}%
+= Absorb {0:0.#}–{1:0.#}   Block {2:0}%
+
+Resistências: veneno {0:0}%  fogo {1:0}%  choque {2:0}%
+= Resistances: poison {0:0}%  fire {1:0}%  shock {2:0}%
+
+Velocidade {0:0}%   Ataque {1:0}%
+= Speed {0:0}%   Attack {1:0}%
+
+Roubo de vida {0:0.#}%
+= Life steal {0:0.#}%
+
+Recarga {0:0}% mais rápida
+= Cooldown {0:0}% faster
+
+Achado raro +{0:0}%
+= Rare find +{0:0}%
+
+Experiência +{0:0}%
+= Experience +{0:0}%
+
+Experiência {0} / {1}
+= Experience {0} / {1}
+
+{0:0} de fôlego
+= {0:0} stamina
+
+recarga {0:0.#}s
+= cooldown {0:0.#}s
+
+dano ×{0:0.00} ({1})
+= damage ×{0:0.00} ({1})
+
+corpo a corpo
+= melee
+
+distância
+= ranged
+
+engenhoca
+= gadget
+
+raio {0:0.#}m
+= radius {0:0.#}m
+
+Poderes
+= Powers
+
+{0} pontos de poder
+= {0} power points
+
+sem pontos — ganhe nível
+= no points — level up
+
+{0} ({1}) — todos sabem.
+= {0} ({1}) — everyone knows it.
+
+Clique em cima de um poder e depois num espaço da barra para trocar.
+= Click a power and then a bar slot to swap.
+
+rank {0}/{1}
+= rank {0}/{1}
+
+nív. {0}
+= lvl {0}
+
+Diário
+= Journal
+
+Missões
+= Quests
+
+Registros da ARCA
+= ARCA Records
+
+{0} de sucata
+= {0} scrap
+
+Nenhuma missão ainda.
+= No quests yet.
+
+Nenhum registro lido ainda. Os terminais da ARCA ficam nos becos do labirinto. ({0}/{1})
+= No records read yet. The ARCA terminals are in the maze's dead ends. ({0}/{1})
+
+Mesa dos Mapas
+= Map Table
+
+Mapa
+= Map
+
+Explorado hoje: {0} de {1} trechos. Amanhã os muros terão mudado.
+= Explored today: {0} of {1} sections. Tomorrow the walls will have changed.
+
+O Pátio. Tudo que importa está aqui dentro.
+= The Yard. Everything that matters is in here.
+
+Entregar mapas ao Caio ({0} trechos novos)
+= Hand maps to Caio ({0} new sections)
+
+Nenhum trecho novo para entregar
+= No new sections to hand over
+
+Clique para comprar. Na mochila, botão direito vende.
+= Click to buy. In the backpack, right click sells.
+
+Bancada da Oficina
+= Workshop Bench
+
+Mesa da Enfermaria
+= Infirmary Table
+
+Nada para fazer aqui ainda.
+= Nothing to do here yet.
+
+Fabricar
+= Craft
+
+Baú do Redário
+= Bunkhouse Chest
+
+Botão direito tira do baú. Na mochila, botão direito guarda.
+= Right click takes from the chest. In the backpack, right click stores.
+
+Terminal da ARCA
+= ARCA Terminal
+
+OS ESQUECIDOS
+= THE FORGOTTEN
+
+Ninguém lembra de como chegou. Ninguém nunca saiu.
+= Nobody remembers how they got here. Nobody ever left.
+
+Continuar
+= Continue
+
+Carregar
+= Load
+
+Novo jogo
+= New game
+
+Opções
+= Options
+
+Controles
+= Controls
+
+Sair
+= Quit
+
+Inspirado em Flare e Pal3.Unity. Tudo no jogo — modelos, música, sons — é gerado por código.
+= Inspired by Flare and Pal3.Unity. Everything in the game — models, music, sounds — is generated by code.
+
+<b>Clique esquerdo</b> — andar; em inimigo, atacar (segure para continuar); em gente, conversar; em item, pegar
+= <b>Left click</b> — walk; on an enemy, attack (hold to keep going); on a person, talk; on an item, pick up
+
+<b>{0}</b> — andar direto
+= <b>{0}</b> — walk directly
+
+<b>{0} + clique</b> — atacar parado na direção do cursor
+= <b>{0} + click</b> — attack in place toward the cursor
+
+<b>Clique direito</b> — poder do segundo espaço da barra
+= <b>Right click</b> — power in the second bar slot
+
+<b>{0}</b> — poderes e itens da barra
+= <b>{0}</b> — powers and items on the bar
+
+<b>{0}</b> — rolamento (nada te acerta no meio dele)
+= <b>{0}</b> — roll (nothing hits you mid-roll)
+
+<b>{0}</b> — interagir com o que estiver perto
+= <b>{0}</b> — interact with whatever is nearby
+
+<b>{0} / {1}</b> — girar a câmera    <b>roda</b> — aproximar
+= <b>{0} / {1}</b> — rotate the camera    <b>wheel</b> — zoom
+
+<b>{0}</b> — mostrar nomes dos itens no chão
+= <b>{0}</b> — show names of items on the ground
+
+<b>{0}</b> mochila   <b>{1}</b> personagem   <b>{2}</b> poderes   <b>{3}</b> diário   <b>{4}</b> mapa
+= <b>{0}</b> backpack   <b>{1}</b> character   <b>{2}</b> powers   <b>{3}</b> journal   <b>{4}</b> map
+
+<b>{0}</b> salvar   <b>{1}</b> carregar   <b>Esc</b> pausa
+= <b>{0}</b> save   <b>{1}</b> load   <b>Esc</b> pause
+
+<b>Controle</b>: analógico anda, A ataca o mais perto, B rola, X e gatilhos usam a barra, Y interage, LB/RB giram a câmera.
+= <b>Gamepad</b>: left stick walks, A attacks the nearest, B rolls, X and triggers use the bar, Y interacts, LB/RB rotate the camera.
+
+As teclas podem ser trocadas em Opções → Teclas.
+= Keys can be changed in Options → Keys.
+
+Os portões do Pátio fecham às 19h30. Quem fica lá fora passa a noite com eles.
+= The Yard gates close at 7:30 PM. Whoever stays outside spends the night with them.
+
+Voltar
+= Back
+
+vazio
+= empty
+
+Espaço {0}
+= Slot {0}
+
+Quem saiu da caixa?
+= Who came out of the box?
+
+A única coisa que você lembra é o seu nome:
+= The only thing you remember is your name:
+
+digite um nome
+= type a name
+
+O que você faz no Pátio:
+= What you do in the Yard:
+
+Físico {0} · Mente {1} · Ofensiva {2} · Defesa {3}
+= Physique {0} · Mind {1} · Offense {2} · Defense {3}
+
+Pele
+= Skin
+
+Cabelo
+= Hair
+
+Penteado: {0}
+= Hairstyle: {0}
+
+Salvar no espaço:
+= Save to slot:
+
+Vai substituir: {0}
+= Will replace: {0}
+
+Acordar
+= Wake up
+
+Novato
+= Newbie
+
+PAUSA
+= PAUSED
+
+Salvar (espaço {0})
+= Save (slot {0})
+
+Menu principal
+= Main menu
+
+Som
+= Sound
+
+Tela
+= Display
+
+Teclas
+= Keys
+
+Música
+= Music
+
+Efeitos
+= Effects
+
+Ambiente
+= Ambience
+
+Idioma
+= Language
+
+Resolução
+= Resolution
+
+Tela cheia
+= Fullscreen
+
+Sim
+= Yes
+
+Não
+= No
+
+Sincronia vertical
+= Vertical sync
+
+Qualidade
+= Quality
+
+Tamanho do texto
+= Text size
+
+Qualidade baixa desliga a oclusão de ambiente e as sombras de longe; ajuda em placa de vídeo fraca.
+= Low quality turns off ambient occlusion and distant shadows; helps on weaker graphics cards.
+
+Andar para cima
+= Walk up
+
+Andar para baixo
+= Walk down
+
+Andar para a esquerda
+= Walk left
+
+Andar para a direita
+= Walk right
+
+Interagir
+= Interact
+
+Rolar
+= Roll
+
+Atacar parado (segure)
+= Attack in place (hold)
+
+Mostrar itens no chão
+= Show items on the ground
+
+Girar câmera ←
+= Rotate camera ←
+
+Girar câmera →
+= Rotate camera →
+
+Salvar
+= Save
+
+Barra {0}
+= Bar {0}
+
+aperte…
+= press…
+
+Restaurar o padrão
+= Restore defaults
+
+Aperte a tecla nova. Esc cancela.
+= Press the new key. Esc cancels.
+
+Clique numa tecla para trocar. Se outra ação usava a mesma, as duas trocam.
+= Click a key to change it. If another action used the same key, the two swap.
+
+O LABIRINTO VENCEU HOJE
+= THE MAZE WON TODAY
+
+Alguém te arrastou de volta. Pelo caminho, {0} de sucata ficaram para trás.
+= Someone dragged you back. Along the way, {0} scrap was left behind.
+
+Alguém te arrastou de volta.
+= Someone dragged you back.
+
+Acordar na enfermaria
+= Wake up in the infirmary
+
+<size=60><b>OS LEMBRADOS</b></size>\n\nOs muros desceram ao amanhecer.\nTrinta e oito pessoas atravessaram o labirinto andando, pela primeira vez sem correr.\n\nLá fora, o mundo era cinza e estava vazio.\nMas era grande. E era deles.\n\nNinguém ali lembrava de quem tinha sido.\nTodo mundo ia lembrar de quem estava sendo.
+= <size=60><b>THE REMEMBERED</b></size>\n\nThe walls came down at dawn.\nThirty-eight people walked across the maze, for the first time without running.\n\nOutside, the world was grey and empty.\nBut it was big. And it was theirs.\n\nNobody there remembered who they had been.\nEveryone would remember who they were becoming.
+
+<size=60><b>O NOVO ARQUITETO</b></size>\n\nOs muros continuaram no lugar.\nÀ noite, eles se moveram de novo, do jeito que você desenhou.\n\nCem dias depois, a cura funcionou em ratos.\nDuzentos dias depois, em gente.\n\nNo Pátio, ninguém soube. A caixa continuou subindo, uma vez por mês.\nNa etiqueta, a sua letra.
+= <size=60><b>THE NEW ARCHITECT</b></size>\n\nThe walls stayed where they were.\nAt night, they moved again, the way you designed them.\n\nA hundred days later, the cure worked on rats.\nTwo hundred days later, on people.\n\nIn the Yard, nobody knew. The box kept coming up, once a month.\nOn the label, your handwriting.
+
+<size=40><b>OS ESQUECIDOS</b></size>\n\nUm RPG de ação feito inteiramente em código:\nmodelos, animação, shaders, música e sons.\n\nInspirado em <b>Flare</b> (Clint Bellanger e colaboradores)\ne no <b>Pal3.Unity</b> (0x7c13).\n\nObrigado por correr.
+= <size=40><b>THE FORGOTTEN</b></size>\n\nAn action RPG made entirely in code:\nmodels, animation, shaders, music and sounds.\n\nInspired by <b>Flare</b> (Clint Bellanger and contributors)\nand <b>Pal3.Unity</b> (0x7c13).\n\nThank you for running.
+
+{0} · {1} nível {2} · Dia {3} · {4:dd/MM HH:mm}
+= {0} · {1} level {2} · Day {3} · {4:dd/MM HH:mm}
+
+(arquivo danificado)
+= (damaged file)
+
+Não foi possível carregar o jogo salvo.
+= Could not load the saved game.
+
+Jogo carregado.
+= Game loaded.
+
+Jogo salvo (espaço {0}).
+= Game saved (slot {0}).
+
+{0} caiu.
+= {0} fell.
+
+Arma
+= Weapon
+
+Mão secundária
+= Off-hand
+
+Cabeça
+= Head
+
+Corpo
+= Body
+
+Mãos
+= Hands
+
+Pés
+= Feet
+
+Pingente
+= Pendant
+
+Bugiganga
+= Trinket
+
+Consumível
+= Consumable
+
+Material
+= Material
+
+Item de missão
+= Quest item
+
+Comum
+= Common
+
+Raro
+= Rare
+
+Relíquia
+= Relic
+
+Único
+= Unique
+
+ de duas mãos
+=  two-handed
+
+{0} · {1} · nível {2}
+= {0} · {1} · level {2}
+
+Dano {0}–{1} · {2:0.0#} golpes/s
+= Damage {0}–{1} · {2:0.0#} hits/s
+
+Absorção {0}–{1}
+= Absorb {0}–{1}
+
+Requer {0} {1}
+= Requires {0} {1}
+
+Usar: recupera {0:0} de vida em {1:0} s
+= Use: restores {0:0} life over {1:0} s
+
+Usar: recupera {0:0} de vida
+= Use: restores {0:0} life
+
+Usar: recupera {0:0} de fôlego
+= Use: restores {0:0} stamina
+
+Usar: remove veneno e sangramento
+= Use: removes poison and bleeding
+
+Usar: +{0:0}% dano por {1:0} s
+= Use: +{0:0}% damage for {1:0} s
+
+Usar: +{0:0} absorção por {1:0} s
+= Use: +{0:0} absorb for {1:0} s
+
+Usar: revela o setor atual no mapa
+= Use: reveals the current sector on the map
+
+Usar: volta ao Pátio (não funciona de noite)
+= Use: returns to the Yard (doesn't work at night)
+
+Monta-Cargas
+= Lift
+
+Rede
+= Hammock
+
+Muro dos Nomes
+= Wall of Names
+
+Portão {0}
+= {0} Gate
+
+O portão está fechado.
+= The gate is closed.
+
+Labirinto
+= Maze
+
+Grade da arena
+= Arena gate
+
+Trancada. {0} alavancas mexem nessa grade.
+= Locked. {0} levers work this gate.
+
+Trancada. Alguma alavanca abre isso.
+= Locked. Some lever opens this.
+
+Alavanca
+= Lever
+
+Caixa de suprimentos
+= Supply crate
+
+Marco do {0}
+= {0} Marker
+
+Muro
+= Wall
+
+Portão do Pátio
+= Yard Gate
+
+Passagem
+= Passage
+
+Voltar ao Pátio
+= Back to the Yard
+
+Seguir em frente
+= Go forward
+
+{0} caiu. A passagem ao norte se abriu.
+= {0} fell. The north passage has opened.
+
+Um rangido longo, lá na arena: a grade subiu.
+= A long creak, over in the arena: the gate went up.
+
+Alavanca puxada. {0} de {1}.
+= Lever pulled. {0} of {1}.
+
+Alavanca solta. {0} de {1}.
+= Lever released. {0} of {1}.
+
+Um obelisco de concreto com marcas que você não entende.
+= A concrete obelisk with markings you don't understand.
+
+Fechado até o amanhecer.
+= Closed until dawn.
+
+Trancado.
+= Locked.
+
+Precisa de: {0}.
+= Requires: {0}.
+
+{0} não tem nada a dizer agora.
+= {0} has nothing to say right now.
+
+Do outro lado só há parede. Este portão não leva a lugar nenhum.
+= On the other side there's only wall. This gate leads nowhere.
+
+Você não está pronto para ir por aí ainda.
+= You're not ready to go that way yet.
+
+Mochila cheia. O resto ficou no chão.
+= Backpack full. The rest stayed on the ground.
+
+Mochila cheia.
+= Backpack full.
+
+ ou 
+=  or
+
+{0} precisa de arma {1}.
+= {0} needs a {1} weapon.
+
+Sem fôlego.
+= Out of stamina.
+
+leve
+= light
+
+pesada
+= heavy
+
+de haste
+= polearm
+
+de arremesso
+= thrown
+
+de choque
+= shock
+
+nenhuma
+= none
+
+Você já está inteiro.
+= You're already in one piece.
+
+Aqui não há o que mapear.
+= There's nothing to map here.
+
+De noite o sinalizador não chama ninguém.
+= At night the flare calls no one.
+
+Você já está no Pátio.
+= You're already in the Yard.
+
+Isso é importante demais para jogar fora.
+= That's too important to throw away.
+
+O baú está cheio.
+= The chest is full.
+
+Sucata insuficiente.
+= Not enough scrap.
+
+Ninguém compra isso. E você precisa disso.
+= Nobody buys that. And you need it.
+
+requer nível {0}
+= requires level {0}
+
+sucata insuficiente
+= not enough scrap
+
+O setor inteiro está no seu mapa agora.
+= The whole sector is on your map now.
+
+Caio passou {0} trechos para o mapa grande. (+{1} XP)
+= Caio copied {0} sections to the big map. (+{1} XP)
+
+Nenhum trecho novo para entregar. Vá mapear o labirinto.
+= No new sections to hand over. Go map the maze.
+
+Recebeu: {0}
+= Received: {0}
+
+Entregou: {0}
+= Handed over: {0}
+
++{0} de experiência
+= +{0} experience
+
++{0} de sucata
+= +{0} scrap
+
+Concluída
+= Complete
+
+A sirene do Pátio tocou: os portões fecham em breve.
+= The Yard siren sounded: the gates close soon.
+
+Nível {0}! +{1} pontos de atributo, +{2} de poder.
+= Level {0}! +{1} attribute points, +{2} power.
+
+Amanheceu. Dia {0} no labirinto.
+= Dawn. Day {0} in the maze.
+
+Você sobreviveu a uma noite no labirinto.
+= You survived a night in the maze.
+
+A noite caiu. Os portões estão fechados até o amanhecer.
+= Night has fallen. The gates are closed until dawn.
+
+A noite caiu e os portões se fecharam. Agora são eles que caçam.
+= Night has fallen and the gates have closed. Now they are the hunters.
+
+Os muros estão se movendo.
+= The walls are moving.
+
+Dia {0} · {1:00}:{2:00}
+= Day {0} · {1:00}:{2:00}
+
+Físico
+= Physique
+
+Mente
+= Mind
+
+Ofensiva
+= Offense
+
+Defesa
+= Defense
+
+{0} Físico
+= {0} Physique
+
+{0} Vida por segundo
+= {0} Life per second
+
+{0} Fôlego
+= {0} Stamina
+
+{0} Fôlego por segundo
+= {0} Stamina per second
+
+{0} Precisão
+= {0} Accuracy
+
+{0}% chance de crítico
+= {0}% critical chance
+
+{0}% dano crítico
+= {0}% critical damage
+
+{0} dano corpo a corpo mínimo
+= {0} minimum melee damage
+
+{0} dano corpo a corpo máximo
+= {0} maximum melee damage
+
+{0} dano à distância mínimo
+= {0} minimum ranged damage
+
+{0} dano à distância máximo
+= {0} maximum ranged damage
+
+{0} dano de engenhoca mínimo
+= {0} minimum gadget damage
+
+{0} dano de engenhoca máximo
+= {0} maximum gadget damage
+
+{0} absorção mínima
+= {0} minimum absorb
+
+{0} absorção máxima
+= {0} maximum absorb
+
+{0}% velocidade de movimento
+= {0}% movement speed
+
+{0}% velocidade de ataque
+= {0}% attack speed
+
+{0}% resistência a veneno
+= {0}% poison resistance
+
+{0}% resistência a fogo
+= {0}% fire resistance
+
+{0}% resistência a choque
+= {0}% shock resistance
+
+{0}% do dano vira vida
+= {0}% of damage becomes life
+
+{0}% recarga mais rápida
+= {0}% faster cooldowns
+
+{0}% experiência
+= {0}% experience
+
+{0}% sucata encontrada
+= {0}% scrap found
+
+{0}% chance de achado raro
+= {0}% rare find chance
+
+{0} dano devolvido ao ser atingido
+= {0} damage returned when hit
+
+no máximo
+= maxed out
+
+sem pontos de poder
+= no power points
+
+requer o poder anterior
+= requires the previous power
+
+Não dá para equipar isso aí.
+= You can't equip that.
+
+A arma usa as duas mãos.
+= The weapon uses both hands.
+
+FÚRIA
+= FURY
+
+A fera se enfurece
+= The beast is enraged
+
++{0} atributo ({1})
+= +{0} attribute ({1})
+
++{0} poder ({1})
+= +{0} power ({1})
+
+⚙ {0} sucata
+= ⚙ {0} scrap
+
+veneno
+= poison
+
+sangra
+= bleeding
+
+queima
+= burning
+
+tonto
+= dazed
+
+lento
+= slow
+
+preso
+= rooted
+
+fúria
+= fury
+
+pele
+= skin
+
+escudo
+= shield
+
+cura
+= healing
+
+rápido
+= swift
+
+exposto
+= exposed
+
+provocado
+= taunted
+
+pingente
+= pendant
+
+arma
+= weapon
+
+bugiganga
+= trinket
+
+Inimigos derrotados {0}   Noites lá fora {1}   Mortes {2}
+= Enemies defeated {0}   Nights outside {1}   Deaths {2}
+
+arma {0}
+= {0} weapon
+
+missão principal
+= main quest
+
+missão secundária
+= side quest
+
+Recompensa: {0}
+= Reward: {0}

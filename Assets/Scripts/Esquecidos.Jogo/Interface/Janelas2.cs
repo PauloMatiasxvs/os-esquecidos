@@ -7,6 +7,7 @@ using Esquecidos.Nucleo.Progresso;
 using Esquecidos.Nucleo.Simulacao;
 using UnityEngine;
 using UnityEngine.UI;
+using static Esquecidos.Nucleo.Idioma;
 
 namespace Esquecidos.Jogo.Interface
 {
@@ -16,9 +17,9 @@ namespace Esquecidos.Jogo.Interface
 
         private void Diario()
         {
-            RectTransform j = Janela("diario", "Diário", new Vector2(0.5f, 0.5f), new Vector2(0, 40), new Vector2(1100, 780));
+            RectTransform j = Janela("diario", T("Diário"), new Vector2(0.5f, 0.5f), new Vector2(0, 40), new Vector2(1100, 780));
             string[] abas = { "missoes", "registros" };
-            string[] nomes = { "Missões", "Registros da ARCA" };
+            string[] nomes = { T("Missões"), T("Registros da ARCA") };
             for (int i = 0; i < abas.Length; i++)
             {
                 string aba = abas[i];
@@ -66,7 +67,7 @@ namespace Esquecidos.Jogo.Interface
                     EstadoDeMissao est = d.Missoes[_missaoSelecionada];
                     var sb = new System.Text.StringBuilder();
                     sb.Append($"<size=28><b>{m.Nome}</b></size>\n");
-                    sb.Append(IU.Cor(m.Principal ? "missão principal" : "missão secundária", "#8a8070")).Append("\n\n");
+                    sb.Append(IU.Cor(m.Principal ? T("missão principal") : T("missão secundária"), "#8a8070")).Append("\n\n");
                     sb.Append(IU.Cor($"<i>{m.Descricao}</i>", "#c8c0a8")).Append("\n\n");
                     for (int i = 0; i < m.Etapas.Count; i++)
                     {
@@ -79,12 +80,12 @@ namespace Esquecidos.Jogo.Interface
                     }
                     var recompensa = new List<string>();
                     if (m.RecompensaXp > 0) recompensa.Add($"{m.RecompensaXp} XP");
-                    if (m.RecompensaSucata > 0) recompensa.Add($"{m.RecompensaSucata} de sucata");
+                    if (m.RecompensaSucata > 0) recompensa.Add(F("{0} de sucata", m.RecompensaSucata));
                     foreach (string it in m.RecompensaItens) recompensa.Add(C.Item(it).Nome);
-                    if (recompensa.Count > 0) sb.Append('\n').Append(IU.Cor("Recompensa: " + string.Join(", ", recompensa), "#e0c890"));
+                    if (recompensa.Count > 0) sb.Append('\n').Append(IU.Cor(F("Recompensa: {0}", string.Join(", ", recompensa)), "#e0c890"));
                     detalhe.text = sb.ToString();
                 }
-                else detalhe.text = IU.Cor("Nenhuma missão ainda.", "#8a8070");
+                else detalhe.text = IU.Cor(T("Nenhuma missão ainda."), "#8a8070");
             }
             else
             {
@@ -110,7 +111,7 @@ namespace Esquecidos.Jogo.Interface
                 if (_missaoSelecionada != null && C.Registros.TryGetValue(_missaoSelecionada, out RegistroDef reg))
                     detalhe.text = $"<size=28><b>{reg.Titulo}</b></size>\n{IU.Cor(reg.Autor, "#8a8070")}\n\n{reg.Texto}";
                 else
-                    detalhe.text = IU.Cor($"Nenhum registro lido ainda. Os terminais da ARCA ficam nos becos do labirinto. ({Partida.RegistrosLidos.Count}/{C.Registros.Count})", "#8a8070");
+                    detalhe.text = IU.Cor(F("Nenhum registro lido ainda. Os terminais da ARCA ficam nos becos do labirinto. ({0}/{1})", Partida.RegistrosLidos.Count, C.Registros.Count), "#8a8070");
             }
         }
 
@@ -119,7 +120,7 @@ namespace Esquecidos.Jogo.Interface
         private void Mapa()
         {
             Nucleo.Mapas.Mapa m = Partida.Mapa;
-            RectTransform j = Janela("mapa", _mesaDosMapas ? "Mesa dos Mapas" : m?.Nome ?? "Mapa", new Vector2(0.5f, 0.5f), new Vector2(0, 30), new Vector2(940, 900));
+            RectTransform j = Janela("mapa", _mesaDosMapas ? T("Mesa dos Mapas") : m?.Nome ?? T("Mapa"), new Vector2(0.5f, 0.5f), new Vector2(0, 30), new Vector2(940, 900));
             if (m == null) return;
             Grade g = m.Grade;
             var tex = new Texture2D(g.Largura, g.Altura, TextureFormat.RGBA32, false) { filterMode = FilterMode.Point };
@@ -179,13 +180,13 @@ namespace Esquecidos.Jogo.Interface
                 Marca(Partida.Jogador.Pos, "▲", new Color(1f, 0.95f, 0.5f), 28);
             }
             int total = pl != null ? pl.Colunas * pl.Linhas : 0;
-            string rodape = pl != null ? $"Explorado hoje: {explorado?.Count ?? 0} de {total} trechos. Amanhã os muros terão mudado." : "O Pátio. Tudo que importa está aqui dentro.";
+            string rodape = pl != null ? F("Explorado hoje: {0} de {1} trechos. Amanhã os muros terão mudado.", explorado?.Count ?? 0, total) : T("O Pátio. Tudo que importa está aqui dentro.");
             Text info = IU.Texto(j, "info", rodape, 19, IU.CorFraca, TextAnchor.LowerCenter);
             info.rectTransform.Lugar(new Vector2(0.5f, 0), new Vector2(0.5f, 0), new Vector2(0, 58), new Vector2(880, 30));
             if (_mesaDosMapas)
             {
                 int novos = Partida.Explorado.Sum(kv => Mathf.Max(0, kv.Value.Count - (Partida.Entregue.TryGetValue(kv.Key, out int ja) ? ja : 0)));
-                Button b = IU.Botao(j, "entregar", novos > 0 ? $"Entregar mapas ao Caio ({novos} trechos novos)" : "Nenhum trecho novo para entregar", () =>
+                Button b = IU.Botao(j, "entregar", novos > 0 ? F("Entregar mapas ao Caio ({0} trechos novos)", novos) : T("Nenhum trecho novo para entregar"), () =>
                 {
                     Partida.EntregarMapas();
                     Sujar();
@@ -238,7 +239,7 @@ namespace Esquecidos.Jogo.Interface
             LojaDef def = C.Lojas[_loja];
             RectTransform j = Janela("loja", def.Nome, new Vector2(0, 0.5f), new Vector2(30, 40), new Vector2(620, 860));
             j.pivot = new Vector2(0, 0.5f);
-            Text ajuda = IU.Texto(j, "ajuda", "Clique para comprar. Na mochila, botão direito vende.", 17, IU.CorFraca, TextAnchor.UpperCenter);
+            Text ajuda = IU.Texto(j, "ajuda", T("Clique para comprar. Na mochila, botão direito vende."), 17, IU.CorFraca, TextAnchor.UpperCenter);
             ajuda.rectTransform.Lugar(new Vector2(0.5f, 1), new Vector2(0.5f, 1), new Vector2(0, -50), new Vector2(560, 24));
             List<Item> estoque = Partida.Estoque(_loja);
             float tam = 64, pad = 5;
@@ -267,7 +268,7 @@ namespace Esquecidos.Jogo.Interface
                 Text p = IU.Texto(s.transform, "preco", preco.ToString(), 13, preco <= Partida.Heroi.Sucata ? new Color(0.95f, 0.8f, 0.45f) : new Color(1f, 0.4f, 0.3f), TextAnchor.UpperRight);
                 p.rectTransform.Esticar(3);
             }
-            Text sucata = IU.Texto(j, "sucata", $"⚙ {Partida.Heroi.Sucata} de sucata", 22, new Color(0.95f, 0.8f, 0.45f), TextAnchor.LowerLeft);
+            Text sucata = IU.Texto(j, "sucata", F("⚙ {0} de sucata", Partida.Heroi.Sucata), 22, new Color(0.95f, 0.8f, 0.45f), TextAnchor.LowerLeft);
             sucata.rectTransform.Lugar(new Vector2(0, 0), new Vector2(0, 0), new Vector2(24, 16), new Vector2(400, 32));
         }
 
@@ -276,7 +277,7 @@ namespace Esquecidos.Jogo.Interface
         private void Oficina()
         {
             if (_estacao == null) return;
-            string titulo = _estacao == "oficina" ? "Bancada da Oficina" : "Mesa da Enfermaria";
+            string titulo = _estacao == "oficina" ? T("Bancada da Oficina") : T("Mesa da Enfermaria");
             RectTransform j = Janela("oficina", titulo, new Vector2(0, 0.5f), new Vector2(30, 40), new Vector2(620, 860));
             j.pivot = new Vector2(0, 0.5f);
             List<Receita> receitas = Partida.ReceitasDa(_estacao);
@@ -307,7 +308,7 @@ namespace Esquecidos.Jogo.Interface
             }
             if (receitas.Count == 0)
             {
-                Text nada = IU.Texto(j, "nada", "Nada para fazer aqui ainda.", 19, IU.CorFraca);
+                Text nada = IU.Texto(j, "nada", T("Nada para fazer aqui ainda."), 19, IU.CorFraca);
                 nada.rectTransform.Lugar(new Vector2(0, 1), new Vector2(0, 1), new Vector2(24, -60), new Vector2(500, 30));
                 return;
             }
@@ -328,7 +329,7 @@ namespace Esquecidos.Jogo.Interface
             det.rectTransform.Lugar(new Vector2(0, 0), new Vector2(0, 0), new Vector2(24, 80), new Vector2(570, 330));
             det.verticalOverflow = VerticalWrapMode.Overflow;
             det.rectTransform.pivot = new Vector2(0, 0);
-            Button fab = IU.Botao(j, "fabricar", "Fabricar", () =>
+            Button fab = IU.Botao(j, "fabricar", T("Fabricar"), () =>
             {
                 Partida.Fabricar(sel);
                 Sujar();
@@ -341,9 +342,9 @@ namespace Esquecidos.Jogo.Interface
 
         private void Guarda()
         {
-            RectTransform j = Janela("guarda", "Baú do Redário", new Vector2(0, 0.5f), new Vector2(30, 40), new Vector2(620, 860));
+            RectTransform j = Janela("guarda", T("Baú do Redário"), new Vector2(0, 0.5f), new Vector2(30, 40), new Vector2(620, 860));
             j.pivot = new Vector2(0, 0.5f);
-            Text ajuda = IU.Texto(j, "ajuda", "Botão direito tira do baú. Na mochila, botão direito guarda.", 17, IU.CorFraca, TextAnchor.UpperCenter);
+            Text ajuda = IU.Texto(j, "ajuda", T("Botão direito tira do baú. Na mochila, botão direito guarda."), 17, IU.CorFraca, TextAnchor.UpperCenter);
             ajuda.rectTransform.Lugar(new Vector2(0.5f, 1), new Vector2(0.5f, 1), new Vector2(0, -50), new Vector2(560, 24));
             float tam = 64, pad = 5;
             var g = Partida.Guarda;
@@ -371,7 +372,7 @@ namespace Esquecidos.Jogo.Interface
         private void Registro()
         {
             if (_registro == null || !C.Registros.TryGetValue(_registro, out RegistroDef r)) return;
-            RectTransform j = Janela("registro", "Terminal da ARCA", new Vector2(0.5f, 0.5f), new Vector2(0, 40), new Vector2(860, 620));
+            RectTransform j = Janela("registro", T("Terminal da ARCA"), new Vector2(0.5f, 0.5f), new Vector2(0, 40), new Vector2(860, 620));
             Image tela = IU.Painel(j, "tela", new Color(0.02f, 0.06f, 0.04f, 1));
             tela.rectTransform.Lugar(new Vector2(0.5f, 1), new Vector2(0.5f, 1), new Vector2(0, -56), new Vector2(800, 540));
             Text t = IU.Texto(tela.transform, "texto", $"<b>{r.Titulo.ToUpperInvariant()}</b>\n<size=18>{r.Autor}</size>\n\n{r.Texto}", 22, new Color(0.55f, 1f, 0.7f));

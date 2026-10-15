@@ -8,6 +8,7 @@ using Esquecidos.Nucleo.Itens;
 using Esquecidos.Nucleo.Regras;
 using Esquecidos.Nucleo.Roteiro;
 using Esquecidos.Nucleo.Simulacao;
+using static Esquecidos.Nucleo.Idioma;
 
 namespace Esquecidos.Nucleo.Partidas
 {
@@ -43,7 +44,7 @@ namespace Esquecidos.Nucleo.Partidas
     {
         public void Executar(EntregarMapas c)
         {
-            if (EntregarMapas() == 0) Mensagem("Nenhum trecho novo para entregar. Vá mapear o labirinto.", "#d0c0a0");
+            if (EntregarMapas() == 0) Mensagem(T("Nenhum trecho novo para entregar. Vá mapear o labirinto."), "#d0c0a0");
         }
 
         public void Executar(DefinirStatus c)
@@ -65,26 +66,26 @@ namespace Esquecidos.Nucleo.Partidas
             ItemBase b = Catalogo.Item(c.Item);
             Item item = b.Equipavel ? Loot.Criar(b, Math.Max(b.Nivel, Heroi.Nivel), b.Unico ? Raridade.Unico : Raridade.Reforcado, Rng) : new Item(c.Item, c.Quantidade);
             DarItemAoHeroi(item);
-            Mensagem($"Recebeu: {DescricaoDeItem.Nome(item, Catalogo)}{(item.Quantidade > 1 ? " ×" + item.Quantidade : "")}", DescricaoDeItem.CorDaRaridade(item.Raridade));
+            Mensagem(F("Recebeu: {0}", DescricaoDeItem.Nome(item, Catalogo)) + (item.Quantidade > 1 ? " ×" + item.Quantidade : ""), DescricaoDeItem.CorDaRaridade(item.Raridade));
         }
 
         public void Executar(TirarItem c)
         {
             if (Heroi.Mochila.Remover(c.Item, c.Quantidade))
-                Mensagem($"Entregou: {Catalogo.Item(c.Item).Nome}{(c.Quantidade > 1 ? " ×" + c.Quantidade : "")}", "#c8c0b0");
+                Mensagem(F("Entregou: {0}", Catalogo.Item(c.Item).Nome) + (c.Quantidade > 1 ? " ×" + c.Quantidade : ""), "#c8c0b0");
             Diario.Reavaliar();
         }
 
         public void Executar(DarXp c)
         {
             GanharXp(c.Quantidade);
-            Mensagem($"+{c.Quantidade} de experiência", "#c8e0ff");
+            Mensagem(F("+{0} de experiência", c.Quantidade), "#c8e0ff");
         }
 
         public void Executar(DarSucata c)
         {
             GanharSucata(c.Quantidade);
-            Mensagem($"+{c.Quantidade} de sucata", "#e0c890");
+            Mensagem(F("+{0} de sucata", c.Quantidade), "#e0c890");
         }
 
         public void Executar(TirarSucata c) => GanharSucata(-Math.Min(c.Quantidade, Heroi.Sucata));
@@ -114,7 +115,6 @@ namespace Esquecidos.Nucleo.Partidas
 
         public void Executar(IrParaMapa c)
         {
-            Despachante.Despachar(new NotTransicao(c.Mapa, c.Entrada));
             IrPara(c.Mapa, c.Entrada);
         }
 
@@ -279,7 +279,7 @@ namespace Esquecidos.Nucleo.Partidas
 
         private void AoConcluirMissao(MissaoDef m)
         {
-            Despachante.Despachar(new NotMissao(m, "Concluída", false, true));
+            Despachante.Despachar(new NotMissao(m, T("Concluída"), false, true));
             if (m.RecompensaXp > 0) GanharXp(m.RecompensaXp);
             if (m.RecompensaSucata > 0) GanharSucata(m.RecompensaSucata);
             foreach (string id in m.RecompensaItens) Executar(new DarItem(id, 1));
