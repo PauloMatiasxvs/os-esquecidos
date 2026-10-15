@@ -9,8 +9,10 @@ using Esquecidos.Nucleo.Partidas;
 using Esquecidos.Nucleo.Progresso;
 using Esquecidos.Nucleo.Regras;
 using Esquecidos.Nucleo.Simulacao;
+using Esquecidos.Motor.Entrada;
 using UnityEngine;
 using UnityEngine.UI;
+using static Esquecidos.Nucleo.Idioma;
 
 namespace Esquecidos.Jogo.Interface
 {
@@ -179,16 +181,16 @@ namespace Esquecidos.Jogo.Interface
             _folegoTxt.text = $"{Mathf.FloorToInt(j.Energia)} / {Mathf.RoundToInt(j.EnergiaMax)}";
             int xpAtual = h.Xp - c.Regras.XpTotalPara(h.Nivel), xpProx = c.Regras.XpTotalPara(h.Nivel + 1) - c.Regras.XpTotalPara(h.Nivel);
             _xp.fillAmount = h.Nivel >= c.Regras.NivelMaximo ? 1 : xpAtual / (float)Mathf.Max(1, xpProx);
-            _xpTxt.text = h.Nivel >= c.Regras.NivelMaximo ? "nível máximo" : $"{xpAtual} / {xpProx} XP";
-            _nome.text = $"{h.Nome}  <size=20><color=#b0a890>{c.Classe(h.Classe).Nome} · nível {h.Nivel}</color></size>";
+            _xpTxt.text = h.Nivel >= c.Regras.NivelMaximo ? T("nível máximo") : $"{xpAtual} / {xpProx} XP";
+            _nome.text = F("{0}  <size=20><color=#b0a890>{1} · nível {2}</color></size>", h.Nome, c.Classe(h.Classe).Nome, h.Nivel);
             string pontos = "";
-            if (h.PontosDeAtributo > 0) pontos += $"+{h.PontosDeAtributo} atributo (C)   ";
-            if (h.PontosDePoder > 0) pontos += $"+{h.PontosDePoder} poder (K)";
+            if (h.PontosDeAtributo > 0) pontos += F("+{0} atributo ({1})", h.PontosDeAtributo, Controles.Nome(Acao.Personagem)) + "   ";
+            if (h.PontosDePoder > 0) pontos += F("+{0} poder ({1})", h.PontosDePoder, Controles.Nome(Acao.Poderes));
             _pontos.text = pontos;
-            _sucata.text = $"⚙ {h.Sucata} sucata";
+            _sucata.text = F("⚙ {0} sucata", h.Sucata);
             CicloDoDia ciclo = Partida.Ciclo;
             string sol = ciclo.Noite ? "☾" : "☀";
-            string aviso = !ciclo.Noite && ciclo.Hora >= CicloDoDia.AvisoDeFechamento ? IU.Cor("  portões fechando!", "#ff9a4a") : "";
+            string aviso = !ciclo.Noite && ciclo.Hora >= CicloDoDia.AvisoDeFechamento ? IU.Cor(T("  portões fechando!"), "#ff9a4a") : "";
             _relogio.text = $"{sol} {ciclo.Relogio()}{aviso}";
             _local.text = Partida.Mapa?.Nome ?? "";
             AtualizarBarra(h, j, c);
@@ -290,19 +292,19 @@ namespace Esquecidos.Jogo.Interface
         {
             switch (e)
             {
-                case "veneno": return ("veneno", new Color(0.55f, 1f, 0.35f));
-                case "sangramento": return ("sangra", new Color(1f, 0.35f, 0.3f));
-                case "queimadura": return ("queima", new Color(1f, 0.6f, 0.25f));
-                case "atordoado": return ("tonto", new Color(1f, 0.9f, 0.4f));
-                case "lento": return ("lento", new Color(0.55f, 0.75f, 1f));
-                case "enraizado": return ("preso", new Color(0.9f, 0.75f, 0.5f));
-                case "furia": return ("fúria", new Color(1f, 0.4f, 0.25f));
-                case "pele": return ("pele", new Color(0.8f, 0.85f, 0.95f));
-                case "barreira": return ("escudo", new Color(0.6f, 0.8f, 1f));
-                case "regeneracao": return ("cura", new Color(0.5f, 1f, 0.55f));
-                case "rapidez": return ("rápido", new Color(0.9f, 0.95f, 1f));
-                case "vulneravel": return ("exposto", new Color(1f, 0.85f, 0.3f));
-                case "provocado": return ("provocado", new Color(1f, 0.5f, 0.3f));
+                case "veneno": return (T("veneno"), new Color(0.55f, 1f, 0.35f));
+                case "sangramento": return (T("sangra"), new Color(1f, 0.35f, 0.3f));
+                case "queimadura": return (T("queima"), new Color(1f, 0.6f, 0.25f));
+                case "atordoado": return (T("tonto"), new Color(1f, 0.9f, 0.4f));
+                case "lento": return (T("lento"), new Color(0.55f, 0.75f, 1f));
+                case "enraizado": return (T("preso"), new Color(0.9f, 0.75f, 0.5f));
+                case "furia": return (T("fúria"), new Color(1f, 0.4f, 0.25f));
+                case "pele": return (T("pele"), new Color(0.8f, 0.85f, 0.95f));
+                case "barreira": return (T("escudo"), new Color(0.6f, 0.8f, 1f));
+                case "regeneracao": return (T("cura"), new Color(0.5f, 1f, 0.55f));
+                case "rapidez": return (T("rápido"), new Color(0.9f, 0.95f, 1f));
+                case "vulneravel": return (T("exposto"), new Color(1f, 0.85f, 0.3f));
+                case "provocado": return (T("provocado"), new Color(1f, 0.5f, 0.3f));
             }
             return (e, Color.white);
         }
@@ -331,7 +333,7 @@ namespace Esquecidos.Jogo.Interface
             {
                 Entidade e = alvo.E;
                 bool inimigo = e.Faccao == Faccao.Inimigo;
-                string titulo = e.NpcId != null && e.Def == null ? _ui.P.Partida.Catalogo.Npc(e.NpcId).Titulo : $"nível {e.Nivel}";
+                string titulo = e.NpcId != null && e.Def == null ? _ui.P.Partida.Catalogo.Npc(e.NpcId).Titulo : F("nível {0}", e.Nivel);
                 _alvoNome.text = $"{e.Nome} <size=15><color=#b0a890>{titulo}</color></size>";
                 _alvoNome.color = inimigo ? (e.Elite ? new Color(1f, 0.85f, 0.35f) : new Color(1f, 0.75f, 0.7f)) : new Color(0.8f, 0.95f, 0.8f);
                 _alvoVida.transform.parent.gameObject.SetActive(inimigo);
@@ -372,9 +374,9 @@ namespace Esquecidos.Jogo.Interface
             Controle ctl = _ui.P.Controle;
             string texto = "";
             if (Partida.EmCena) texto = "";
-            else if (ctl.Mirado != null && ctl.Mirado.E.NpcId != null && ctl.Mirado.E.Faccao == Faccao.Neutro) texto = $"clique: falar com {ctl.Mirado.E.Nome}";
-            else if (ctl.LootMirado != null) texto = $"clique: pegar {ctl.LootMirado.Nome}";
-            else if (ctl.ObjetoMirado != null) texto = $"clique: {ctl.ObjetoMirado.O.Nome}";
+            else if (ctl.Mirado != null && ctl.Mirado.E.NpcId != null && ctl.Mirado.E.Faccao == Faccao.Neutro) texto = F("clique: falar com {0}", ctl.Mirado.E.Nome);
+            else if (ctl.LootMirado != null) texto = F("clique: pegar {0}", ctl.LootMirado.Nome);
+            else if (ctl.ObjetoMirado != null) texto = F("clique: {0}", ctl.ObjetoMirado.O.Nome);
             else
             {
                 // O mais perto ao alcance da tecla F.
@@ -387,7 +389,7 @@ namespace Esquecidos.Jogo.Interface
                     if (d < melhor)
                     {
                         melhor = d;
-                        texto = $"F: falar com {e.Nome}";
+                        texto = F("{0}: falar com {1}", Controles.Nome(Acao.Interagir), e.Nome);
                     }
                 }
                 foreach (ObjetoDeCena o in Partida.Mundo.Objetos)
@@ -397,7 +399,7 @@ namespace Esquecidos.Jogo.Interface
                     if (d < melhor)
                     {
                         melhor = d;
-                        texto = $"F: {o.Nome}";
+                        texto = $"{Controles.Nome(Acao.Interagir)}: {o.Nome}";
                     }
                 }
             }

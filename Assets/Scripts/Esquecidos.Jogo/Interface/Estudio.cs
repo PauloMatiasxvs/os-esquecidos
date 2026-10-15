@@ -77,7 +77,7 @@ namespace Esquecidos.Jogo.Interface
                 intensidade = sol.intensity;
                 sol.transform.rotation = Quaternion.Euler(40, -35, 0);
                 sol.color = new Color(1f, 0.95f, 0.88f);
-                sol.intensity = 0.8f;
+                sol.intensity = 1.15f;
             }
             Vector4 ceu = Shader.GetGlobalVector("_Esq_AmbienteCeu");
             Vector4 chao = Shader.GetGlobalVector("_Esq_AmbienteChao");

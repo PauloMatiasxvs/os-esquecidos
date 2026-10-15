@@ -1,4 +1,5 @@
 using System;
+using static Esquecidos.Nucleo.Idioma;
 
 namespace Esquecidos.Nucleo.Progresso
 {
@@ -91,7 +92,7 @@ namespace Esquecidos.Nucleo.Progresso
         {
             int h = (int)Hora;
             int min = (int)((Hora - h) * 60);
-            return $"Dia {Dia} · {h:00}:{min:00}";
+            return F("Dia {0} · {1:00}:{2:00}", Dia, h, min);
         }
 
         /// <summary>0 a meia-noite, 1 ao meio-dia: o quanto o sol esta alto, para a luz.</summary>

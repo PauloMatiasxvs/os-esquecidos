@@ -131,9 +131,17 @@ namespace Esquecidos.Jogo.Atores
                 }
             }
             Item maos = h.Equipado[(int)SlotEquip.Maos];
-            if (maos != null) d.CorLuvas = Util.Cor(c.Item(maos.Base).Cor);
+            if (maos != null)
+            {
+                d.CorLuvas = Util.Cor(c.Item(maos.Base).Cor);
+                d.ModeloLuvas = c.Item(maos.Base).Modelo;
+            }
             Item pes = h.Equipado[(int)SlotEquip.Pes];
-            if (pes != null) d.CorBotas = Util.Cor(c.Item(pes.Base).Cor);
+            if (pes != null)
+            {
+                d.CorBotas = Util.Cor(c.Item(pes.Base).Cor);
+                d.ModeloBotas = c.Item(pes.Base).Modelo;
+            }
             return d;
         }
 

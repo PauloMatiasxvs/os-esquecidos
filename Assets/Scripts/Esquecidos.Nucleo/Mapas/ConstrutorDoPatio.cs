@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Numerics;
 using Esquecidos.Nucleo.Simulacao;
+using static Esquecidos.Nucleo.Idioma;
 
 namespace Esquecidos.Nucleo.Mapas
 {
@@ -29,7 +30,7 @@ namespace Esquecidos.Nucleo.Mapas
         {
             var m = new Mapa("patio", Tamanho, Tamanho)
             {
-                Nome = "O Pátio",
+                Nome = T("O Pátio"),
                 Tema = Tema.Patio,
                 Seguro = true,
                 Musica = "patio",
@@ -66,7 +67,7 @@ namespace Esquecidos.Nucleo.Mapas
             Obj(new ObjetoDeCena
             {
                 Tipo = TipoObjeto.Elevador,
-                Nome = "Monta-Cargas",
+                Nome = T("Monta-Cargas"),
                 Pos = montaCargas + new Vector2(0, 2.8f),
                 RaioInteracao = 2.4f,
                 Modelo = "monta_cargas",
@@ -135,12 +136,12 @@ namespace Esquecidos.Nucleo.Mapas
             m.Enfeite("mesa_remedios", new Vector2(28, 63.6f), 0, 1, 2.4f, 1f);
 
             // Objetos com que se interage.
-            Obj(new ObjetoDeCena { Tipo = TipoObjeto.Estacao, Nome = "Bancada da Oficina", Pos = new Vector2(68, 62.4f), RaioInteracao = 2f, Texto = "oficina", Modelo = "nenhum" });
-            Obj(new ObjetoDeCena { Tipo = TipoObjeto.Estacao, Nome = "Mesa da Enfermaria", Pos = new Vector2(28, 62.4f), RaioInteracao = 2f, Texto = "enfermaria", Modelo = "nenhum" });
-            Obj(new ObjetoDeCena { Tipo = TipoObjeto.Guarda, Nome = "Baú do Redário", Pos = new Vector2(33, 25.4f), RaioInteracao = 2f, Modelo = "bau_grande", TemBloqueio = true, Bloqueio = Retangulo.Centrado(33, 25.4f, 1.6f, 1f), BloqueiaLigado = false });
-            Obj(new ObjetoDeCena { Tipo = TipoObjeto.Descanso, Nome = "Rede", Pos = new Vector2(23, 25.2f), RaioInteracao = 2.2f, Modelo = "rede" });
-            Obj(new ObjetoDeCena { Tipo = TipoObjeto.Painel, Nome = "Mesa dos Mapas", Pos = new Vector2(63, 33.5f), RaioInteracao = 2.2f, Modelo = "mesa_mapas", TemBloqueio = true, Bloqueio = Retangulo.Centrado(63, 33.5f, 2.4f, 1.4f), BloqueiaLigado = false });
-            Obj(new ObjetoDeCena { Tipo = TipoObjeto.Cartaz, Nome = "Muro dos Nomes", Pos = new Vector2(10.2f, 64), Direcao = 0, RaioInteracao = 2.6f, Modelo = "muro_dos_nomes", Roteiro = "muro_dos_nomes" });
+            Obj(new ObjetoDeCena { Tipo = TipoObjeto.Estacao, Nome = T("Bancada da Oficina"), Pos = new Vector2(68, 62.4f), RaioInteracao = 2f, Texto = "oficina", Modelo = "nenhum" });
+            Obj(new ObjetoDeCena { Tipo = TipoObjeto.Estacao, Nome = T("Mesa da Enfermaria"), Pos = new Vector2(28, 62.4f), RaioInteracao = 2f, Texto = "enfermaria", Modelo = "nenhum" });
+            Obj(new ObjetoDeCena { Tipo = TipoObjeto.Guarda, Nome = T("Baú do Redário"), Pos = new Vector2(33, 25.4f), RaioInteracao = 2f, Modelo = "bau_grande", TemBloqueio = true, Bloqueio = Retangulo.Centrado(33, 25.4f, 1.6f, 1f), BloqueiaLigado = false });
+            Obj(new ObjetoDeCena { Tipo = TipoObjeto.Descanso, Nome = T("Rede"), Pos = new Vector2(23, 25.2f), RaioInteracao = 2.2f, Modelo = "rede" });
+            Obj(new ObjetoDeCena { Tipo = TipoObjeto.Painel, Nome = T("Mesa dos Mapas"), Pos = new Vector2(63, 33.5f), RaioInteracao = 2.2f, Modelo = "mesa_mapas", TemBloqueio = true, Bloqueio = Retangulo.Centrado(63, 33.5f, 2.4f, 1.4f), BloqueiaLigado = false });
+            Obj(new ObjetoDeCena { Tipo = TipoObjeto.Cartaz, Nome = T("Muro dos Nomes"), Pos = new Vector2(10.2f, 64), Direcao = 0, RaioInteracao = 2.6f, Modelo = "muro_dos_nomes", Roteiro = "muro_dos_nomes" });
 
             m.Surgimentos.Add(new Surgimento { Inimigo = "boneco", Nivel = 1, Pos = new Vector2(78, 60) });
             m.Surgimentos.Add(new Surgimento { Inimigo = "boneco", Nivel = 1, Pos = new Vector2(81, 61.5f) });
@@ -217,7 +218,7 @@ namespace Esquecidos.Nucleo.Mapas
             obj(new ObjetoDeCena
             {
                 Tipo = TipoObjeto.Porta,
-                Nome = "Portão " + lado,
+                Nome = F("Portão {0}", T(lado)),
                 Pos = noMuro,
                 Direcao = MathF.Atan2(normal.Y, normal.X),
                 TemBloqueio = true,
@@ -230,7 +231,7 @@ namespace Esquecidos.Nucleo.Mapas
                 Altura = h,
                 SoDeDia = true,
                 RequerStatus = "portao_" + lado,
-                Mensagem = "O portão está fechado.",
+                Mensagem = T("O portão está fechado."),
                 Chave = "patio:portao_" + lado,
             });
             m.Muros.Add(new TrechoDeMuro
@@ -243,7 +244,7 @@ namespace Esquecidos.Nucleo.Mapas
             obj(new ObjetoDeCena
             {
                 Tipo = TipoObjeto.Saida,
-                Nome = "Labirinto",
+                Nome = T("Labirinto"),
                 Pos = saida,
                 RaioInteracao = 2.2f,
                 Destino = "portao:" + lado,

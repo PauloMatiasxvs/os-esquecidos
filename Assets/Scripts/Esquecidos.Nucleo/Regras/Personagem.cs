@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Esquecidos.Nucleo.Dados;
 using Esquecidos.Nucleo.Itens;
+using static Esquecidos.Nucleo.Idioma;
 
 namespace Esquecidos.Nucleo.Regras
 {
@@ -14,7 +15,7 @@ namespace Esquecidos.Nucleo.Regras
         public const int TamanhoDaMochila = 40;
         public const int TamanhoDaBarra = 8;
 
-        public string Nome = "Novato";
+        public string Nome = T("Novato");
         public string Classe;
         public int Nivel = 1;
         public int Xp;
@@ -97,11 +98,11 @@ namespace Esquecidos.Nucleo.Regras
         public string MotivoParaNaoAprender(Poder p)
         {
             int rank = RankDe(p.Id);
-            if (rank >= p.RankMaximo) return "no máximo";
-            if (PontosDePoder <= 0) return "sem pontos de poder";
-            if (Nivel < p.NivelMinimo + rank * 2 && rank > 0) return $"requer nível {p.NivelMinimo + rank * 2}";
-            if (Nivel < p.NivelMinimo) return $"requer nível {p.NivelMinimo}";
-            if (p.RequerPoder != null && RankDe(p.RequerPoder) == 0) return "requer o poder anterior";
+            if (rank >= p.RankMaximo) return T("no máximo");
+            if (PontosDePoder <= 0) return T("sem pontos de poder");
+            if (Nivel < p.NivelMinimo + rank * 2 && rank > 0) return F("requer nível {0}", p.NivelMinimo + rank * 2);
+            if (Nivel < p.NivelMinimo) return F("requer nível {0}", p.NivelMinimo);
+            if (p.RequerPoder != null && RankDe(p.RequerPoder) == 0) return T("requer o poder anterior");
             return null;
         }
 
@@ -121,7 +122,7 @@ namespace Esquecidos.Nucleo.Regras
                 float tem = Atributos[(int)atributo] + bonus[(Estat)(int)atributo];
                 if (tem < valor)
                 {
-                    motivo = $"Requer {Nomes.Exibir(atributo)} {valor}";
+                    motivo = F("Requer {0} {1}", Nomes.Exibir(atributo), valor);
                     return false;
                 }
             }
@@ -171,7 +172,7 @@ namespace Esquecidos.Nucleo.Regras
             SlotEquip? slot = slotPedido ?? SlotPara(b, this);
             if (slot == null || !SlotAceita(slot.Value, b))
             {
-                motivo = "Não dá para equipar isso aí.";
+                motivo = T("Não dá para equipar isso aí.");
                 return false;
             }
             if (!AtendeRequisitos(b, c, out motivo)) return false;
@@ -180,7 +181,7 @@ namespace Esquecidos.Nucleo.Regras
                 ItemBase arma = Arma(c);
                 if (arma != null && arma.DuasMaos)
                 {
-                    motivo = "A arma usa as duas mãos.";
+                    motivo = T("A arma usa as duas mãos.");
                     return false;
                 }
             }
@@ -196,7 +197,7 @@ namespace Esquecidos.Nucleo.Regras
                     Equipado[(int)SlotEquip.Secundaria] = sec;
                     Equipado[(int)slot.Value] = Mochila.Espacos[espaco];
                     Mochila.Espacos[espaco] = item;
-                    motivo = "Mochila cheia.";
+                    motivo = T("Mochila cheia.");
                     return false;
                 }
             }

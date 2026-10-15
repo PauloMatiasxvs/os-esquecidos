@@ -7,6 +7,7 @@ using Esquecidos.Nucleo.Itens;
 using Esquecidos.Nucleo.Mapas;
 using Esquecidos.Nucleo.Regras;
 using Esquecidos.Nucleo.Simulacao;
+using static Esquecidos.Nucleo.Idioma;
 
 namespace Esquecidos.Nucleo.Partidas
 {
@@ -107,10 +108,10 @@ namespace Esquecidos.Nucleo.Partidas
             {
                 if (motivo == "arma errada")
                 {
-                    string armas = string.Join(" ou ", p.ArmasExigidas.Select(NomeDaClasseDeArma));
-                    Mensagem($"{p.Nome} precisa de arma {armas}.", "#ff9a6a");
+                    string armas = string.Join(T(" ou "), p.ArmasExigidas.Select(NomeDaClasseDeArma));
+                    Mensagem(F("{0} precisa de arma {1}.", p.Nome, armas), "#ff9a6a");
                 }
-                else if (motivo == "fôlego insuficiente") Mensagem("Sem fôlego.", "#7fb6ff");
+                else if (motivo == "fôlego insuficiente") Mensagem(T("Sem fôlego."), "#7fb6ff");
                 return;
             }
             Entidade alvo = Mundo.Buscar(alvoId);
@@ -140,12 +141,12 @@ namespace Esquecidos.Nucleo.Partidas
         {
             switch (c)
             {
-                case ClasseArma.Leve: return "leve";
-                case ClasseArma.Pesada: return "pesada";
-                case ClasseArma.Haste: return "de haste";
-                case ClasseArma.Distancia: return "de arremesso";
-                case ClasseArma.Choque: return "de choque";
-                default: return "nenhuma";
+                case ClasseArma.Leve: return T("leve");
+                case ClasseArma.Pesada: return T("pesada");
+                case ClasseArma.Haste: return T("de haste");
+                case ClasseArma.Distancia: return T("de arremesso");
+                case ClasseArma.Choque: return T("de choque");
+                default: return T("nenhuma");
             }
         }
 
@@ -262,7 +263,7 @@ namespace Esquecidos.Nucleo.Partidas
                 case "cura":
                     if (j.Vida >= j.VidaMax - 0.5f)
                     {
-                        Mensagem("Você já está inteiro.");
+                        Mensagem(T("Você já está inteiro."));
                         return false;
                     }
                     if (u.Duracao > 0) Mundo.AplicarEfeito(j, "regeneracao", u.Duracao, u.Valor / u.Duracao, j.Id);
@@ -285,7 +286,7 @@ namespace Esquecidos.Nucleo.Partidas
                 case "mapa":
                     if (Mapa.Planta == null)
                     {
-                        Mensagem("Aqui não há o que mapear.");
+                        Mensagem(T("Aqui não há o que mapear."));
                         return false;
                     }
                     RevelarSetor();
@@ -293,7 +294,7 @@ namespace Esquecidos.Nucleo.Partidas
                 case "retorno":
                     if (Mapa.Seguro || Ciclo.Noite)
                     {
-                        Mensagem(Ciclo.Noite ? "De noite o sinalizador não chama ninguém." : "Você já está no Pátio.");
+                        Mensagem(Ciclo.Noite ? T("De noite o sinalizador não chama ninguém.") : T("Você já está no Pátio."));
                         return false;
                     }
                     IrPara("patio", "sul");
@@ -318,7 +319,7 @@ namespace Esquecidos.Nucleo.Partidas
         {
             if (!Heroi.Desequipar(slot, Catalogo))
             {
-                Mensagem("Mochila cheia.", "#ff9a6a");
+                Mensagem(T("Mochila cheia."), "#ff9a6a");
                 return false;
             }
             RecalcularFicha();
@@ -331,7 +332,7 @@ namespace Esquecidos.Nucleo.Partidas
             if (item == null || Jogador == null) return;
             if (Catalogo.Item(item.Base).Tipo == TipoItem.Missao)
             {
-                Mensagem("Isso é importante demais para jogar fora.");
+                Mensagem(T("Isso é importante demais para jogar fora."));
                 return;
             }
             Heroi.Mochila.Espacos[espaco] = null;
@@ -345,7 +346,7 @@ namespace Esquecidos.Nucleo.Partidas
             if (item == null) return;
             Item sobra = Guarda.Adicionar(item, Catalogo);
             Heroi.Mochila.Espacos[espaco] = sobra;
-            if (sobra != null) Mensagem("O baú está cheio.");
+            if (sobra != null) Mensagem(T("O baú está cheio."));
             Diario.Reavaliar();
         }
 
@@ -355,7 +356,7 @@ namespace Esquecidos.Nucleo.Partidas
             if (item == null) return;
             Item sobra = Heroi.Mochila.Adicionar(item, Catalogo);
             Guarda.Espacos[espaco] = sobra;
-            if (sobra != null) Mensagem("Mochila cheia.", "#ff9a6a");
+            if (sobra != null) Mensagem(T("Mochila cheia."), "#ff9a6a");
             Diario.Reavaliar();
         }
 
@@ -448,12 +449,12 @@ namespace Esquecidos.Nucleo.Partidas
             int preco = DescricaoDeItem.PrecoDeCompra(unidade, Catalogo);
             if (Heroi.Sucata < preco)
             {
-                Mensagem("Sucata insuficiente.", "#ff9a6a");
+                Mensagem(T("Sucata insuficiente."), "#ff9a6a");
                 return false;
             }
             if (Heroi.Mochila.Cabe(unidade, Catalogo) < unidade.Quantidade)
             {
-                Mensagem("Mochila cheia.", "#ff9a6a");
+                Mensagem(T("Mochila cheia."), "#ff9a6a");
                 return false;
             }
             GanharSucata(-preco);
@@ -479,7 +480,7 @@ namespace Esquecidos.Nucleo.Partidas
             ItemBase b = Catalogo.Item(item.Base);
             if (b.Tipo == TipoItem.Missao)
             {
-                Mensagem("Ninguém compra isso. E você precisa disso.");
+                Mensagem(T("Ninguém compra isso. E você precisa disso."));
                 return false;
             }
             int valor = DescricaoDeItem.PrecoDeVenda(item, Catalogo);
@@ -502,8 +503,8 @@ namespace Esquecidos.Nucleo.Partidas
 
         public string MotivoParaNaoFabricar(Receita r)
         {
-            if (Heroi.Nivel < r.Nivel) return $"requer nível {r.Nivel}";
-            if (Heroi.Sucata < r.Sucata) return "sucata insuficiente";
+            if (Heroi.Nivel < r.Nivel) return F("requer nível {0}", r.Nivel);
+            if (Heroi.Sucata < r.Sucata) return T("sucata insuficiente");
             foreach ((string item, int qtd) in r.Ingredientes)
                 if (Heroi.Mochila.Contar(item) < qtd) return $"falta {Catalogo.Item(item).Nome}";
             return null;
@@ -523,7 +524,7 @@ namespace Esquecidos.Nucleo.Partidas
                 : new Item(b.Id, r.QuantidadeResultado);
             if (Heroi.Mochila.Cabe(resultado, Catalogo) < resultado.Quantidade && Heroi.Mochila.Livres() == 0)
             {
-                Mensagem("Mochila cheia.", "#ff9a6a");
+                Mensagem(T("Mochila cheia."), "#ff9a6a");
                 return false;
             }
             foreach ((string item, int qtd) in r.Ingredientes) Heroi.Mochila.Remover(item, qtd);
@@ -576,7 +577,7 @@ namespace Esquecidos.Nucleo.Partidas
                 Explorado[chave] = celulas;
             }
             for (int i = 0; i < Mapa.Planta.Colunas * Mapa.Planta.Linhas; i++) celulas.Add(i);
-            Mensagem("O setor inteiro está no seu mapa agora.", "#ffe9b0");
+            Mensagem(T("O setor inteiro está no seu mapa agora."), "#ffe9b0");
         }
 
         public HashSet<int> CelulasExploradas(string mapa, int dia)
@@ -605,7 +606,7 @@ namespace Esquecidos.Nucleo.Partidas
             int total = Contador("celulas_mapeadas");
             if (total >= 40) Diario.DefinirStatus("mapeou_40");
             if (total >= 120) Diario.DefinirStatus("mapeou_120");
-            Mensagem($"Caio passou {novas} trechos para o mapa grande. (+{novas * 4} XP)", "#ffe9b0");
+            Mensagem(F("Caio passou {0} trechos para o mapa grande. (+{1} XP)", novas, novas * 4), "#ffe9b0");
             return novas;
         }
     }

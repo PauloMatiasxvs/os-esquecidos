@@ -7,6 +7,7 @@ using Esquecidos.Jogo.Cena;
 using Esquecidos.Jogo.Efeitos;
 using Esquecidos.Jogo.Interface;
 using Esquecidos.Motor;
+using Esquecidos.Nucleo;
 using Esquecidos.Nucleo.Comandos;
 using Esquecidos.Nucleo.Dados;
 using Esquecidos.Nucleo.Mapas;
@@ -15,6 +16,7 @@ using Esquecidos.Nucleo.Simulacao;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
+using static Esquecidos.Nucleo.Idioma;
 
 namespace Esquecidos.Jogo
 {
@@ -35,6 +37,8 @@ namespace Esquecidos.Jogo
     public sealed class Principal : MonoBehaviour, IExecutor<NotMapaCarregado>, IExecutor<NotJogadorMorreu>, IExecutor<NotTransicao>
     {
         public const float Passo = 1f / 60f;
+        /// <summary>Tempo da tela escurecendo antes de trocar de mapa.</summary>
+        public const float AtrasoDeTransicao = 0.3f;
         public static Principal Instancia { get; private set; }
 
         public Catalogo Catalogo { get; private set; }
@@ -58,7 +62,13 @@ namespace Esquecidos.Jogo
         private float _lento;
         private float _orbita;
 
-        public static string CaminhoDoSalvo => Path.Combine(Application.persistentDataPath, "salvo.txt");
+        public const int Espacos = 3;
+
+        /// <summary>O espaco de salvamento em uso (1 a 3): o salvamento automatico e o F5 vao para ele.</summary>
+        public int Espaco { get; private set; } = 1;
+
+        public static string CaminhoDoEspaco(int espaco) => Path.Combine(Application.persistentDataPath, $"salvo{espaco}.txt");
+        public string CaminhoDoSalvo => CaminhoDoEspaco(Espaco);
         public static string CaminhoDasOpcoes => Path.Combine(Application.persistentDataPath, "opcoes.txt");
 
         private void Awake()
@@ -66,6 +76,11 @@ namespace Esquecidos.Jogo
             Instancia = this;
             Application.targetFrameRate = 144;
             Registro.Info("iniciando Os Esquecidos");
+            bool teste = Teste.Pedido(out string modo);
+            // O idioma vem antes de tudo: o catalogo e os roteiros sao lidos ja traduzidos.
+            Opcoes.Ler();
+            Recursos.AplicarIdioma(teste ? Teste.Argumento("idioma") ?? Opcoes.Idioma : Opcoes.Idioma);
+            MigrarSalvoAntigo();
             Catalogo = Recursos.Catalogo();
             _mundo = new GameObject("Mundo").transform;
             _mundo.SetParent(transform, false);
@@ -82,12 +97,13 @@ namespace Esquecidos.Jogo
                 es.transform.SetParent(transform, false);
             }
             UI = Interface.Interface.Criar(this, transform);
-            Opcoes.Carregar(this);
+            if (teste) ModoTeste = true;
+            Opcoes.Aplicar(this);
 
             var erros = Catalogo.Validar(nome => true);
             foreach (string e in erros) Registro.Erro("dados: " + e);
 
-            if (Teste.Pedido(out string modo))
+            if (teste)
             {
                 Teste.Iniciar(this, modo);
                 return;
@@ -98,7 +114,7 @@ namespace Esquecidos.Jogo
         /// <summary>Partida nova ligada a todos os ouvintes da camada de jogo.</summary>
         private Partida NovaPartidaVazia()
         {
-            var p = new Partida(Catalogo, () => Recursos.Textos("Roteiros"));
+            var p = new Partida(Catalogo, () => Recursos.Textos("Roteiros")) { AtrasoDeTransicao = AtrasoDeTransicao };
             RegistroDeExecutores r = p.Registro;
             r.Registrar(this);
             r.Registrar(Visuais);
@@ -135,8 +151,9 @@ namespace Esquecidos.Jogo
             UI.MostrarMenuPrincipal();
         }
 
-        public void ComecarNovoJogo(string classe, string nome, Aparencia aparencia)
+        public void ComecarNovoJogo(string classe, string nome, Aparencia aparencia, int espaco = 0)
         {
+            if (espaco >= 1 && espaco <= Espacos) Espaco = espaco;
             Demonstracao = false;
             Partida = NovaPartidaVazia();
             Camera.FocarCena(null);
@@ -146,14 +163,102 @@ namespace Esquecidos.Jogo
             Partida.NovaPartida(classe, nome, aparencia);
         }
 
-        public bool TemSalvo => File.Exists(CaminhoDoSalvo);
+        public bool TemSalvo => EspacoMaisRecente() > 0;
 
-        public bool Continuar()
+        public static bool EspacoUsado(int espaco) => File.Exists(CaminhoDoEspaco(espaco));
+
+        /// <summary>O espaco salvo por ultimo, ou 0 se nao ha nenhum.</summary>
+        public static int EspacoMaisRecente()
         {
-            if (!TemSalvo) return false;
+            int melhor = 0;
+            DateTime quando = DateTime.MinValue;
+            for (int i = 1; i <= Espacos; i++)
+            {
+                if (!EspacoUsado(i)) continue;
+                DateTime t = File.GetLastWriteTime(CaminhoDoEspaco(i));
+                if (t > quando)
+                {
+                    quando = t;
+                    melhor = i;
+                }
+            }
+            return melhor;
+        }
+
+        /// <summary>Uma linha para a lista de espacos: quem, classe, nivel, dia e quando foi salvo.</summary>
+        public string ResumoDoEspaco(int espaco)
+        {
+            if (!EspacoUsado(espaco)) return null;
             try
             {
-                string texto = File.ReadAllText(CaminhoDoSalvo);
+                string texto = File.ReadAllText(CaminhoDoEspaco(espaco));
+                List<Secao> secoes = LeitorIni.Ler(texto, "salvo");
+                Secao jogo = secoes.Find(s => s.Nome == "jogo");
+                Secao pers = secoes.Find(s => s.Nome == "personagem");
+                string classe = pers?.Texto("classe");
+                string nomeDaClasse = classe != null && Catalogo.Classes.TryGetValue(classe, out Nucleo.Regras.Classe c) ? c.Nome : classe;
+                DateTime quando = File.GetLastWriteTime(CaminhoDoEspaco(espaco));
+                return Idioma.F("{0} · {1} nível {2} · Dia {3} · {4:dd/MM HH:mm}", pers?.Texto("nome") ?? "?", nomeDaClasse, pers?.Inteiro("nivel", 1) ?? 1, jogo?.Inteiro("dia", 1) ?? 1, quando);
+            }
+            catch (Exception e)
+            {
+                Registro.Aviso("resumo do salvo: " + e.Message);
+                return Idioma.T("(arquivo danificado)");
+            }
+        }
+
+        /// <summary>O salvo de antes dos espacos ("salvo.txt") vira o espaco 1.</summary>
+        private static void MigrarSalvoAntigo()
+        {
+            try
+            {
+                string antigo = Path.Combine(Application.persistentDataPath, "salvo.txt");
+                if (File.Exists(antigo) && !EspacoUsado(1)) File.Move(antigo, CaminhoDoEspaco(1));
+            }
+            catch (Exception e)
+            {
+                Registro.Aviso("migrar salvo: " + e.Message);
+            }
+        }
+
+        public bool Continuar() => CarregarEspaco(EspacoMaisRecente());
+
+        public bool CarregarEspacoAtual() => CarregarEspaco(Espaco);
+
+        public bool CarregarEspaco(int espaco)
+        {
+            if (espaco < 1 || !EspacoUsado(espaco)) return false;
+            Espaco = espaco;
+            try
+            {
+                return CarregarTexto(File.ReadAllText(CaminhoDoSalvo));
+            }
+            catch (Exception e)
+            {
+                Registro.Erro("carregar: " + e);
+                UI.Mensagem(Idioma.T("Não foi possível carregar o jogo salvo."), "#ff8060");
+                return false;
+            }
+        }
+
+        /// <summary>Troca o idioma: guarda nas opcoes e remonta o jogo inteiro, ja traduzido.</summary>
+        public void TrocarIdioma(string idioma)
+        {
+            if (idioma == Opcoes.Idioma) return;
+            Opcoes.Idioma = idioma;
+            Opcoes.Salvar(this);
+            Instancia = null;
+            // Desligar antes de destruir: o EventSystem e a camera antigos saem de cena ja neste quadro.
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+            Inicio.Recomecar();
+        }
+
+        /// <summary>Monta a partida a partir do texto de um jogo salvo.</summary>
+        public bool CarregarTexto(string texto)
+        {
+            try
+            {
                 Demonstracao = false;
                 Partida = NovaPartidaVazia();
                 Camera.FocarCena(null);
@@ -161,13 +266,13 @@ namespace Esquecidos.Jogo
                 Estado = EstadoDoJogo.Jogando;
                 UI.EsconderMenus();
                 Partida.Carregar(texto);
-                UI.Mensagem("Jogo carregado.", "#c8e0ff");
+                UI.Mensagem(Idioma.T("Jogo carregado."), "#c8e0ff");
                 return true;
             }
             catch (Exception e)
             {
                 Registro.Erro("carregar: " + e);
-                UI.Mensagem("Não foi possível carregar o jogo salvo.", "#ff8060");
+                UI.Mensagem(Idioma.T("Não foi possível carregar o jogo salvo."), "#ff8060");
                 return false;
             }
         }
@@ -179,7 +284,7 @@ namespace Esquecidos.Jogo
             {
                 Directory.CreateDirectory(Path.GetDirectoryName(CaminhoDoSalvo));
                 File.WriteAllText(CaminhoDoSalvo, Partida.Salvar());
-                UI.Mensagem("Jogo salvo.", "#c8e0ff");
+                UI.Mensagem(Idioma.F("Jogo salvo (espaço {0}).", Espaco), "#c8e0ff");
             }
             catch (Exception e)
             {
@@ -207,12 +312,18 @@ namespace Esquecidos.Jogo
 
         // ------------------------------------------------------------------ notificacoes
 
+        /// <summary>Quanto custou montar o ultimo mapa, para o relatorio do modo de teste.</summary>
+        public string TempoDaUltimaCarga { get; private set; } = "";
+
         public void Executar(NotMapaCarregado n)
         {
+            var relogio = System.Diagnostics.Stopwatch.StartNew();
             if (Cena != null) Destroy(Cena.gameObject);
             Cena = ConstrutorDeCena.Construir(n.Mapa, n.Mundo, _mundo);
+            long cena = relogio.ElapsedMilliseconds;
             Efeitos.Limpar(_mundo);
             Visuais.Reconstruir(n.Mundo, _mundo);
+            TempoDaUltimaCarga = $"cena {cena} ms, atores {relogio.ElapsedMilliseconds - cena} ms";
             Camera.Teleportar();
             if (!Demonstracao)
             {
@@ -223,7 +334,7 @@ namespace Esquecidos.Jogo
             UI.MapaMudou(n.Mapa);
         }
 
-        public void Executar(NotTransicao n) => UI.Piscar(0.35f);
+        public void Executar(NotTransicao n) => UI.EscurecerParaTrocar(AtrasoDeTransicao * 0.85f);
 
         public void Executar(NotJogadorMorreu n)
         {
@@ -264,11 +375,19 @@ namespace Esquecidos.Jogo
             {
                 _acumulador += dt * Time.timeScale;
                 int passos = 0;
+                Nucleo.Mapas.Mapa antes = Partida.Mapa;
+                var relogio = System.Diagnostics.Stopwatch.StartNew();
                 while (_acumulador >= Passo && passos < 5)
                 {
                     Partida.Passo(Passo);
                     _acumulador -= Passo;
                     passos++;
+                }
+                if (Partida.Mapa != antes)
+                {
+                    TempoDaUltimaCarga += $", total {relogio.ElapsedMilliseconds} ms";
+                    // O passo que montou o mapa foi longo: nao tenta recuperar o atraso de uma vez.
+                    _acumulador = 0;
                 }
                 if (passos == 5) _acumulador = 0;
             }

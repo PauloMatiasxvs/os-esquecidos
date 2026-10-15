@@ -35,7 +35,7 @@ namespace Esquecidos.Nucleo.Dados
         public bool Chefe;
         public bool Voa;
         public string Loot;
-        public float VidaPorNivel = 0.28f;
+        public float VidaPorNivel = 0.22f;
         public float DanoPorNivel = 0.14f;
         public string Voz = "tecelao";
         public string Descricao = "";
@@ -61,7 +61,7 @@ namespace Esquecidos.Nucleo.Dados
                 Chefe = s.Logico("chefe"),
                 Voa = s.Logico("voa"),
                 Loot = s.Texto("loot"),
-                VidaPorNivel = s.Real("vida_por_nivel", 0.28f),
+                VidaPorNivel = s.Real("vida_por_nivel", 0.22f),
                 DanoPorNivel = s.Real("dano_por_nivel", 0.14f),
                 Voz = s.Texto("voz", "tecelao"),
                 Descricao = s.Texto("descricao", ""),

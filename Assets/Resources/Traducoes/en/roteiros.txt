@@ -1,0 +1,727 @@
+# Traducao para o ingles: roteiros. O texto em portugues e a chave; a linha com "= " e a traducao.
+
+Escuro. Um rangido de metal subindo, subindo. Cheiro de ferrugem e de terra molhada.
+= Darkness. A creak of metal rising, rising. The smell of rust and wet earth.
+
+Você não lembra de onde veio. Não lembra de rosto nenhum. Só de uma coisa: o seu próprio nome.
+= You don't remember where you came from. You don't remember a single face. Only one thing: your own name.
+
+A subida para de uma vez. Do lado de fora, mãos forçam as grades.
+= The ascent stops all at once. Outside, hands are forcing the bars.
+
+Calma. Calma, novato. Ninguém aqui vai te machucar.
+= Easy. Easy, newbie. Nobody here is going to hurt you.
+
+Eu sou a Iara. Isso aqui é o Pátio. Todo mundo chegou do mesmo jeito que você: nessa caixa, sem lembrar de nada.
+= I'm Iara. This is the Yard. Everyone got here the same way you did: in that box, remembering nothing.
+
+Onde eu estou?
+= Where am I?
+
+Por que eu não lembro de nada?
+= Why can't I remember anything?
+
+Dentro de um muro. E do outro lado do muro, um labirinto que ninguém nunca atravessou.
+= Inside a wall. And on the other side of the wall, a maze nobody has ever crossed.
+
+Ninguém aqui lembra. A gente acha que tiraram de propósito. Quem? Também não sabemos.
+= Nobody here remembers. We think it was taken on purpose. By whom? We don't know that either.
+
+Respira. Depois você pergunta o resto. Vem comigo até a árvore velha.
+= Breathe. You can ask the rest later. Come with me to the old tree.
+
+O Pátio
+= The Yard
+
+Clique no chão ou use W A S D para andar. Clique numa pessoa para conversar (ou chegue perto e aperte F). Q e E giram a câmera, a roda do mouse aproxima.
+= Click on the ground or use W A S D to walk. Click on a person to talk (or get close and press F). Q and E rotate the camera, the mouse wheel zooms.
+
+Melhor. Já tem cor no rosto.
+= Better. There's some color in your face now.
+
+As regras do Pátio são poucas. Todo mundo trabalha. Ninguém machuca ninguém. E ninguém passa pelos portões sem ser Corredor.
+= The Yard has few rules. Everybody works. Nobody hurts anybody. And nobody goes through the gates unless they're a Runner.
+
+O que tem lá fora?
+= What's out there?
+
+Quem colocou a gente aqui?
+= Who put us here?
+
+Certo. O que eu faço?
+= Okay. What do I do?
+
+O labirinto. Muros de concreto do tamanho de prédio. De dia os portões abrem. De noite fecham, os muros andam e os Tecelões saem.
+= The maze. Concrete walls as tall as buildings. By day the gates open. At night they close, the walls move and the Weavers come out.
+
+Os Corredores do Teo mapeiam tudo de dia procurando a saída. Faz dois anos que procuram.
+= Teo's Runners map everything by day, looking for the way out. They've been looking for two years.
+
+Tem placas velhas espalhadas pelo labirinto com quatro letras: ARCA. Nunca vimos ninguém da ARCA. Só as coisas que eles mandam.
+= There are old signs all over the maze with four letters: ARCA. We've never seen anyone from ARCA. Only the things they send.
+
+Primeiro, a Duda. Ela cuida de todo mundo que chega. A enfermaria é a cabana a noroeste, depois da plantação.
+= First, Duda. She takes care of everyone who arrives. The infirmary is the hut to the northwest, past the crops.
+
+Descansa um pouco. O labirinto não vai a lugar nenhum. Infelizmente.
+= Rest a little. The maze isn't going anywhere. Unfortunately.
+
+Duda, depois Marreta, depois o Teo. Nessa ordem. A pressa mata mais que os Tecelões.
+= Duda, then Marreta, then Teo. In that order. Rushing kills more people than the Weavers.
+
+O Ferrão vive no fundo do setor leste, numa arena com grade. Alguma alavanca abre a grade. Volte antes da sirene.
+= Stinger lives at the back of the east sector, in an arena with a gate. Some lever opens the gate. Be back before the siren.
+
+Os marcos. O Caio está convencido de que os quatro símbolos são uma chave. Eu quero acreditar nele.
+= The markers. Caio is convinced the four symbols are a key. I want to believe him.
+
+O que tinha naquele gravador? Você está com uma cara de quem ouviu um fantasma.
+= What was on that recorder? You look like you've heard a ghost.
+
+A saída. Depois de dois anos. Vai. Se alguém pode, é você.
+= The way out. After two years. Go. If anyone can, it's you.
+
+Somos trinta e oito agora. Trinta e nove com você.
+= There are thirty-eight of us now. Thirty-nine with you.
+
+A Bia cozinha, a Duda remenda, o Marreta conserta, o Caio desenha mapas. O Zeca vigia o portão norte, que é por onde eles mais tentam entrar.
+= Bia cooks, Duda patches people up, Marreta fixes things, Caio draws maps. Zeca keeps watch over the north gate, which is where they try to get in the most.
+
+A cada trinta dias a caixa sobe com comida, ferramentas e uma pessoa nova. Sempre uma só. Sempre sem memória.
+= Every thirty days the box comes up with food, tools and one new person. Always just one. Always with no memory.
+
+Eu fui a quarta a chegar. As três primeiras... estão no cemitério, perto do matagal.
+= I was the fourth to arrive. The first three... are in the cemetery, by the thicket.
+
+Ninguém me escolheu líder. Eu só fui a única que não chorava na primeira noite.
+= Nobody chose me as leader. I was just the only one who didn't cry the first night.
+
+Às vezes eu sonho com uma janela grande. Gente de branco do outro lado do vidro, anotando. Nunca contei isso para ninguém.
+= Sometimes I dream of a big window. People in white on the other side of the glass, taking notes. I've never told anyone that.
+
+Você ouviu o gravador. Eu vi da árvore. O que ele disse?
+= You listened to the recorder. I saw from the tree. What did it say?
+
+A verdade: eu trabalhava para a ARCA. Eu ajudei a construir isso.
+= The truth: I worked for ARCA. I helped build this.
+
+Nada que faça sentido. Chiado, umas palavras soltas.
+= Nothing that makes sense. Static, a few loose words.
+
+...
+= ...
+
+Você desenhou os muros. Os Tecelões. O Davi morreu para uma coisa que você fez.
+= You designed the walls. The Weavers. Davi died because of something you made.
+
+E mesmo assim você contou. Podia ter mentido e eu nunca ia saber.
+= And you told me anyway. You could have lied and I'd never have known.
+
+Então quem você era não importa. Importa quem você é aqui. Encontra a saída que você mesmo escondeu.
+= So who you were doesn't matter. What matters is who you are here. Find the way out you hid yourself.
+
+Hm. Se você diz.
+= Hm. If you say so.
+
+Só lembra de uma coisa: no Pátio a gente não guarda segredo um do outro. É a única coisa que a gente tem.
+= Just remember one thing: in the Yard we don't keep secrets from each other. It's the only thing we have.
+
+Você anda lendo aqueles terminais da ARCA no labirinto, não anda? O Caio me contou.
+= You've been reading those ARCA terminals in the maze, haven't you? Caio told me.
+
+Lê todos que achar. Eu quero saber o que eles pensam que estão fazendo com a gente.
+= Read every one you find. I want to know what they think they're doing to us.
+
+E então?
+= Well?
+
+A Cinza. Uma doença lá fora que apaga as pessoas. A gente é imune. O labirinto é um teste para achar uma cura.
+= The Ash. A disease out there that erases people. We're immune. The maze is a test to find a cure.
+
+Então tudo isso... os muros, os Tecelões, as mortes... é um laboratório. E nós somos os ratos.
+= So all of this... the walls, the Weavers, the deaths... it's a laboratory. And we're the rats.
+
+Obrigada por me contar. Fica com isso. Achei perto do portão norte, semana passada.
+= Thank you for telling me. Keep this. I found it near the north gate last week.
+
+Escuta. O Caio quer um núcleo de Tecelão. Não um qualquer: o do Ferrão, o maior do setor leste.
+= Listen. Caio wants a Weaver core. Not just any: Stinger's, the biggest one in the east sector.
+
+Eu vou com você dessa vez. Portão leste. A gente volta antes da sirene, entendeu? Antes da sirene.
+= I'm coming with you this time. East gate. We're back before the siren, understood? Before the siren.
+
+Espaço rola: no meio do rolamento nada te acerta. Clique direito e as teclas 1 a 6 usam os poderes e itens da barra. I abre a mochila, C o personagem, K os poderes, J o diário, M o mapa.
+= Space rolls: mid-roll nothing hits you. Right click and keys 1 to 6 use the powers and items on the bar. I opens the backpack, C the character, K the powers, J the journal, M the map.
+
+O Teo me contou. Você voltou do setor leste com o núcleo do Ferrão nas mãos.
+= Teo told me. You came back from the east sector with Stinger's core in your hands.
+
+A partir de hoje você é Corredor. E o portão sul também é seu.
+= From today on you're a Runner. And the south gate is yours too.
+
+Quando quiser companhia lá fora, é só me chamar. E vê se não morre antes de mim.
+= Whenever you want company out there, just call me. And try not to die before I do.
+
+Você subiu de nível? C abre o personagem para gastar pontos de atributo; K abre a árvore de poderes.
+= Leveled up? C opens the character screen to spend attribute points; K opens the power tree.
+
+Os quatro. Juntos. Olha só como encaixam.
+= All four. Together. Look how they fit.
+
+Não é desenho. É um mapa. Os quatro setores, de cima, girados até as linhas baterem. E no meio, onde elas se cruzam...
+= It's not a drawing. It's a map. The four sectors, seen from above, rotated until the lines match. And in the middle, where they cross...
+
+...embaixo do setor das engrenagens. Tem uma porta lá embaixo. Tem que ter.
+= ...beneath the gear sector. There's a door down there. There has to be.
+
+Encaixei as quatro placas nisso aqui. Se a porta lê o padrão, ela lê isso. A passagem norte do Setor 4.
+= I set the four plates into this. If the door reads the pattern, it'll read this. The north passage of Sector 4.
+
+O Monta-Cargas está subindo.
+= The Lift is coming up.
+
+A caixa! A caixa tá subindo! Fora de época! Faltam vinte dias pro próximo!
+= The box! The box is coming up! Out of schedule! The next one isn't due for twenty days!
+
+Todo mundo pra trás. Ninguém encosta.
+= Everybody back. Nobody touch it.
+
+Vazia. Nenhum novato. Só... isso.
+= Empty. No newbie. Just... this.
+
+Ei. Vem cá. Tem o seu nome na etiqueta. Com a sua letra.
+= Hey. Come here. Your name is on the label. In your handwriting.
+
+A jaula de metal por onde todo mundo chegou. O poço embaixo desce até onde a luz não alcança.
+= The metal cage everyone arrived in. The shaft below goes down to where the light doesn't reach.
+
+Você aperta o botão. Chiado. E depois, a sua voz.
+= You press the button. Static. And then, your voice.
+
+Sua voz
+= Your voice
+
+Se você está ouvindo isso, deu certo. Você esqueceu. Eu esqueci.
+= If you're hearing this, it worked. You forgot. I forgot.
+
+Eu trabalhava para a ARCA. Eu desenhei os muros. Eu desenhei os Tecelões. Eles me chamavam de Arquiteto.
+= I worked for ARCA. I designed the walls. I designed the Weavers. They called me the Architect.
+
+O labirinto não é uma prisão. É um teste. Cada muro que se move mede o que vocês sentem.
+= The maze isn't a prison. It's a test. Every wall that moves measures what you feel.
+
+Existe uma saída. Embaixo do setor das engrenagens, no Núcleo. A porta lê um padrão: os quatro símbolos dos marcos.
+= There is a way out. Beneath the gear sector, in the Core. The door reads a pattern: the four symbols on the markers.
+
+Eu pedi para entrar aqui. Para consertar o que eu fiz. Não confie em ninguém que use crachá.
+= I asked to be put in here. To fix what I did. Don't trust anyone who wears a badge.
+
+O chiado volta. A fita acabou.
+= The static comes back. The tape is over.
+
+Você ouve a fita mais uma vez. A sua voz dizendo coisas que você não lembra de ter dito.
+= You listen to the tape one more time. Your voice saying things you don't remember saying.
+
+Descansar até amanhã cedo (salva o jogo)
+= Rest until early tomorrow (saves the game)
+
+Agora não
+= Not now
+
+Ei. Ei! Abre o olho. Isso. Te acharam caído perto do portão.
+= Hey. Hey! Open your eyes. That's it. They found you collapsed near the gate.
+
+Perdeu um pouco da sucata pelo caminho. Mas está vivo. Aqui isso já é muito.
+= You lost some scrap along the way. But you're alive. Around here that's a lot.
+
+De novo? Você está tentando bater algum recorde? Fica parado que eu vou costurar.
+= Again? Are you trying to set some kind of record? Hold still while I stitch you up.
+
+Nomes riscados no concreto, um embaixo do outro. Alguns têm um traço por cima.
+= Names scratched into the concrete, one below the other. Some have a line through them.
+
+Davi. Lúcia. Bento. Rafa. Jonas. Mais de quarenta. Os riscados são dos que não voltaram.
+= Davi. Lúcia. Bento. Rafa. Jonas. More than forty. The crossed-out ones never came back.
+
+Riscar o seu nome no muro
+= Scratch your name on the wall
+
+Deixar para depois
+= Leave it for later
+
+Você pega uma pedra e risca o seu nome, devagar, embaixo dos outros.
+= You pick up a stone and scratch your name, slowly, below the others.
+
+O seu nome está lá, embaixo dos outros. Ainda sem traço por cima.
+= Your name is there, below the others. Still without a line through it.
+
+O portão só abre para Corredor. Fala com a Iara primeiro, novato.
+= The gate only opens for Runners. Talk to Iara first, newbie.
+
+O sul? Só depois que você trouxer o núcleo do Ferrão. Ordem da Iara.
+= The south? Only after you bring back Stinger's core. Iara's orders.
+
+Oeste dá no Fosso. Ninguém vai lá sem antes acabar com o ninho do sul.
+= West leads to the Pit. Nobody goes there before finishing off the south nest.
+
+O norte é o pior de todos. Primeiro o Fosso, depois a gente conversa.
+= The north is the worst of all. First the Pit, then we'll talk.
+
+Regra número um: nunca pare de andar. Regra número dois: anota tudo que você vir.
+= Rule number one: never stop moving. Rule number two: write down everything you see.
+
+A arena do Ferrão fica no fundo, encostada no muro norte. Tem uma grade. Alguma alavanca por aí abre ela.
+= Stinger's arena is at the back, against the north wall. There's a gate. Some lever around here opens it.
+
+M abre o mapa do setor. Becos sem saída escondem alavancas, caixas de suprimento e terminais.
+= M opens the sector map. Dead ends hide levers, supply crates and terminals.
+
+No topo do marco, uma placa de concreto solta. Gravado nela, um círculo cortado por três linhas.
+= On top of the marker, a loose concrete plate. Carved into it, a circle crossed by three lines.
+
+Um obelisco de concreto mais alto que você. Tem uma placa encaixada no topo, mas algo enorme circula a base.
+= A concrete obelisk taller than you. There's a plate set on top, but something huge is circling the base.
+
+O encaixe no topo do marco está vazio. A placa já está com você, ou com o Caio.
+= The slot on top of the marker is empty. The plate is already with you, or with Caio.
+
+O Ferrão se debate uma última vez e para. As patas encolhem devagar, como um guarda-chuva fechando.
+= Stinger thrashes one last time and stops. Its legs curl in slowly, like an umbrella closing.
+
+Você enfia a mão na carapaça rachada e arranca o núcleo. Pulsa, quente como um coração.
+= You push your hand into the cracked shell and tear out the core. It pulses, warm as a heart.
+
+Ele caiu. O Ferrão caiu! Dois anos, e você chega e...
+= It's down. Stinger is down! Two years, and you show up and...
+
+Pega a placa do marco. O Caio vai querer. E depois a gente volta, que eu quero ver a cara da Iara.
+= Grab the plate from the marker. Caio will want it. And then we go back, I want to see Iara's face.
+
+Cheiro doce. Ninho.
+= A sweet smell. Nest.
+
+Placas de metal soltas batem com o vento. Debaixo do barulho, outro barulho: um zumbido baixo, como uma colmeia.
+= Loose metal plates bang in the wind. Under the noise, another noise: a low hum, like a hive.
+
+Sente esse cheiro? É o ninho. Ela tá aqui em algum lugar. A Mãe.
+= Smell that? It's the nest. She's here somewhere. The Mother.
+
+A placa deste marco tem um quadrado com um ponto no centro, rodeado de ferrugem.
+= This marker's plate shows a square with a dot in the center, surrounded by rust.
+
+(pelo rádio do Pátio) Ei! O portão oeste destravou sozinho! Alguém mexeu em alguma coisa aí fora?
+= (over the Yard radio) Hey! The west gate just unlocked by itself! Did somebody mess with something out there?
+
+O marco está coberto de casulos. Algo grande se mexe entre eles.
+= The marker is covered in cocoons. Something big moves among them.
+
+O encaixe do marco está vazio.
+= The marker's slot is empty.
+
+A Tecelã-Mãe desaba sobre o próprio ninho. Os casulos em volta param de pulsar, um por um.
+= The Weaver Mother collapses onto her own nest. The cocoons around her stop pulsing, one by one.
+
+Acabou o ninho. Quantos menos agora? Cem? Mil?
+= The nest is done. How many fewer now? A hundred? A thousand?
+
+O chão some em buracos redondos que ninguém sabe a profundidade. Do fundo vem um ar quente e um barulho de unhas no concreto.
+= The floor vanishes into round holes of unknown depth. From the bottom comes warm air and the sound of claws on concrete.
+
+A placa do Fosso mostra um triângulo invertido com uma linha no meio, como um olho fechado.
+= The Pit's plate shows an inverted triangle with a line through the middle, like a closed eye.
+
+Uma luz vermelha passa pelo marco e para em você. Lá no alto, algo te observa.
+= A red light sweeps over the marker and stops on you. High above, something is watching you.
+
+O Olho-de-Vidro cai girando e se espatifa no chão do Fosso. Em todo o setor, as luzes vermelhas das Sentinelas apagam ao mesmo tempo.
+= Glass-Eye spins as it falls and shatters on the floor of the Pit. Across the whole sector, the Sentinels' red lights go out at the same time.
+
+Por um instante, ninguém está te olhando.
+= For a moment, nobody is watching you.
+
+Os muros aqui não são concreto. São máquinas: pistões, correntes, engrenagens do tamanho de casas. O labirinto inteiro trabalha.
+= The walls here aren't concrete. They're machines: pistons, chains, gears the size of houses. The whole maze is working.
+
+A última placa: uma espiral que termina numa linha reta. Uma saída.
+= The last plate: a spiral that ends in a straight line. A way out.
+
+Lâminas enormes giram em volta do marco. Ainda não.
+= Huge blades spin around the marker. Not yet.
+
+O Ceifador trava no meio de um giro. As lâminas param e o motor tosse fumaça preta.
+= The Reaper seizes up mid-spin. The blades stop and the engine coughs black smoke.
+
+Atrás dele, a passagem norte se abre num rangido longo. Uma escada desce para o escuro.
+= Behind it, the north passage opens with a long creak. A staircase leads down into the dark.
+
+No fim da escada, uma porta redonda com quatro encaixes vazios. Leve os quatro fragmentos ao Caio.
+= At the bottom of the stairs, a round door with four empty slots. Take the four fragments to Caio.
+
+A porta lê a chave do Caio, gira e abre. Embaixo do labirinto, cabos grossos como troncos correm pelo chão até um zumbido no centro.
+= The door reads Caio's key, turns and opens. Beneath the maze, cables as thick as tree trunks run across the floor toward a hum in the center.
+
+Os cristais nas paredes pulsam no mesmo ritmo do núcleo que você tirou do Ferrão.
+= The crystals in the walls pulse to the same rhythm as the core you took from Stinger.
+
+Você reconhece este lugar. Não lembra, reconhece. Os seus pés sabem para onde virar.
+= You recognize this place. You don't remember it, you recognize it. Your feet know where to turn.
+
+No centro do Núcleo, um servidor do tamanho de um muro. Na tela, uma lista de nomes. Iara. Teo. Duda. Nico. O seu, no topo.
+= In the center of the Core, a server the size of a wall. On the screen, a list of names. Iara. Teo. Duda. Nico. Yours, at the top.
+
+Ao lado de cada nome, um gráfico que sobe e desce. Medo, medido todo dia, há dois anos.
+= Next to each name, a graph that rises and falls. Fear, measured every day, for two years.
+
+O Tecelão Primordial se desenrola do servidor e cai. O zumbido para. Pela primeira vez, silêncio.
+= The Primordial Weaver uncoils from the server and falls. The hum stops. For the first time, silence.
+
+Uma porta branca se abre no fundo do Núcleo. Luz fria do outro lado.
+= A white door opens at the back of the Core. Cold light on the other side.
+
+Paredes brancas. Luz fria. Janelas enormes que dão para o labirinto, lá embaixo, inteiro, como uma maquete.
+= White walls. Cold light. Huge windows overlooking the maze below, all of it, like a scale model.
+
+Voz no alto-falante
+= Voice on the loudspeaker
+
+Sujeito A-01 na ala de controle. Protocolo Executor em espera. Guardas para o corredor dois.
+= Subject A-01 in the control wing. Executor Protocol on standby. Guards to corridor two.
+
+Você achou que eu ia te deixar vir sozinho até aqui? Eu segui o seu rastro desde o Núcleo.
+= Did you think I'd let you come all this way alone? I followed your trail from the Core.
+
+Você me contou a verdade quando podia ter mentido. Agora eu vou junto até o fim.
+= You told me the truth when you could have lied. Now I'm with you until the end.
+
+Você está sozinho. Atrás de você, a porta do Núcleo se fecha.
+= You're alone. Behind you, the Core door closes.
+
+O console central. Um botão com a palavra ABRIR coberto por uma tampa de acrílico.
+= The central console. A button with the word OPEN, covered by an acrylic lid.
+
+O console espera a sua decisão.
+= The console awaits your decision.
+
+Uma voz sai do console: 'Acesso negado. Protocolo Executor ativo.'
+= A voice comes from the console: 'Access denied. Executor Protocol active.'
+
+O Executor desaba. As luzes vermelhas do laboratório piscam e apagam, uma por uma.
+= The Executor collapses. The laboratory's red lights blink and go out, one by one.
+
+Dra. Vasco
+= Dr. Vasco
+
+Impressionante. Você sempre foi o melhor de nós. Foi por isso que eu deixei você entrar.
+= Impressive. You were always the best of us. That's why I let you in.
+
+Daquele console você abre todos os muros. Os Esquecidos saem, e o mundo lá fora come todos em uma semana. A Cinza ainda está lá.
+= From that console you can open every wall. The Forgotten walk out, and the world out there eats them all within a week. The Ash is still out there.
+
+Ou você fecha o console, pega o meu crachá e assume o projeto. Mais cem dias de teste e talvez exista uma cura. Para todo mundo.
+= Or you close the console, take my badge and take over the project. A hundred more days of testing and maybe there will be a cure. For everyone.
+
+Ela vai dizer o que for preciso. Decide você. Mas decide sabendo quem está lá embaixo.
+= She'll say whatever it takes. You decide. But decide knowing who is down there.
+
+Abrir os muros. Ninguém mais fica preso.
+= Open the walls. Nobody stays trapped anymore.
+
+Assumir o Projeto ÉDEN.
+= Take over Project EDEN.
+
+Você levanta a tampa de acrílico e aperta o botão.
+= You lift the acrylic lid and press the button.
+
+Lá embaixo, pela janela, os muros do labirinto começam a descer. Todos. De uma vez. O barulho chega até o vidro.
+= Down below, through the window, the maze walls begin to sink. All of them. At once. The noise reaches the glass.
+
+No Pátio, trinta e oito pessoas olham para cima e veem o horizonte pela primeira vez.
+= In the Yard, thirty-eight people look up and see the horizon for the first time.
+
+O mundo lá fora é cinza e está vazio. Mas é grande. E agora é deles.
+= The world out there is grey and empty. But it's big. And now it's theirs.
+
+Você fecha a tampa. Pega o crachá. Senta na cadeira dela.
+= You close the lid. You take the badge. You sit in her chair.
+
+Pela janela, lá embaixo, os muros continuam no lugar. À noite eles vão se mover de novo.
+= Through the window, down below, the walls stay where they are. At night they'll move again.
+
+Amanhã a caixa sobe com alguém novo. Sem memória. Você já sabe o que vai escrever na etiqueta.
+= Tomorrow the box will come up with someone new. With no memory. You already know what you'll write on the label.
+
+Senta aí. Não, aí não, na caixa. Isso.
+= Sit there. No, not there, on the crate. That's it.
+
+Olhos, ok. Dentes, ok. Nenhum osso quebrado. A caixa é mais gentil com uns do que com outros.
+= Eyes, fine. Teeth, fine. No broken bones. The box is kinder to some than to others.
+
+Eu sou a Duda. Se você voltar do labirinto com um pedaço faltando, é aqui que você vem.
+= I'm Duda. If you come back from the maze missing a piece, this is where you come.
+
+Leva essas bandagens. Lá fora, sangrando, você aperta o número dela na barra e enrola rápido.
+= Take these bandages. Out there, if you're bleeding, press their number on the bar and wrap up fast.
+
+Ah, e a mesa ali do lado é minha bancada. Me traz trapo e eu faço mais bandagem. Fluido de Tecelão eu transformo em antídoto.
+= Oh, and that table next to it is my workbench. Bring me rags and I'll make more bandages. Weaver fluid I turn into antidote.
+
+Agora vai no Marreta. Você não vai sair daqui de mãos vazias.
+= Now go see Marreta. You're not leaving here empty-handed.
+
+O que eu tenho, eu vendo. O que eu não tenho, você traz que eu faço.
+= What I have, I sell. What I don't have, you bring and I make.
+
+Sem sucata? Tudo bem. Hoje é por conta da casa. Hoje.
+= No scrap? That's fine. Today it's on the house. Today.
+
+Dez de sucata pelo remédio. Fica quieto.
+= Ten scrap for the medicine. Hold still.
+
+A maioria chega aqui com corte de ferrão. O veneno dos Tecelões não mata rápido. Mata devagar, se você deixar.
+= Most of them come in with sting wounds. Weaver venom doesn't kill fast. It kills slowly, if you let it.
+
+Antídoto ajuda. Correr ajuda mais.
+= Antidote helps. Running helps more.
+
+E você, da próxima vez que desmaiar lá fora, desmaia mais perto do portão. Carregar Corredor pesa.
+= And you, next time you pass out out there, pass out closer to the gate. Carrying Runners is heavy.
+
+Tenho uma ideia, mas preciso de você. O veneno dos Tecelões e o veneno que cura podem ser a mesma coisa, em quantidade diferente.
+= I have an idea, but I need you. The Weavers' venom and the venom that cures might be the same thing, in different amounts.
+
+Me traz cinco frascos de fluido ácido dos Cuspidores e três núcleos de Tecelão. Eu tento fazer remédio de verdade.
+= Bring me five flasks of acid fluid from the Spitters and three Weaver cores. I'll try to make real medicine.
+
+Perfeito. Me dá um dia. Não, me dá uma hora.
+= Perfect. Give me a day. No, give me an hour.
+
+Pronto. Soro de verdade. E agora eu sei fazer coisa melhor na bancada. Passa lá.
+= Done. Real saline. And now I know how to make better things at the workbench. Stop by.
+
+Ainda falta coisa. Cinco fluidos, três núcleos. Eu conto.
+= Still missing some. Five fluids, three cores. I'm counting.
+
+Novato. Iara mandou você? Claro que mandou.
+= Newbie. Iara sent you? Of course she did.
+
+Tudo que tem ponta, peso ou corda passa por esta oficina. Tudo.
+= Everything with an edge, some weight or a string goes through this workshop. Everything.
+
+Mão leve, olho rápido. Corredor nato. Toma, uma bandana. Segura o suor e você parece mais perigoso.
+= Light hands, quick eyes. A born Runner. Here, a bandana. It keeps the sweat off and makes you look more dangerous.
+
+Ombro largo. Você aguenta peso. Toma: tampa de lixeira. Não ri. Já salvou mais gente que muita armadura.
+= Broad shoulders. You can carry weight. Here: a trash can lid. Don't laugh. It's saved more people than a lot of armor.
+
+Cano de ferro usa as duas mãos, então a tampa espera na mochila até você trocar por uma arma de uma mão.
+= The iron pipe takes both hands, so the lid waits in your backpack until you switch to a one-handed weapon.
+
+Você é dos que pensa antes de bater. Toma uma aljava, pra levar mais pedra no estilingue.
+= You're the type who thinks before hitting. Take a quiver, to carry more stones for the slingshot.
+
+Abre a mochila com I. Clica no item pra vestir. Simples.
+= Open the backpack with I. Click the item to put it on. Simple.
+
+Depois vai no Teo, perto do portão leste. Ele quer ver se você bate em boneco antes de bater em bicho.
+= Then go see Teo, near the east gate. He wants to see you hit dummies before you hit beasts.
+
+Olha, mas não toca no que não vai comprar.
+= Look, but don't touch what you're not buying.
+
+A bancada ali fora faz coisa que a loja não tem. Traz material: placa, mola, fio de Tecelão.
+= The workbench out there makes things the shop doesn't have. Bring materials: plates, springs, Weaver thread.
+
+Fio de Tecelão é o melhor material que existe. Mais forte que aço e flexível. Eu odeio de onde ele vem, mas não sou burro.
+= Weaver thread is the best material there is. Stronger than steel and flexible. I hate where it comes from, but I'm not stupid.
+
+Tô montando uma coisa. Não pergunta o quê.
+= I'm building something. Don't ask what.
+
+Preciso de doze fios de Tecelão e quatro molas. As Sentinelas carregam mola dentro, se você abrir com cuidado. Ou sem cuidado.
+= I need twelve Weaver threads and four springs. Sentinels carry springs inside, if you open them carefully. Or not carefully.
+
+Isso. Exatamente isso.
+= That's it. Exactly that.
+
+Era pra mim, sabe. Uma marreta nova. Mas olha você aí, voltando do labirinto toda semana com esse cano torto.
+= It was for me, you know. A new sledgehammer. But look at you, coming back from the maze every week with that bent pipe.
+
+Leva. É emprestada. Devolve quando morrer.
+= Take it. It's a loan. Give it back when you die.
+
+Doze fios. Quatro molas. Eu sei contar.
+= Twelve threads. Four springs. I can count.
+
+Novato! Que pressa é essa? Duda primeiro, depois Marreta. Depois a gente conversa.
+= Newbie! What's the rush? Duda first, then Marreta. Then we'll talk.
+
+Então você é o novato. Eu sou o Teo. Corredor-chefe.
+= So you're the newbie. I'm Teo. Head Runner.
+
+Labirinto não perdoa quem hesita. Tá vendo aqueles bonecos ali, do lado da oficina? Derruba três.
+= The maze doesn't forgive hesitation. See those dummies over there, by the workshop? Knock down three.
+
+Clica neles e segura que você bate sem parar. Ou aperta os números da barra pra usar o que você sabe fazer.
+= Click on them and hold to keep hitting. Or press the bar numbers to use what you know.
+
+Clique num inimigo para atacar; segure o botão para continuar batendo. Shift + clique ataca parado na direção do cursor.
+= Click an enemy to attack; hold the button to keep hitting. Shift + click attacks in place toward the cursor.
+
+Nada mal pra quem chegou hoje. Ainda bate de olho fechado, mas bate.
+= Not bad for someone who arrived today. You still hit with your eyes closed, but you hit.
+
+Quer companhia lá fora? Eu tô pronto.
+= Want company out there? I'm ready.
+
+Vem comigo.
+= Come with me.
+
+Hoje vou sozinho.
+= I'm going alone today.
+
+Então anda. E não me deixa pra trás.
+= Then move. And don't leave me behind.
+
+Fica no Pátio dessa vez.
+= Stay in the Yard this time.
+
+Continua comigo.
+= Stay with me.
+
+Beleza. Volta inteiro.
+= Alright. Come back in one piece.
+
+Três coisas. Uma: rola. Espaço. No meio do rolamento nada te acerta, nem ferrão.
+= Three things. One: roll. Space. Mid-roll nothing hits you, not even a stinger.
+
+Duas: quando um bicho se encolhe, ele vai dar o bote. Sai da frente.
+= Two: when a beast curls up, it's about to lunge. Get out of the way.
+
+Três: anota tudo. Os muros mudam toda noite, mas os becos sem saída sempre escondem alguma coisa. Caixa, alavanca, terminal.
+= Three: write everything down. The walls change every night, but dead ends always hide something. A crate, a lever, a terminal.
+
+E quatro, que eu sempre esqueço: quando a sirene toca, você tem uma hora até os portões fecharem.
+= And four, which I always forget: when the siren sounds, you have an hour before the gates close.
+
+Os jovens andam em bando e mordem. Os grandes têm ferrão e dão bote. Os cuspidores ficam longe.
+= The young ones move in packs and bite. The big ones have stingers and lunge. The spitters keep their distance.
+
+De noite sai outro tipo. Preto, rápido. A gente chama de Noturno. Ninguém que ficou pra ver voltou pra contar direito.
+= At night another kind comes out. Black, fast. We call them Night Weavers. Nobody who stayed to see came back to tell it properly.
+
+Espera. Você passou a noite lá fora? Inteira? E voltou andando?
+= Wait. You spent the night out there? The whole night? And walked back?
+
+Dois anos e ninguém conseguiu. Ninguém. Toma. Era do primeiro de nós. Ele gravou isso no cabo.
+= Two years and nobody managed it. Nobody. Here. This belonged to the first of us. He carved it into the handle.
+
+Isso... é o núcleo do Ferrão? Me dá aqui. Devagar. Devagar!
+= Is that... Stinger's core? Give it here. Slowly. Slowly!
+
+Olha só. Tem circuito aqui dentro. Tecido vivo enrolado em circuito. Eles não nasceram. Alguém fez esses bichos.
+= Look at that. There's circuitry inside. Living tissue wrapped around circuits. They weren't born. Somebody made these things.
+
+E isso? Do marco da arena? ... Esse símbolo. Eu já vi ele. Nos meus mapas. Espera aí.
+= And this? From the arena marker? ... That symbol. I've seen it before. In my maps. Hold on.
+
+Ah, e se você passar pelo marco da arena de novo, pega a placa do topo. Quero ver uma de perto.
+= Oh, and if you pass by the arena marker again, grab the plate from the top. I want to see one up close.
+
+Ainda falta placa. Preciso das quatro.
+= Still missing plates. I need all four.
+
+Mapas, sinalizadores, umas coisas que eu acho no caminho. Leva o que quiser, mas paga.
+= Maps, flares, a few things I find along the way. Take what you want, but pay.
+
+Toda noite os muros mudam, então meu mapa de ontem não serve pra hoje. Mas o jeito como eles mudam... isso tem padrão.
+= Every night the walls change, so yesterday's map is useless today. But the way they change... that has a pattern.
+
+Cada trecho que você andar no labirinto fica no seu mapa. Traz pra mesa ali fora e eu copio. Quanto mais, melhor.
+= Every stretch you walk in the maze goes on your map. Bring it to the table out there and I'll copy it. The more the better.
+
+A Mesa dos Mapas, na frente da Sala dos Mapas, recebe o que você mapeou no dia. Cada trecho novo vale experiência.
+= The Map Table, in front of the Map Room, takes what you mapped during the day. Every new section is worth experience.
+
+Cada marco tem um símbolo. Quatro marcos, quatro setores, quatro portões. Não pode ser coincidência.
+= Every marker has a symbol. Four markers, four sectors, four gates. That can't be a coincidence.
+
+Traz as quatro placas. A Hera, a Ferrugem, o Fosso e as Engrenagens.
+= Bring the four plates. Ivy, Rust, Pit and Gears.
+
+Eu tenho setecentos e doze mapas. Nenhum igual ao outro. Ninguém acha isso estranho? Eu acho isso estranho.
+= I have seven hundred and twelve maps. No two alike. Doesn't anyone find that strange? I find that strange.
+
+Entregar o que eu mapeei
+= Hand over what I mapped
+
+Até mais
+= See you
+
+Você é o novo? Eu era o novo antes de você. Agora não sou mais.
+= You're the new one? I was the new one before you. Not anymore.
+
+Quando eu crescer eu vou ser Corredor. O Teo diz que eu sou baixo demais. Eu acho que é inveja.
+= When I grow up I'm going to be a Runner. Teo says I'm too short. I think he's jealous.
+
+A bússola ainda aponta pro mesmo lugar. Pra fora. Um dia eu vou atrás.
+= The compass still points to the same place. Outside. One day I'll follow it.
+
+Ei... você vai pro setor leste? Eu... eu fui lá. Escondido. Atrás dos Corredores.
+= Hey... are you going to the east sector? I... I went there. Secretly. Following the Runners.
+
+Eu deixei cair minha bússola. Ela aponta pra casa! Juro. Ela fica em algum beco de lá.
+= I dropped my compass. It points home! I swear. It's in some dead end over there.
+
+Não conta pro Teo. Por favor.
+= Don't tell Teo. Please.
+
+Você achou! Você achou!
+= You found it! You found it!
+
+Olha, tá vendo? Ela aponta pra lá. Sempre pra lá. Pra fora do muro.
+= Look, see? It points that way. Always that way. Outside the wall.
+
+Toma. É meu estilingue. Eu pintei de vermelho. Agora é seu. É justo.
+= Here. It's my slingshot. I painted it red. Now it's yours. That's fair.
+
+Comida não cai do céu. Bom, cai da caixa. Dá no mesmo. Mas aqui ela é feita.
+= Food doesn't fall from the sky. Well, it falls from the box. Same thing. But here it gets cooked.
+
+Pão de milho da plantação do Nico. Não é muito, mas segura a fome até a sirene.
+= Cornbread from Nico's crops. It's not much, but it holds off hunger until the siren.
+
+E se você vir minha faca boa por aí, me devolve. Alguém pegou faz uns dias.
+= And if you see my good knife around, bring it back. Somebody took it a few days ago.
+
+Alguém pegou minha melhor faca da cozinha. Se você souber de alguma faca de cozinha largada por aí... ou numa mão novata...
+= Somebody took my best kitchen knife. If you know of a kitchen knife lying around... or in a newbie's hand...
+
+Não tô vendo faca nenhuma na sua mochila. Se estiver na sua mão, guarda primeiro.
+= I don't see any knife in your backpack. If it's in your hand, put it away first.
+
+Minha faca! Ou uma igualzinha. Tanto faz. Obrigada.
+= My knife! Or one exactly like it. Doesn't matter. Thank you.
+
+Toma uns pães. Por conta da casa.
+= Have some bread. On the house.
+
+Eu fico aqui. Toda noite. Eles arranham o portão norte, você sabia? Arranham e param. Arranham e param.
+= I stay here. Every night. They scratch at the north gate, did you know? Scratch and stop. Scratch and stop.
+
+Escuta. Tá ouvindo? Ali. Arranhando.
+= Listen. Hear that? There. Scratching.
+
+Os pretos. Os Noturnos. Só saem depois que o portão fecha.
+= The black ones. The Night Weavers. They only come out after the gate closes.
+
+Eu quero saber se eles sangram. Derruba seis e volta pra me contar.
+= I want to know if they bleed. Take down six and come back to tell me.
+
+Seis? E eles... sangram?
+= Six? And they... bleed?
+
+Sangram. Um óleo preto, quente.
+= They bleed. A hot, black oil.
+
+Então dá pra matar. Então dá pra dormir. Toma, guardei isso pra quem me desse essa notícia.
+= Then they can be killed. Then I can sleep. Here, I saved this for whoever brought me that news.

@@ -1,0 +1,64 @@
+# Traducao para o ingles: interface_listas. O texto em portugues e a chave; a linha com "= " e a traducao.
+
+leste
+= East
+
+oeste
+= West
+
+norte
+= North
+
+sul
+= South
+
+atordoado
+= stunned
+
+recarregando
+= recharging
+
+fôlego insuficiente
+= out of stamina
+
+arma errada
+= wrong weapon
+
+morto
+= dead
+
+curto
+= short
+
+raspado
+= buzzed
+
+longo
+= long
+
+trança
+= braid
+
+coque
+= bun
+
+rabo
+= ponytail
+
+cacheado
+= curly
+
+bagunçado
+= messy
+
+careca
+= bald
+
+Baixa
+= Low
+
+Média
+= Medium
+
+Alta
+= High

@@ -9,6 +9,7 @@ using Esquecidos.Nucleo.Mapas;
 using Esquecidos.Nucleo.Regras;
 using Esquecidos.Nucleo.Roteiro;
 using Esquecidos.Nucleo.Simulacao;
+using static Esquecidos.Nucleo.Idioma;
 
 namespace Esquecidos.Nucleo.Partidas
 {
@@ -62,7 +63,7 @@ namespace Esquecidos.Nucleo.Partidas
                 {
                     Diario.DefinirStatus(setor.StatusDoChefe);
                     AtualizarPortoes();
-                    Mensagem($"{def.Nome} caiu. A passagem ao norte se abriu.", "#ffd25a");
+                    Mensagem(F("{0} caiu. A passagem ao norte se abriu.", def.Nome), "#ffd25a");
                 }
                 string roteiro = "chefe_" + def.Id;
                 if (Roteiros.Existe(roteiro)) Roteiros.Executar(roteiro);
@@ -108,8 +109,8 @@ namespace Esquecidos.Nucleo.Partidas
                     if (grade != null)
                     {
                         int puxadas = grade.Dependencias.Count(d => Mundo.Objeto(d)?.Ligado == true);
-                        if (grade.Ligado) Mensagem("Um rangido longo, lá na arena: a grade subiu.", "#ffd25a");
-                        else Mensagem($"Alavanca {(o.Ligado ? "puxada" : "solta")}. {puxadas} de {grade.Dependencias.Count}.", "#e8e2d0");
+                        if (grade.Ligado) Mensagem(T("Um rangido longo, lá na arena: a grade subiu."), "#ffd25a");
+                        else Mensagem(o.Ligado ? F("Alavanca puxada. {0} de {1}.", puxadas, grade.Dependencias.Count) : F("Alavanca solta. {0} de {1}.", puxadas, grade.Dependencias.Count), "#e8e2d0");
                         Despachante.Despachar(new NotTremor(0.15f));
                     }
                     break;
@@ -145,7 +146,7 @@ namespace Esquecidos.Nucleo.Partidas
                 case TipoObjeto.Elevador:
                 case TipoObjeto.Cartaz:
                     if (o.Roteiro != null && Roteiros.Existe(o.Roteiro)) Roteiros.Executar(o.Roteiro);
-                    else if (o.Tipo == TipoObjeto.Marco) Mensagem("Um obelisco de concreto com marcas que você não entende.");
+                    else if (o.Tipo == TipoObjeto.Marco) Mensagem(T("Um obelisco de concreto com marcas que você não entende."));
                     break;
             }
         }
@@ -161,12 +162,12 @@ namespace Esquecidos.Nucleo.Partidas
             }
             if (o.SoDeDia && !Ciclo.PortoesAbertos)
             {
-                Mensagem("Fechado até o amanhecer.", "#9fb4ff");
+                Mensagem(T("Fechado até o amanhecer."), "#9fb4ff");
                 return;
             }
             if (o.RequerStatus != null && !Diario.TemStatus(o.RequerStatus))
             {
-                Mensagem(o.Mensagem ?? "Trancado.", "#d0c0a0");
+                Mensagem(o.Mensagem ?? T("Trancado."), "#d0c0a0");
                 if (Roteiros.Existe("trancado_" + o.RequerStatus)) Roteiros.Executar("trancado_" + o.RequerStatus);
                 return;
             }
@@ -174,7 +175,7 @@ namespace Esquecidos.Nucleo.Partidas
             {
                 if (!Heroi.Mochila.Remover(o.RequerItem, 1))
                 {
-                    Mensagem($"Precisa de: {Catalogo.Item(o.RequerItem).Nome}.", "#d0c0a0");
+                    Mensagem(F("Precisa de: {0}.", Catalogo.Item(o.RequerItem).Nome), "#d0c0a0");
                     return;
                 }
             }
@@ -228,7 +229,7 @@ namespace Esquecidos.Nucleo.Partidas
             }
             if (topicos.Count == 0)
             {
-                Mensagem($"{n.Npc.Nome} não tem nada a dizer agora.");
+                Mensagem(F("{0} não tem nada a dizer agora.", n.Npc.Nome));
                 return;
             }
             if (topicos.Count == 1)
@@ -265,6 +266,7 @@ namespace Esquecidos.Nucleo.Partidas
 
         private void TentarSair(ObjetoDeCena o)
         {
+            if (TransicaoPendente) return;
             string destino = o.Destino;
             string entrada = o.Entrada;
             if (destino != null && destino.StartsWith("portao:", StringComparison.Ordinal))
@@ -273,7 +275,7 @@ namespace Esquecidos.Nucleo.Partidas
                 SetorDef setor = Catalogo.Setores.Values.FirstOrDefault(s => s.Portao == lado);
                 if (setor == null)
                 {
-                    AvisarSaida("Do outro lado só há parede. Este portão não leva a lugar nenhum.");
+                    AvisarSaida(T("Do outro lado só há parede. Este portão não leva a lugar nenhum."));
                     return;
                 }
                 destino = setor.Id;
@@ -281,10 +283,9 @@ namespace Esquecidos.Nucleo.Partidas
             if (destino == null) return;
             if (destino != "patio" && Catalogo.Setores.TryGetValue(destino, out SetorDef def) && def.RequerStatus != null && !Diario.TemStatus(def.RequerStatus))
             {
-                AvisarSaida("Você não está pronto para ir por aí ainda.");
+                AvisarSaida(T("Você não está pronto para ir por aí ainda."));
                 return;
             }
-            Despachante.Despachar(new NotTransicao(destino, entrada));
             IrPara(destino, entrada);
         }
 
@@ -308,7 +309,7 @@ namespace Esquecidos.Nucleo.Partidas
                     Despachante.Despachar(new NotItemRecebido(entrou));
                 }
                 if (Mundo != null && Jogador != null) Mundo.SoltarItem(Jogador.Pos, sobra);
-                if (avisar) Mensagem("Mochila cheia. O resto ficou no chão.", "#ff9a6a");
+                if (avisar) Mensagem(T("Mochila cheia. O resto ficou no chão."), "#ff9a6a");
                 Diario.Reavaliar();
                 return false;
             }
@@ -342,7 +343,7 @@ namespace Esquecidos.Nucleo.Partidas
             }
             if (Heroi.Mochila.Cabe(l.Item, Catalogo) < l.Item.Quantidade)
             {
-                Mensagem("Mochila cheia.", "#ff9a6a");
+                Mensagem(T("Mochila cheia."), "#ff9a6a");
                 return;
             }
             Mundo.RemoverLoot(l, true);

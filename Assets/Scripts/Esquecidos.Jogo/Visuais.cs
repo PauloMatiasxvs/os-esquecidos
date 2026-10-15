@@ -9,6 +9,7 @@ using Esquecidos.Nucleo.Itens;
 using Esquecidos.Nucleo.Partidas;
 using Esquecidos.Nucleo.Simulacao;
 using UnityEngine;
+using static Esquecidos.Nucleo.Idioma;
 
 namespace Esquecidos.Jogo
 {
@@ -121,7 +122,7 @@ namespace Esquecidos.Jogo
             if (l.Item == null)
             {
                 v.Cor = new Color(0.95f, 0.8f, 0.45f);
-                v.Nome = $"{l.Sucata} de sucata";
+                v.Nome = F("{0} de sucata", l.Sucata);
                 var rng = new System.Random(l.Id);
                 for (int i = 0; i < 6; i++)
                 {

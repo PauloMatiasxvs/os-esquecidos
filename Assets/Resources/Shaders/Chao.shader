@@ -169,7 +169,7 @@ Shader "Esquecidos/Chao"
                 float2 f = frac(xz / 1.0);
                 float junta = smoothstep(0.0, 0.025, min(min(f.x, 1 - f.x), min(f.y, 1 - f.y)));
                 float4 a = Ruido(xz * 0.13);
-                half3 cor = half3(0.6, 0.63, 0.66) * (0.93 + 0.07 * a.b);
+                half3 cor = half3(0.3, 0.33, 0.37) * (0.93 + 0.07 * a.b);
                 cor = lerp(cor, half3(0.55, 0.5, 0.45), smoothstep(0.78, 0.95, a.r) * 0.4);
                 cor *= lerp(0.6, 1, junta);
                 return cor;
